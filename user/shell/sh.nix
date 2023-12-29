@@ -15,6 +15,7 @@ let
     labc="ls -lap"; #alphabetical sort
     lf="ls -l | egrep -v '^d'"; # files only
     ldir="ls -l | egrep '^d'"; # directories only
+    vim="nvim";
     
     shutdownsafe="sudo shutdown now";
     rebootsafe="sudo reboot now";

@@ -8,6 +8,7 @@
   imports = [
     ../../user/shell/sh.nix
     ../../user/shell/cli-collection.nix
+    ../../user/app/neovim/neovim.nix
     ../../user/app/git/git.nix
     ../../user/app/virtualization/virtualization.nix
     ../../user/app/flatpak/flatpak.nix

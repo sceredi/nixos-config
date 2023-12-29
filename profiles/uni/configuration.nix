@@ -7,9 +7,13 @@
   imports = [
     ../../system/hardware-configuration.nix
     ../../system/hardware/bluetooth.nix
-    ( import ../../system/app/docker.nix {storageDriver = "btrfs"; inherit username pkgs config lib;} )
+    # ( import ../../system/app/docker.nix {storageDriver = "btrfs"; inherit username pkgs config lib;} )
     ../../system/app/virtualization.nix
   ];
+  # TODO remove, temporary solution to have kde while setting up mu wm 
+  services.xserver.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   # Ensure nix flakes are enabled
   nix.package = pkgs.nixFlakes;
