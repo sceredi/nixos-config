@@ -9,6 +9,7 @@
     ../../system/hardware/bluetooth.nix
     # ( import ../../system/app/docker.nix {storageDriver = "btrfs"; inherit username pkgs config lib;} )
     ../../system/app/virtualization.nix
+    ../../system/keyboard/layout.nix
   ];
   # TODO remove, temporary solution to have kde while setting up mu wm 
   services.xserver.enable = true;
