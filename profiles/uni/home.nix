@@ -13,6 +13,8 @@
     ../../user/app/virtualization/virtualization.nix
     ../../user/app/flatpak/flatpak.nix
     ../../user/lang/cc/cc.nix
+    ../../user/lang/node/node.nix
+    ../../user/lang/ruby/ruby.nix
     ../../user/hardware/bluetooth.nix
   ];
 

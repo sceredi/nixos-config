@@ -29,6 +29,13 @@ let
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       shellAliases = myAliases;
+      initExtra = ''
+        bindkey '^ ' autosuggest-accept
+      '';
+      oh-my-zsh = {
+        enable = true;
+        theme = "robbyrussell";
+      };
     };
 
     programs.bash = {
@@ -44,5 +51,6 @@ let
     programs.direnv.enable = true;
     programs.direnv.enableZshIntegration = true;
     programs.direnv.nix-direnv.enable = true;
+
 
   }
