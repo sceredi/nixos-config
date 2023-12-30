@@ -16,7 +16,7 @@
     email = "ceredi.simone.iti@gmail.com"; # email (used for certain configurations)
     dotfilesDir = "~/.dotfiles"; # absolute path of the local repo
     theme = "catpuccin"; # selcted theme from my themes directory (./themes/)
-    wm = "kde"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
+    wm = "i3"; # Selected window manager or desktop environment; must select one in both ./user/wm/ and ./system/wm/
     wmType = "x11"; # x11 or wayland
     browser = "firefox"; # Default browser; must select one from ./user/app/browser/
     editor = "nvim"; # Default editor;

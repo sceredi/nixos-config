@@ -16,6 +16,7 @@
     ../../user/lang/node/node.nix
     ../../user/lang/ruby/ruby.nix
     ../../user/hardware/bluetooth.nix
+    (./. + "../../../user/wm"+("/"+wm+"/"+wm)+".nix") # My window manager selected from flake
   ];
 
   home.stateVersion = "23.11";
@@ -23,6 +24,7 @@
   home.packages = with pkgs; [
     zsh
     kitty
+    alacritty
     firefox
     brave
     git

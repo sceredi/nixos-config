@@ -12,7 +12,6 @@
   # Configure xwayland
   services.xserver = {
     enable = true;
-    layout = "us";
     xkbVariant = "";
     xkbOptions = "caps:escape";
     displayManager.gdm = {

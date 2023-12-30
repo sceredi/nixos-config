@@ -10,11 +10,12 @@
     # ( import ../../system/app/docker.nix {storageDriver = "btrfs"; inherit username pkgs config lib;} )
     ../../system/app/virtualization.nix
     ../../system/keyboard/layout.nix
+    (./. + "../../../system/wm"+("/"+wm)+".nix") # My window manager
   ];
-  # TODO remove, temporary solution to have kde while setting up mu wm 
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # # TODO remove, temporary solution to have kde while setting up mu wm 
+  # services.xserver.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   # Ensure nix flakes are enabled
   nix.package = pkgs.nixFlakes;
