@@ -42,13 +42,3 @@ And now that home manager is running you can setup the home manager configuratio
 cd ~/.dotfiles
 home-manager switch --flake .#user
 ```
-This also load librephoenix convenience script called phoenix (WIP). It can be used by:
-- `phoenix sync` to build and switch system and home configuration
-    - `phoenix sync system` to build and switch only system configuration
-    - `phoenix sync user` to build and switch only home configuration
-- `phoenix update` to update flake inputs
-- `phoenix gc` to garbage collect
-    - If no argument is given, it cleans anything older than 30 days
-    - If a time argument is supplied (i.e. 10d), it cleans stuff older than that (10 days in this example)
-    - If the argument full is given, it deletes all previous generations
-
