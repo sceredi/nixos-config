@@ -9,6 +9,7 @@
     ../../user/shell/sh.nix
     ../../user/shell/cli-collection.nix
     ../../user/app/neovim/neovim.nix
+    ../../user/app/vscode/vscode.nix
     ../../user/app/git/git.nix
     ../../user/app/virtualization/virtualization.nix
     ../../user/app/flatpak/flatpak.nix
@@ -61,5 +62,7 @@
     SPAWNEDITOR = spawnEditor;
     TERM = term;
     BROWSER = browser;
+    NIXPKGS_ALLOW_UNFREE = 1;
+
   };
 }

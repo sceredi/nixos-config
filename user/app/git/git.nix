@@ -2,10 +2,12 @@
 
 {
   home.packages = [ pkgs.git ];
-  programs.git.enable = true;
-  programs.git.userName = "Simone Ceredi";
-  programs.git.userEmail = email;
-  programs.git.extraConfig = {
-    init.defaultBranch = "master";
+  programs.git = {
+    enable = true;
+    userName = "Simone Ceredi";
+    userEmail = email;
+    extraConfig = {
+      init.defaultBranch = "master";
+    };
   };
 }
