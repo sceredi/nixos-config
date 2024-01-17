@@ -1,0 +1,3 @@
+{
+  simone = import ./simone;
+}

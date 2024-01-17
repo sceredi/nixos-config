@@ -1,0 +1,63 @@
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "rpq" {
+
+    name[Group1]= "English (Real Programmers Qwerty)";
+
+    include "us(basic)"
+
+    key <TLDE> { [ dollar, asciitilde, dead_grave, dead_tilde ] };
+    key <AE01> { [ plus, 1 ] };
+    key <AE02> { [ bracketleft, 2 ] };
+    key <AE03> { [ braceleft, 3 ] };
+    key <AE04> { [ parenleft, 4 ] };
+    key <AE05> { [ ampersand, 5 ] };
+    key <AE06> { [ equal, 6, dead_circumflex, dead_circumflex ] };
+    key <AE07> { [ parenright, 7 ] };
+    key <AE08> { [ braceright, 8 ] };
+    key <AE09> { [ bracketright, 9, dead_grave ] };
+    key <AE10> { [ asterisk, 0 ] };
+    key <AE11> { [ minus, underscore ] };
+    key <AE12> { [ exclam, percent ] };
+    
+
+    key <AD01> { [ q, Q ] };
+    key <AD02> { [ w, W ] };
+    key <AD03> { [ e, E, egrave, Egrave ] };
+    key <AD04> { [ r, R, eacute, Eacute ] };
+    key <AD05> { [ t, T ] };
+    key <AD06> { [ y, Y ] };
+    key <AD07> { [ u, U, ugrave, Ugrave ] };
+    key <AD08> { [ i, I, igrave, Igrave ] };
+    key <AD09> { [ o, O, ograve, Ograve ] };
+    key <AD10> { [ p, P ] };
+    key <AD11> { [ at, asciicircum ] };
+    key <AD12> { [ backslash, numbersign ] };
+
+    key <AC01> { [ a, A, agrave, Agrave ] };
+    key <AC02> { [ s, S ] };
+    key <AC03> { [ d, D ] };
+    key <AC04> { [ f, F ] };
+    key <AC05> { [ g, G ] };
+    key <AC06> { [ h, H ] };
+    key <AC07> { [ j, J ] };
+    key <AC08> { [ k, K ] };
+    key <AC09> { [ l, L ] };
+    key <AC10> { [ semicolon, colon, dead_acute, dead_diaeresis ] };
+    key <AC11> { [ apostrophe, quotedbl] };
+
+    key <AB01> { [ z, Z ] };
+    key <AB02> { [ x, X ] };
+    key <AB03> { [ c, C ] };
+    key <AB04> { [ v, V ] };
+    key <AB05> { [ b, B ] };
+    key <AB06> { [ n, N ] };
+    key <AB07> { [ m, M ] };
+    key <AB08> { [ comma, less ] };
+    key <AB09> { [ period, greater ] };
+    key <AB10> { [ slash, question ] };
+
+    key <BKSL> { [ bar, grave, dead_tilde ] };
+
+    include "level3(ralt_switch)"
+
+};

@@ -1,0 +1,122 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)
+
+set scrolloff=10
+set number
+set relativenumber
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set hlsearch = false
+set commentary
+let mapleader = " "
+
+map <C-d> <cmd><C-d>zz
+map <C-u> <cmd><C-u>zz
+
+" Go to previous diagnostic message
+nmap [d :action GotoPrevError<CR>
+" Go to next diagnostic message
+nmap ]d :action GotoNextError<CR>
+
+" Go to search (Find) dialog in IntelliJ IDEA
+nmap <Leader>sg :action ShowFind<CR>
+" Search for Git files in IntelliJ IDEA
+nmap <Leader>gf :action GotoAction<CR>
+" Search for files in project
+nmap <C-p> :action GotoFile<CR>
+" Search recent files
+nmap <Leader>? :action RecentFiles<CR>
+" Search recently open buffers
+nmap <Leader><Space> :action ShowBufferSwitcher<CR>
+
+" Move selected text in visual mode down
+xmap J :m '>+1<CR>gv=gv
+" Move selected text in visual mode up
+xmap K :m '<-2<CR>gv=gv
+
+" Join lines without modifying the current cursor position
+nmap J mzJ`z
+
+" Scroll the buffer down by half a screen
+nmap <C-d> <C-d>zz
+
+" Scroll the buffer up by half a screen
+nmap <C-u> <C-u>zz
+
+" After jumping to a match, center the line in the middle of the screen
+nmap n nzzzv
+
+" After jumping to a match in reverse, center the line in the middle of the screen
+nmap N Nzzzv
+
+" Delete and paste in normal mode
+xmap <Leader>p "_dP
+
+" Yank in normal mode to system clipboard
+xmap <Leader>y "+y
+
+" Yank in normal mode to system clipboard for entire line
+nmap <Leader>Y "+Y
+
+" Delete in normal mode without changing the default register
+xmap <Leader>d "_d
+
+" Remap the <C-c> key in insert mode to exit insert mode
+imap <C-c> <Esc>
+
+" Disable the default behavior of Q (replacing it with <nop>)
+nmap Q <nop>
+
+" Toggle line comment
+xmap gc :action CommentByLineComment<CR>
+
+" Views (leader v)
+map <leader>pf :action ActivateProjectToolWindow<cr>
+map <leader>vp :action ActivateProblemsViewToolWindow<cr>
+map <leader>vs :action ActivateStructureToolWindow<cr>
+map <leader>vt :action ActivateTerminalToolWindow<cr>
+map <leader>vv :action ActivateServicesToolWindow<cr>
+map <leader>vd :action ActivateDebugToolWindow<cr>
+map <leader>vg :action ActivateVersionControlToolWindow<cr>
+map <leader>vo :action ActivateTODOToolWindow<cr>
+map <leader>vq :action CloseActiveTab<cr>
+
+" Reformat code
+map <leader>f :action ReformatCode<cr>
+
+map <leader>ca :action Refactorings.QuickListPopupAction<CR>
+map <leader>rn :action RenameElement<cr>
+
+sethandler <C-i> n-v-i:vim
+sethandler <C-o> n-v-i:vim
+sethandler <C-d> n-v-i:vim
+sethandler <C-u> n-v-i:vim
+sethandler <C-h> n-v-i:vim
+sethandler <C-j> n-v-i:vim
+sethandler <C-k> n-v-i:vim
+sethandler <C-l> n-v-i:vim
