@@ -14,6 +14,7 @@
   {
     home.packages = with pkgs; [
       # Command Line
+      tldr
       neofetch
       gnugrep
       gnused

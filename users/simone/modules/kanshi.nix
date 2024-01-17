@@ -1,3 +1,4 @@
+{ config, pkgs, ... }:
 {
   systemd.user.services.kanshi = {
     serviceConfig = {
@@ -5,6 +6,7 @@
       StartLimitIntervalSec = 30;
     };
   };
+  home.packages = [ pkgs.kanshi ]; 
   services.kanshi = {
     enable = true;
     profiles = {
