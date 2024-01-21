@@ -16,7 +16,11 @@ let
     lf = "ls -l | egrep -v '^d'"; # files only
     ldir = "ls -l | egrep '^d'"; # directories only
     vim = "nvim";
-    launch = ''function _launch() { nohup "$@" > /dev/null 2>&1 & }; _launch'';
+    launch =
+      ''function _launch() { nohup "$@" > /dev/null 2>&1 & disown }; _launch'';
+    idea = ''launch idea-ultimate "$@"'';
+    pycharm = ''launch pycharm-professional "$@"'';
+    webstorm = ''launch webstorm "$@"'';
 
     cat = "bat";
 
