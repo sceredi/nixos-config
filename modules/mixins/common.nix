@@ -1,17 +1,12 @@
-{ config, pkgs, lib, inputs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    vim
-    git
-  ];
+{ config, pkgs, lib, inputs, ... }: {
+  environment.systemPackages = with pkgs; [ vim git ];
   nix = {
     settings = {
       trusted-users = [ "@wheel" "root" ];
       auto-optimise-store = true;
     };
   };
-  home-manager.users.simone = { pkgs, ... }:
-  {
+  home-manager.users.simone = { pkgs, ... }: {
     home.packages = with pkgs; [
       # Command Line
       tldr

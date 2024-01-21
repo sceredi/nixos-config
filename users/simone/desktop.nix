@@ -1,8 +1,5 @@
-{ config, lib, pkgs, inputs, ... }:
-{
-  imports = [
-    ./modules
-  ];
+{ config, lib, pkgs, inputs, ... }: {
+  imports = [ ./modules ];
   home = {
     packages = with pkgs; [
       logseq

@@ -1,12 +1,8 @@
-{ config, lib, pkgs, ... }:
-{
-  imports = [
-    ../mixins/mako.nix
-    ../mixins/sway.nix
-    ../mixins/wlsunset.nix
-  ];
+{ config, lib, pkgs, ... }: {
+  imports = [ ../mixins/mako.nix ../mixins/sway.nix ../mixins/wlsunset.nix ];
   config = {
     services.dbus.packages = with pkgs; [ dconf ];
+    programs.dconf.enable = true;
     programs.light.enable = true;
 
     xdg = {
@@ -22,8 +18,11 @@
     # The NixOS option 'programs.sway.enable' is needed to make swaylock work,
     # since home-manager can't set PAM up to allow unlocks, along with some
     # other quirks.
-    services.xserver.displayManager.gdm.enable = true;
-    services.xserver.displayManager.gdm.wayland = true;
+    services.xserver.displayManager.gdm = {
+      enable = true;
+      wayland = true;
+      settings = { greeter = { include = "simone"; }; };
+    };
     programs.sway.enable = true;
 
     fonts.packages = with pkgs; [ terminus_font_ttf font-awesome ];
@@ -42,10 +41,11 @@
         XDG_SESSION_TYPE = "wayland";
         XDG_CURRENT_DESKTOP = "sway";
       };
+
       home.packages = with pkgs; [
         wl-clipboard
         imv
-        gnome.nautilus
+        xfce.thunar
         gnome.gnome-disk-utility
       ];
     };

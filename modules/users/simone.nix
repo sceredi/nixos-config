@@ -1,14 +1,12 @@
-{ config, inputs, ... }:
-{
+{ config, inputs, ... }: {
   nix.settings.trusted-users = [ "simone" ];
-  users.users.simone = {
-    isNormalUser = true;
-    extraGroups = [
-      "input"
-      "lp"
-      "wheel"
-      "dialout"
-    ];
+  users.users = {
+    root.isNormalUser = false;
+    simone = {
+      isNormalUser = true;
+      description = "SimoneCeredi";
+      extraGroups = [ "input" "lp" "wheel" "dialout" "networkmanager" ];
+    };
   };
 }
 

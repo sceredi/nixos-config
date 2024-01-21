@@ -1,5 +1,4 @@
-{ config, pkgs, inputs, ... }:
-{
+{ config, lib, pkgs, inputs, ... }: {
   imports = with inputs.self.nixosModules; [
     ./disks.nix
     ./hardware-configuration.nix
@@ -11,6 +10,7 @@
     mixins-bluetooth
     mixins-common
     mixins-discord
+    mixins-flatpak
     mixins-fonts
     mixins-gc
     mixins-keyboards
@@ -23,6 +23,7 @@
     profiles-pipewire
     profiles-sway
     profiles-uni
+    profiles-virtualization
   ];
 
   nix.extraOptions = ''
@@ -52,9 +53,7 @@
   };
 
   networking = {
-    firewall = {
-      enable = false;
-    };
+    firewall = { enable = true; };
     hostName = "pulse14";
     # useNetworkd = true;
     # wireless = {
@@ -63,6 +62,13 @@
     #   interfaces = [ "wlp1s0" ];
     # };
     networkmanager.enable = true;
+    nat = {
+      enable = true;
+      internalInterfaces = [ "ve-+" ];
+      externalInterface = "ens3";
+      # Lazy IPv6 connectivity for the container
+      enableIPv6 = true;
+    };
   };
 
   services = {
@@ -87,9 +93,7 @@
         enable = true;
         configurationLimit = 10;
       };
-      efi = {
-        canTouchEfiVariables = true;
-      };
+      efi = { canTouchEfiVariables = true; };
     };
   };
 
@@ -120,5 +124,4 @@
 
   system.stateVersion = "23.11";
 }
-
 

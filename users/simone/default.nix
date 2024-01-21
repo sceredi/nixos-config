@@ -16,6 +16,7 @@ let
     lf = "ls -l | egrep -v '^d'"; # files only
     ldir = "ls -l | egrep '^d'"; # directories only
     vim = "nvim";
+    launch = ''function _launch() { nohup "$@" > /dev/null 2>&1 & }; _launch'';
 
     cat = "bat";
 
@@ -29,15 +30,7 @@ in {
   home = {
     username = "simone";
     homeDirectory = "/home/simone";
-    packages = with pkgs; [
-      file
-      ripgrep
-      fd
-      unzip
-      btop
-      htop
-      pciutils
-    ];
+    packages = with pkgs; [ file ripgrep fd unzip btop htop pciutils ];
   };
 
   programs = {
@@ -54,6 +47,21 @@ in {
       oh-my-zsh = {
         enable = true;
         theme = "robbyrussell";
+      };
+    };
+    starship = {
+      enable = true;
+      enableBashIntegration = true;
+      settings = {
+        username = {
+          format = "user: [$user]($style) ";
+          show_always = true;
+        };
+        shlvl = {
+          disabled = false;
+          format = "$shlvl ▼ ";
+          threshold = 4;
+        };
       };
     };
     bash = {

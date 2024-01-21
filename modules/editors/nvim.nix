@@ -1,5 +1,5 @@
 {
-  home-manager.users.simone = {pkgs, ... }: {
+  home-manager.users.simone = { pkgs, ... }: {
     programs.neovim = {
       enable = true;
       defaultEditor = true;

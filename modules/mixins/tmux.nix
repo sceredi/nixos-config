@@ -29,8 +29,7 @@
       # bind-key -r i run-shell "tmux neww tmux-cht.sh"
     '';
   };
-  home-manager.users.simone = { pkgs, ... }:
-  {
+  home-manager.users.simone = { pkgs, ... }: {
     home.packages = with pkgs; [ tmux-sessionizer ];
   };
 }

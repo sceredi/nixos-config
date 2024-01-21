@@ -1,53 +1,56 @@
 {
-  home-manager.users.simone = { pkgs, ... }: {
-    imports = [
-      # if some langs need a not trivial configuration
-    ];
+  imports = [
+    # if some langs need a not trivial configuration
+    ./pythonPackages.nix
+  ];
+  config = {
+    home-manager.users.simone = { pkgs, ... }: {
 
-    home.packages = with pkgs; [
-      # nix
-      nixpkgs-lint
-      nixpkgs-fmt
-      nixfmt
+      home.packages = with pkgs; [
+        # nix
+        nixpkgs-lint
+        nixpkgs-fmt
+        nixfmt
 
-      # c
-      gcc
-      gnumake
-      cmake
-      autoconf
-      automake
-      libtool
+        # c
+        gcc
+        gnumake
+        cmake
+        autoconf
+        automake
+        libtool
 
-      # node
-      nodejs
+        # node
+        nodejs
 
-      # go
-      go
+        # go
+        go
 
-      # rust
-      rustup
+        # rust
+        rustup
 
-      # jvm stuff
-      jdk
-      kotlin
-      gradle
-      scala_3
-      sbt
+        # jvm stuff
+        jdk
+        kotlin
+        gradle
+        scala_3
+        sbt
 
-      # erlang stuff
-      erlang
-      elixir
-      gleam
+        # erlang stuff
+        erlang
+        elixir
+        gleam
 
-      # ruby
-      ruby
+        # ruby
+        ruby
 
-      # php
-      php
+        # php
+        php
 
-      # latex
-      texlive.combined.scheme-full
+        # latex
+        texlive.combined.scheme-full
 
-    ];
+      ];
+    };
   };
 }

@@ -1,3 +1,1 @@
-{
-  imports = [ ./nvim.nix ./jetbrains.nix ./vscode.nix ];
-}
+{ imports = [ ./nvim.nix ./jetbrains.nix ./vscode.nix ]; }
