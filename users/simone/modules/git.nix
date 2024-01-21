@@ -8,7 +8,7 @@
   home.packages = [ pkgs.git ];
   programs.git = {
     enable = true;
-    userName = "SimoneCeredi";
+    userName = "sceredi";
     userEmail = "ceredi.simone.iti@gmail.com";
     extraConfig = {
       init.defaultBranch = "master";
