@@ -48,10 +48,6 @@ in {
         bindkey '^ ' autosuggest-accept
         bindkey -s '^f' "tms\n"
       '';
-      oh-my-zsh = {
-        enable = true;
-        theme = "robbyrussell";
-      };
     };
     starship = {
       enable = true;
@@ -66,6 +62,9 @@ in {
           disabled = false;
           format = "$shlvl ▼ ";
           threshold = 4;
+        };
+        scala = {
+          disabled = true;
         };
       };
     };
