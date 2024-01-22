@@ -14,7 +14,7 @@
 
   services.xserver = {
     enable = true;
-    layout = "rpq,bus";
+    layout = "bus,rpq";
     xkbOptions = "caps:escape,grp:win_space_toggle";
   };
 }

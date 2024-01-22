@@ -10,6 +10,8 @@
       set -sa terminal-overrides "*:Tc"
       set -g default-terminal "screen-256color"
       set -g status-style 'bg=#333333 fg=#5eacd3'
+      unbind C-a
+      bind C-a send-prefix
 
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection clipboard'

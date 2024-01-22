@@ -57,6 +57,7 @@ in {
       enable = true;
       enableBashIntegration = true;
       settings = {
+        command_timeout = 1000;
         username = {
           format = "user: [$user]($style) ";
           show_always = true;

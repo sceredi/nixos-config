@@ -2,6 +2,7 @@
   imports = [
     # if some langs need a not trivial configuration
     ./pythonPackages.nix
+    ./tools.nix
   ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
@@ -35,6 +36,7 @@
         gradle
         scala_3
         sbt
+        coursier
 
         # erlang stuff
         erlang
@@ -45,7 +47,14 @@
         ruby
 
         # php
-        php
+        php83
+        php83Packages.composer
+
+        # lua
+        luajitPackages.luarocks
+
+        # julia
+        julia
 
         # latex
         texlive.combined.scheme-full
