@@ -1,1 +1,4 @@
-{ imports = [ ./cursor.nix ./foot.nix ./git.nix ./kanshi.nix ]; }
+{
+  imports =
+    [ ./cursor.nix ./firefox.nix ./foot.nix ./git.nix ./kanshi.nix ./nnn.nix ];
+}

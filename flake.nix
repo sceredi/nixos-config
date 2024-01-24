@@ -7,6 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    firefox = {
+      url = "github:colemickens/flake-firefox-nightly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
   };
 

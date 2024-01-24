@@ -14,6 +14,7 @@
     mixins-fonts
     mixins-gc
     mixins-keyboards
+    mixins-nixld
     mixins-openssh
     mixins-printing
     mixins-tmux
@@ -113,7 +114,6 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    firefox
     vim
     tmux
     mpv

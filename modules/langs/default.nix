@@ -53,9 +53,6 @@
         # lua
         luajitPackages.luarocks
 
-        # julia
-        julia
-
         # latex
         texlive.combined.scheme-full
 
