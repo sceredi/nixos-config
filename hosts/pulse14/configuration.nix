@@ -20,9 +20,11 @@
     mixins-tmux
     mixins-zram
     profiles-avahi
+    # profiles-awesomewm
     profiles-docker
+    profiles-i3
     profiles-pipewire
-    profiles-sway
+    # profiles-sway
     profiles-uni
     profiles-virtualization
   ];
