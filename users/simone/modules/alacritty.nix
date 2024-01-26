@@ -6,7 +6,7 @@
         opacity = 0.98;
       };
       font = {
-        size = 16;
+        size = 14;
         normal = {
           family = "JetBrains Mono";
           style = "Regular";

@@ -12,19 +12,27 @@ let
   launcher = dmenu;
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   i3lockcmd = "${pkgs.i3lock}/bin/i3lock -c 2f3233";
-  idlecmd = pkgs.writeShellScript "swayidle.sh" ''
-    ${pkgs.xidlehook}/bin/xidlehook \
-    --not-when-fullscreen \
-    --not-when-audio \
-    --timer 10 'i3lock -c 2f3233' \
-    --timer 600 'systemctl suspend' \
-  '';
 in {
-  imports = [ ./i3status.nix ];
+  imports = [ ./i3status.nix ./redshift.nix ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
       xsession.windowManager.i3 = {
         enable = true;
+        extraConfig = ''
+          set $Locker ${i3lockcmd}
+          set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+          mode "$mode_system" {
+              bindsym l exec --no-startup-id $Locker, mode "default"
+              bindsym e exec --no-startup-id i3-msg exit, mode "default"
+              bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+              bindsym r exec --no-startup-id systemctl reboot, mode "default"
+              bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+              # back to normal: Enter or Escape
+              bindsym Return mode "default"
+              bindsym Escape mode "default"
+          }
+        '';
         config = rec {
           inherit terminal;
           inherit modifier;
@@ -70,10 +78,6 @@ in {
               always = true;
               command = "${pkgs.blueman}/bin/blueman-applet &";
             }
-            {
-              command = "exec ${idlecmd}";
-              always = true;
-            }
           ];
           keybindings = {
             "XF86MonBrightnessUp" = "exec ${brightnessctl} set 5%+";
@@ -84,7 +88,7 @@ in {
 
             "${modifier}+d" = "exec ${launcher}";
             "${modifier}+Return" = "exec ${terminal}";
-            "${modifier}+Escape" = "exec ${i3lockcmd}";
+            "${modifier}+Escape" = ''mode "$mode_system"'';
             "${modifier}+q" = "kill";
             "${modifier}+Shift+r" = "reload";
             "${modifier}+Shift+e" =
