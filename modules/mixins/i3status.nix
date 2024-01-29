@@ -13,7 +13,7 @@
           {
             block = "cpu";
             interval = 1;
-            format = " $barchart $utilization $frequency ";
+            format = " $icon $utilization ";
           }
           {
             block = "sound";
@@ -27,7 +27,7 @@
           {
             block = "net";
             format =
-              " $icon $ssid $signal_strength $ip ↓$speed_down ↑$speed_up ";
+              " $icon $ssid ";
             interval = 2;
             theme_overrides = { idle_bg = "#00223f"; };
           }

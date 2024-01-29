@@ -45,8 +45,6 @@
       home.packages = with pkgs; [
         wl-clipboard
         imv
-        xfce.thunar
-        gnome.gnome-disk-utility
       ];
     };
   };

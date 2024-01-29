@@ -18,6 +18,7 @@
     mixins-openssh
     mixins-printing
     mixins-tmux
+    mixins-usb
     mixins-zram
     profiles-avahi
     # profiles-awesomewm

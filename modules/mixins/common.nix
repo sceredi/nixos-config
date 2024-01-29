@@ -24,6 +24,11 @@
       hwinfo
       unzip
       fzf
+
+      # Utils
+      xfce.thunar
+      gnome.gnome-disk-utility
+      gnome.gnome-common
     ];
   };
 }

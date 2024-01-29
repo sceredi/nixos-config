@@ -20,12 +20,12 @@ in {
         enable = true;
         extraConfig = ''
           set $Locker ${i3lockcmd}
-          set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+          set $mode_system System (l) lock, (e) logout, (s) suspend, (Shift+r) reboot, (Shift+s) shutdown
           mode "$mode_system" {
               bindsym l exec --no-startup-id $Locker, mode "default"
               bindsym e exec --no-startup-id i3-msg exit, mode "default"
               bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-              bindsym r exec --no-startup-id systemctl reboot, mode "default"
+              bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
               bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
               # back to normal: Enter or Escape
@@ -60,11 +60,6 @@ in {
             {
               always = true;
               command = "${pkgs.systemd}/bin/systemd-notify --ready || true";
-            }
-            {
-              always = true;
-              command =
-                "${pkgs.feh}/bin/feh --bg-fill $HOME/.wallpapers/wallpaper.png &}";
             }
             {
               always = true;
