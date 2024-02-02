@@ -15,7 +15,6 @@
           status = "enable";
           mode = "2880x1800@60.001Hz";
           position = "0,0";
-          scale = 1.5;
         }];
       };
       docked = {
@@ -25,7 +24,6 @@
             status = "enable";
             mode = "2880x1800@60.001Hz";
             position = "0,0";
-            scale = 1.5;
           }
           {
             criteria = "LG Electronics LG HDR 4K 0x00007E97";

@@ -18,6 +18,10 @@
           {
             block = "sound";
             theme_overrides = { idle_bg = "#00223f"; };
+            click = [{
+              button = "left";
+              cmd = "pavucontrol";
+            }];
           }
           {
             block = "battery";
@@ -26,8 +30,7 @@
           }
           {
             block = "net";
-            format =
-              " $icon $ssid ";
+            format = " $icon $ssid ";
             interval = 2;
             theme_overrides = { idle_bg = "#00223f"; };
           }

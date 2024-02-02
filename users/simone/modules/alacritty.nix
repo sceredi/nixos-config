@@ -2,9 +2,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      window = {
-        opacity = 0.98;
-      };
+      window = { opacity = 0.98; };
       font = {
         size = 14;
         normal = {
@@ -14,4 +12,5 @@
       };
     };
   };
+  home.sessionVariables = { TERM = "alacritty"; };
 }

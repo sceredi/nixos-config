@@ -42,10 +42,7 @@
         XDG_CURRENT_DESKTOP = "sway";
       };
 
-      home.packages = with pkgs; [
-        wl-clipboard
-        imv
-      ];
+      home.packages = with pkgs; [ wl-clipboard imv ];
     };
   };
 }

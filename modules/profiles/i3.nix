@@ -13,10 +13,15 @@
     services.xserver = {
       enable = true;
       displayManager = {
-        sddm = { enable = true; };
+        gdm = { enable = true; };
         defaultSession = "none+i3";
       };
       windowManager.i3 = { enable = true; };
+      libinput = {
+        enable = true;
+        touchpad = { naturalScrolling = true; };
+      };
+
     };
     home-manager.users.simone = { pkgs, ... }: {
       home.packages = with pkgs; [ i3status-rust imv alacritty xclip ];

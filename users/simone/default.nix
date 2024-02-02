@@ -15,6 +15,9 @@ let
     labc = "ls -lap"; # alphabetical sort
     lf = "ls -l | egrep -v '^d'"; # files only
     ldir = "ls -l | egrep '^d'"; # directories only
+
+    rm = "trash";
+
     vim = "nvim";
     launch =
       ''function _launch() { nohup "$@" > /dev/null 2>&1 & disown }; _launch'';
@@ -34,7 +37,16 @@ in {
   home = {
     username = "simone";
     homeDirectory = "/home/simone";
-    packages = with pkgs; [ file ripgrep fd unzip btop htop pciutils ];
+    packages = with pkgs; [
+      file
+      ripgrep
+      fd
+      unzip
+      btop
+      htop
+      pciutils
+      trash-cli
+    ];
   };
 
   programs = {
@@ -47,6 +59,7 @@ in {
       initExtra = ''
         bindkey '^ ' autosuggest-accept
         bindkey -s '^f' "tms\n"
+        bindkey '^r' history-incremental-search-backward
         export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
       '';
     };

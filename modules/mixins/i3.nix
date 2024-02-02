@@ -13,7 +13,7 @@ let
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   i3lockcmd = "${pkgs.i3lock}/bin/i3lock -c 2f3233";
 in {
-  imports = [ ./i3status.nix ./redshift.nix ];
+  imports = [ ./autorandr.nix ./i3status.nix ./redshift.nix ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
       xsession.windowManager.i3 = {

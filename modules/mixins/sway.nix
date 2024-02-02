@@ -7,8 +7,9 @@ let
   right = "l";
   terminal = "${pkgs.foot}/bin/foot";
   light = "${pkgs.light}/bin/light";
-  rofi = "${pkgs.rofi}/bin/rofi -show drun";
-  launcher = rofi;
+  dmenu =
+    "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
+  launcher = dmenu;
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   swaylockcmd =
     "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
@@ -20,7 +21,7 @@ let
     timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
   '';
 in {
-  imports = [ ./waybar.nix ./nm-applet.nix ];
+  imports = [ ./i3status.nix ./nm-applet.nix ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
       wayland.windowManager.sway = {
@@ -30,10 +31,33 @@ in {
           gtk = false;
         };
         xwayland = true;
+        extraConfig = ''
+          set $Locker ${swaylockcmd}
+          set $mode_system System (l) lock, (e) logout, (s) suspend, (Shift+r) reboot, (Shift+s) shutdown
+          mode "$mode_system" {
+              bindsym l exec --no-startup-id $Locker, mode "default"
+              bindsym e exec --no-startup-id i3-msg exit, mode "default"
+              bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+              bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
+              bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+
+              # back to normal: Enter or Escape
+              bindsym Return mode "default"
+              bindsym Escape mode "default"
+          }
+        '';
         config = rec {
           inherit terminal;
           inherit modifier;
-          bars = [{ command = "${pkgs.waybar}/bin/waybar"; }];
+          bars = [{
+            fonts = {
+              names = [ "Terminus" ];
+              size = 14.0;
+            };
+            statusCommand =
+              "i3status-rs $HOME/.config/i3status-rust/config-top.toml";
+            extraConfig = "height 20";
+          }];
           focus.followMouse = "always";
           window = {
             border = 1;
@@ -97,7 +121,7 @@ in {
 
             "${modifier}+d" = "exec ${launcher}";
             "${modifier}+Return" = "exec ${terminal}";
-            "${modifier}+Escape" = "exec ${swaylockcmd}";
+            "${modifier}+Escape" = ''mode "$mode_system"'';
             "${modifier}+q" = "kill";
             "${modifier}+Shift+r" = "reload";
             "${modifier}+Shift+e" =

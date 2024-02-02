@@ -11,4 +11,6 @@
       colors = { alpha = 0.98; };
     };
   };
+
+  home.sessionVariables = { TERM = "foot"; };
 }
