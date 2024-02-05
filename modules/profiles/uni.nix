@@ -12,7 +12,7 @@
       # postman
       bruno # alternative to postman
       mongodb-compass
-      # onedrivegui
+      rustdesk
     ];
   };
 }
