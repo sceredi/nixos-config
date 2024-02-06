@@ -27,6 +27,8 @@
 
       # Utils
       xfce.thunar
+      xfce.thunar-volman
+      xfce.thunar-archive-plugin
       gnome.gnome-disk-utility
       gnome.gnome-common
     ];
