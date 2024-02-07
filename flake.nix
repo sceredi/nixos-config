@@ -12,10 +12,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
+    nixvim = {
+      url = "github:sceredi/nixvim-flake";
+    };
   };
 
   outputs =
-    { self, nixpkgs, nixos-hardware, home-manager, utils, ... }@inputs: {
+    { self, nixpkgs, nixos-hardware, home-manager, utils, nixvim, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
