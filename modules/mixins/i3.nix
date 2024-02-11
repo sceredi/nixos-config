@@ -5,7 +5,7 @@ let
   down = "j";
   up = "k";
   right = "l";
-  terminal = "${pkgs.alacritty}/bin/alacritty";
+  terminal = "${pkgs.wezterm}/bin/wezterm";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   dmenu =
     "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
@@ -148,8 +148,6 @@ in {
             "${modifier}+Shift+space" = "floating toggle";
 
             "${modifier}+space" = "focus mode_toggle";
-
-            "${modifier}+a" = "focus parent";
 
             "${modifier}+r" = ''mode "resize"'';
           };

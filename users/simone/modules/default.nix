@@ -7,5 +7,6 @@
     ./git.nix
     # ./kanshi.nix
     ./nnn.nix
+    ./wezterm
   ];
 }

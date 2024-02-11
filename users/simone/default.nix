@@ -57,8 +57,7 @@ in {
       syntaxHighlighting.enable = true;
       shellAliases = myAliases;
       initExtra = ''
-        bindkey '^ ' autosuggest-accept
-        bindkey -s '^f' "tms\n"
+        bindkey '^e' autosuggest-accept
         bindkey '^r' history-incremental-search-backward
         export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
       '';
