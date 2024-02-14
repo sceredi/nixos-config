@@ -27,11 +27,16 @@
         # go
         go
 
+        # ocaml
+        ocaml
+        opam
+
         # rust
         rustup
 
         # jvm stuff
         jdk
+        jdt-language-server
         kotlin
         gradle
         scala_3
