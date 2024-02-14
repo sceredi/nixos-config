@@ -31,6 +31,9 @@
       xfce.thunar-archive-plugin
       gnome.gnome-disk-utility
       gnome.gnome-common
+
+      # Screenshots
+      shutter
     ];
   };
 }
