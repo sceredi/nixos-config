@@ -12,5 +12,4 @@
       };
     };
   };
-  home.sessionVariables = { TERM = "alacritty"; };
 }

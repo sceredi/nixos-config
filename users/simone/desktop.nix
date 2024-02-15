@@ -16,6 +16,10 @@
       wl-mirror
       signal-desktop
     ];
+    sessionVariables = {
+      TERM = "wezterm";
+      EDITOR = "nvim";
+    };
   };
 
   qt = {
