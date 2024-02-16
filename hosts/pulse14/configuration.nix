@@ -16,6 +16,7 @@
     mixins-keyboards
     mixins-nixld
     mixins-openssh
+    mixins-picom
     mixins-printing
     mixins-tmux
     mixins-usb
