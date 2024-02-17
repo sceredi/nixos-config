@@ -5,7 +5,7 @@ let
   down = "j";
   up = "k";
   right = "l";
-  terminal = "${pkgs.foot}/bin/foot";
+  terminal = "${pkgs.wezterm}/bin/wezterm";
   light = "${pkgs.light}/bin/light";
   dmenu =
     "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
