@@ -5,7 +5,7 @@
     ./firefox.nix
     # ./foot.nix
     ./git.nix
-    # ./kanshi.nix
+    ./kanshi.nix
     ./nnn.nix
     ./wezterm
   ];

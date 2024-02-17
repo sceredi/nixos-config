@@ -15,6 +15,7 @@
     nixvim = {
       url = "github:sceredi/nixvim-flake";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =

@@ -24,6 +24,7 @@
     profiles-avahi
     # profiles-awesomewm
     profiles-docker
+    # profiles-hypr
     profiles-i3
     profiles-pipewire
     # profiles-sway
