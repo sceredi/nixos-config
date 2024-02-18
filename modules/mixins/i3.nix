@@ -7,9 +7,9 @@ let
   right = "l";
   terminal = "${pkgs.wezterm}/bin/wezterm";
   brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
-  dmenu =
-    "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
-  launcher = dmenu;
+  rofi =
+    "${pkgs.rofi}/bin/rofi -show drun";
+  launcher = rofi;
   pactl = "${pkgs.pulseaudio}/bin/pactl";
   i3lockcmd = "${pkgs.i3lock}/bin/i3lock -c 2f3233";
 in {
