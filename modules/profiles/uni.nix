@@ -6,6 +6,7 @@
   home-manager.users.simone = { pkgs, ... }: {
     home.packages = with pkgs; [
       chromium
+      brave
       teams-for-linux
       obsidian
       libsForQt5.okular
