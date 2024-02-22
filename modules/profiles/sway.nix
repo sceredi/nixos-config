@@ -8,8 +8,9 @@
     xdg = {
       portal = {
         enable = true;
+        # wlr.enable = true;
         extraPortals = with pkgs; [
-          xdg-desktop-portal-wlr
+          xdg-desktop-portal-hyprland
           xdg-desktop-portal-gtk
         ];
       };
@@ -23,7 +24,10 @@
       wayland = true;
       settings = { greeter = { include = "simone"; }; };
     };
-    programs.sway.enable = true;
+    programs.sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
 
     fonts.packages = with pkgs; [ terminus_font_ttf font-awesome ];
     home-manager.users.simone = { pkgs, ... }: {
@@ -32,14 +36,11 @@
       xdg.configFile."sway/config".onChange = lib.mkForce "";
 
       home.sessionVariables = {
-        MOZ_ENABLE_WAYLAND = "1";
-        MOZ_USE_XINPUT2 = "1";
-        SDL_VIDEODRIVER = "wayland";
-        QT_QPA_PLATFORM = "wayland";
-        QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-        _JAVA_AWT_WM_NONREPARENTING = "1";
-        XDG_SESSION_TYPE = "wayland";
-        XDG_CURRENT_DESKTOP = "sway";
+      "SDL_VIDEODRIVER"="wayland";
+      "QT_QPA_PLATFORM"="wayland";
+      "QT_WAYLAND_DISABLE_WINDOWDECORATION"="1";
+      "_JAVA_AWT_WM_NONREPARENTING"="1";
+      "MOZ_ENABLE_WAYLAND"="1";
       };
 
       home.packages = with pkgs; [ wl-clipboard imv ];

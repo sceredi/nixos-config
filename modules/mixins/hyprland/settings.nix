@@ -24,8 +24,8 @@ in
     ];
 
     general = {
-      gaps_in = 5;
-      gaps_out = 5;
+      gaps_in = 0;
+      gaps_out = 0;
       border_size = 1;
       "col.active_border" = "rgba(88888888)";
       "col.inactive_border" = "rgba(00000088)";
@@ -35,9 +35,9 @@ in
     };
 
     decoration = {
-      rounding = 16;
+      rounding = 0;
       blur = {
-        enabled = true;
+        enabled = false;
         brightness = 1.0;
         contrast = 1.0;
         noise = 2.0e-2;
@@ -55,7 +55,7 @@ in
     };
 
     animations = {
-      enabled = true;
+      enabled = false;
       animation = [
         "border, 1, 2, default"
         "fade, 1, 4, default"

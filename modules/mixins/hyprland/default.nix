@@ -7,9 +7,9 @@ let
   right = "l";
   terminal = "${pkgs.wezterm}/bin/wezterm";
   light = "${pkgs.light}/bin/light";
-  dmenu =
-    "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
-  launcher = dmenu;
+  rofi =
+    "${pkgs.rofi}/bin/rofi -show drun";
+  launcher = rofi;
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   swaylockcmd =
     "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";

@@ -25,9 +25,9 @@
     # profiles-awesomewm
     profiles-docker
     # profiles-hypr
-    profiles-i3
+    # profiles-i3
     profiles-pipewire
-    # profiles-sway
+    profiles-sway
     profiles-uni
     profiles-virtualization
   ];
@@ -101,6 +101,7 @@
       };
       efi = { canTouchEfiVariables = true; };
     };
+    kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
   };
 
   # I use zsh btw

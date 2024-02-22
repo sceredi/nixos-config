@@ -1,10 +1,12 @@
 { pkgs, ... }:
 let
-  terminal = "${pkgs.wezterm}/bin/wezterm";
+  terminal = "${pkgs.alacritty}/bin/alacritty";
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   light = "${pkgs.light}/bin/light";
   fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
   launcher = fuzzel;
+  swaylockcmd =
+    "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
   screenshotarea =
     "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
   workspaces = builtins.concatLists (builtins.genList
@@ -29,10 +31,11 @@ in
       let monocle = "dwindle:no_gaps_when_only";
       in [
         # compositor commands
+        "$mod SHIFT, W, exec, killall waybar;waybar"
         "$mod SHIFT, E, exec, pkill Hyprland"
         "$mod, Q, killactive,"
         "$mod, F, fullscreen,"
-        "$mod, G, togglegroup,"
+        # "$mod, G, togglegroup,"
         "$mod SHIFT, N, changegroupactive, f"
         "$mod SHIFT, P, changegroupactive, b"
         "$mod, R, togglesplit,"
@@ -47,7 +50,7 @@ in
         # terminal
         "$mod, Return, exec, ${terminal}"
         # logout menu
-        "$mod, Escape, exec, wlogout -p layer-shell"
+        "$mod, Escape, exec, wlogout"
 
         "$mod, D, exec, ${launcher}"
 

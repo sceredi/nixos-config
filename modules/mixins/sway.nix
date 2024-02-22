@@ -21,14 +21,14 @@ let
     timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
   '';
 in {
-  imports = [ ./i3status.nix ./nm-applet.nix ];
+  imports = [ ./i3status.nix ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
       wayland.windowManager.sway = {
         enable = true;
         wrapperFeatures = {
-          base = false;
-          gtk = false;
+          base = true;
+          gtk = true;
         };
         xwayland = true;
         extraConfig = ''
@@ -36,8 +36,8 @@ in {
           set $mode_system System (l) lock, (e) logout, (s) suspend, (Shift+r) reboot, (Shift+s) shutdown
           mode "$mode_system" {
               bindsym l exec --no-startup-id $Locker, mode "default"
-              bindsym e exec --no-startup-id i3-msg exit, mode "default"
-              bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+              bindsym e exec --no-startup-id swaymsg exit, mode "default"
+              bindsym s exec systemctl suspend, mode "default"
               bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
               bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -105,6 +105,14 @@ in {
             {
               command = "exec ${idlecmd}";
               always = true;
+            }
+            # {
+            #   always = true;
+            #   command = "${pkgs.networkmanagerapplet}/bin/nm-applet &";
+            # }
+            {
+              always = true;
+              command = "${pkgs.blueman}/bin/blueman-applet &";
             }
           ];
           keybindings = {
@@ -218,7 +226,7 @@ in {
 
             "${modifier}+space" = "focus mode_toggle";
 
-            "${modifier}+a" = "focus parent";
+            "${modifier}+p" = "focus parent";
 
             "${modifier}+r" = ''mode "resize"'';
           };

@@ -14,6 +14,9 @@
       bruno # alternative to postman
       mongodb-compass
       rustdesk
+
+      quickemu
+      quickgui
     ];
   };
 }
