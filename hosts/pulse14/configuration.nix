@@ -18,6 +18,7 @@
     mixins-openssh
     mixins-picom
     mixins-printing
+    mixins-samba
     mixins-tmux
     mixins-usb
     mixins-zram
@@ -36,8 +37,12 @@
     experimental-features = nix-command flakes
   '';
 
-  # I'm sorry Stallman-taichou
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    # I'm sorry Stallman-taichou
+    config.allowUnfree = true;
+    overlays =
+      [ (final: prev: { qemu = prev.qemu.override { smbdSupport = true; }; }) ];
+  };
 
   home-manager = {
     useGlobalPkgs = true;

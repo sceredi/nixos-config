@@ -7,6 +7,7 @@ local fd = "/etc/profiles/per-user/simone/bin/fd"
 local projectsPath = "/home/simone/projects"
 local uniPath = "/home/simone/uni-lab"
 local dotfilesPath = "/home/simone/.dotfiles"
+local publicPath = "/home/simone/Public"
 
 
 M.toggle = function(window, pane)
@@ -21,6 +22,7 @@ M.toggle = function(window, pane)
     projectsPath,
     uniPath,
     dotfilesPath,
+    publicPath,
     -- add more paths here
   })
 
