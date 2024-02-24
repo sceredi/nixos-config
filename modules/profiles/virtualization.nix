@@ -1,7 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [ virt-manager virtualbox distrobox ];
+  environment.systemPackages = with pkgs; [
+    virt-manager
+    virtualbox
+    distrobox
+    quickemu
+    quickgui
+  ];
+  services = { 
+    spice-vdagentd.enable = true;
+    spice-webdavd.enable = true;
+  };
   virtualisation.libvirtd = {
     allowedBridges = [ "nm-bridge" "virbr0" ];
     enable = true;
@@ -9,4 +19,3 @@
   };
   boot.extraModulePackages = with config.boot.kernelPackages; [ virtualbox ];
 }
-

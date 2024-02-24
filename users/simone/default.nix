@@ -20,7 +20,7 @@ let
 
     vim = "nvim";
     launch =
-      ''function _launch() { nohup "$@" > /dev/null 2>&1 & disown }; _launch'';
+      ''function _launch() { "$@" > /dev/null 2>&1 }; _launch'';
     idea = ''launch idea-ultimate "$@"'';
     pycharm = ''launch pycharm-professional "$@"'';
     webstorm = ''launch webstorm "$@"'';

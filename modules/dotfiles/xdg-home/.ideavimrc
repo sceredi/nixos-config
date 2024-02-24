@@ -112,6 +112,15 @@ map <leader>f :action ReformatCode<cr>
 map <leader>ca :action Refactorings.QuickListPopupAction<CR>
 map <leader>rn :action RenameElement<cr>
 
+" Harpoon related stuff
+nmap <C-n> :action GotoHarpoon1<cr>
+nmap <C-e> :action GotoHarpoon2<cr>
+nmap <C-i> :action GotoHarpoon3<cr>
+nmap <C-o> :action GotoHarpoon4<cr>
+
+nmap <C-h> :action ShowHarpoon<cr>
+nmap <leader>a :action AddToHarpoon<cr>
+
 sethandler <C-i> n-v-i:vim
 sethandler <C-o> n-v-i:vim
 sethandler <C-d> n-v-i:vim
