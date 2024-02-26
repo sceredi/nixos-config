@@ -6,7 +6,7 @@
         latitude = "44.1267537";
         longitude = "12.1504279";
         temperature.day = 5500;
-        temperature.night = 4500;
+        temperature.night = 3700;
       };
     };
   };

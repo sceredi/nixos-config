@@ -12,14 +12,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
-    nixvim = {
-      url = "github:sceredi/nixvim-flake";
-    };
+    nixvim = { url = "github:sceredi/nixvim-flake"; };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
     # hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =
-    { self, nixpkgs, nixos-hardware, home-manager, utils, nixvim, ... }@inputs: {
+    { self
+    , nixpkgs
+    , nixos-hardware
+    , home-manager
+    , utils
+    , nixvim
+    , nix-flatpak
+    , ...
+    }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
@@ -31,6 +38,7 @@
             nixos-hardware.nixosModules.common-cpu-amd
             nixos-hardware.nixosModules.common-gpu-amd
             nixos-hardware.nixosModules.common-pc-laptop-ssd
+            nix-flatpak.nixosModules.nix-flatpak
           ];
           specialArgs = { inherit inputs; };
         };

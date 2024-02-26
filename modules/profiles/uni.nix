@@ -9,7 +9,7 @@
       chromium
       brave
       teams-for-linux
-      obsidian
+      # obsidian
       libsForQt5.okular
       # postman
       bruno # alternative to postman

@@ -34,6 +34,7 @@
 
       # Screenshots
       shutter
+      flameshot
     ];
   };
 }

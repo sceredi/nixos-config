@@ -10,7 +10,7 @@
     mixins-bluetooth
     mixins-common
     mixins-discord
-    # mixins-flatpak
+    mixins-flatpak
     mixins-fonts
     mixins-gc
     mixins-keyboards

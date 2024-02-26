@@ -11,6 +11,7 @@
   services = { 
     spice-vdagentd.enable = true;
     spice-webdavd.enable = true;
+    qemuGuest.enable = true;
   };
   virtualisation.libvirtd = {
     allowedBridges = [ "nm-bridge" "virbr0" ];

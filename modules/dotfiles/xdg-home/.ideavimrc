@@ -74,6 +74,10 @@ nmap n nzzzv
 " After jumping to a match in reverse, center the line in the middle of the screen
 nmap N Nzzzv
 
+" Changing C-i C-o to Alt-i Alt-o
+nmap <A-i> <C-i>
+nmap <A-o> <C-o>
+
 " Delete and paste in normal mode
 xmap <Leader>p "_dP
 
