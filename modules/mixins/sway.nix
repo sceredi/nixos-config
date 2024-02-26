@@ -20,7 +20,22 @@ let
     timeout 300 "${swaylockcmd}" \
     timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
   '';
-in {
+  dropdownTerminalCmd = pkgs.writeShellScript "launchkitty.sh" ''
+    open=$(ps aux | grep -i "kitty --class=dropdown" | grep -v grep)
+    if [[ $open -eq 0 ]]
+    then
+      ${pkgs.kitty}/bin/kitty --class=dropdown --detach
+      until swaymsg scratchpad show
+      do
+        echo "Waiting for Kitty to appear..."
+      done
+    else
+      echo "Kitty is already open"
+      swaymsg "[app_id=dropdown] scratchpad show"
+    fi
+  '';
+in
+{
   imports = [ ./i3status.nix ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
@@ -72,6 +87,24 @@ in {
                 criteria = { class = ".*"; };
                 command = "inhibit_idle fullscreen";
               }
+
+              # For dropdown terminal
+              {
+                criteria = { app_id = "dropdown"; };
+                command = "floating enable";
+              }
+              {
+                criteria = { app_id = "dropdown"; };
+                command = "resize set 1920 1440";
+              }
+              {
+                criteria = { app_id = "dropdown"; };
+                command = "move scratchpad";
+              }
+              {
+                criteria = { app_id = "dropdown"; };
+                command = "border pixel 1";
+              }
             ];
           };
           colors.focused = {
@@ -106,10 +139,12 @@ in {
               command = "exec ${idlecmd}";
               always = true;
             }
-            # {
-            #   always = true;
-            #   command = "${pkgs.networkmanagerapplet}/bin/nm-applet &";
-            # }
+            {
+              always = true;
+              command =
+                "touch $SWAYSOCK.wob && tail -n0 -f $SWAYSOCK.wob | ${pkgs.wob}/bin/wob";
+            }
+
             {
               always = true;
               command = "${pkgs.blueman}/bin/blueman-applet &";
@@ -229,6 +264,9 @@ in {
             "${modifier}+p" = "focus parent";
 
             "${modifier}+r" = ''mode "resize"'';
+
+            "${modifier}+c" = "exec ${dropdownTerminalCmd}";
+
           };
         };
       };
