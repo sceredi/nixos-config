@@ -131,7 +131,6 @@
     gnumake
     htop
     git
-    inputs.nixvim.packages."x86_64-linux".default
   ];
 
   system.stateVersion = "23.11";

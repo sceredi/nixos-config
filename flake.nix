@@ -12,9 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
-    nixvim = { url = "github:sceredi/nixvim-flake"; };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    # hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =
@@ -23,7 +21,6 @@
     , nixos-hardware
     , home-manager
     , utils
-    , nixvim
     , nix-flatpak
     , ...
     }@inputs: {
