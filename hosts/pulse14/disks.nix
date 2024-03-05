@@ -6,7 +6,7 @@
     supportedFilesystems = [ "zfs" ];
     # Since I'm using nixos-unstable mostly, the latest ZFS is sometimes
     # incompatible with the latest kernel.
-    zfs.enableUnstable = true;
+    zfs.package = pkgs.zfs_unstable;
   };
 }
 
