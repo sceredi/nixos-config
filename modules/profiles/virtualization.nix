@@ -2,17 +2,17 @@
 
 {
   environment.systemPackages = with pkgs; [
-    virt-manager
-    virtualbox
-    distrobox
+    # virt-manager
+    # virtualbox
+    # distrobox
     quickemu
     quickgui
   ];
-  services = { 
-    spice-vdagentd.enable = true;
-    spice-webdavd.enable = true;
-    qemuGuest.enable = true;
-  };
+  # services = { 
+  #   spice-vdagentd.enable = true;
+  #   spice-webdavd.enable = true;
+  #   qemuGuest.enable = true;
+  # };
   virtualisation.libvirtd = {
     allowedBridges = [ "nm-bridge" "virbr0" ];
     enable = true;
