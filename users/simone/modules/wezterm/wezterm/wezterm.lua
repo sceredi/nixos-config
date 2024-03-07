@@ -41,9 +41,14 @@ config.freetype_load_target = "HorizontalLcd"
 
 -- config.disable_default_key_bindings = true
 -- -- Keybindings like tmux
-config.leader = { key = "b", mods = "CTRL" }
-config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
+config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
+	-- sends C-a to the terminal
+	{
+    key = 'a',
+    mods = 'LEADER|CTRL',
+    action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
+  },
 	-- splitting
 	{
 		mods = "LEADER",
