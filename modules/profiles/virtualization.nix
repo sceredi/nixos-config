@@ -18,5 +18,5 @@
     enable = true;
     qemu.runAsRoot = false;
   };
-  boot.extraModulePackages = with config.boot.kernelPackages; [ virtualbox ];
+  # boot.extraModulePackages = with config.boot.kernelPackages; [ virtualbox ];
 }
