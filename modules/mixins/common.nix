@@ -24,6 +24,7 @@
       hwinfo
       unzip
       fzf
+      tree
 
       # Utils
       xfce.thunar
