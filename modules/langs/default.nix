@@ -47,6 +47,7 @@
         erlang
         elixir
         gleam
+        rebar3
 
         # ruby
         ruby
