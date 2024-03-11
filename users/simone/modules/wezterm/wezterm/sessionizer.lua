@@ -9,6 +9,7 @@ local uniPath = "/home/simone/uni-lab"
 local dotfilesPath = "/home/simone/.dotfiles"
 local myConfigPath = "/home/simone/.config"
 local publicPath = "/home/simone/Public"
+local exercismPath = "/home/simone/exercism"
 
 
 M.toggle = function(window, pane)
@@ -25,6 +26,7 @@ M.toggle = function(window, pane)
     dotfilesPath,
     publicPath,
     myConfigPath,
+    exercismPath,
     -- add more paths here
   })
 
