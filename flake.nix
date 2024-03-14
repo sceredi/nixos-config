@@ -13,6 +13,7 @@
     };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -22,6 +23,7 @@
     , home-manager
     , utils
     , nix-flatpak
+    , neovim-nightly-overlay
     , ...
     }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
