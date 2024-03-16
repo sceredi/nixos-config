@@ -21,9 +21,9 @@ let
     vim = "nvim";
     launch =
       ''function _launch() { "$@" > /dev/null 2>&1 }; _launch'';
-    idea = ''launch idea-ultimate "$@"'';
-    pycharm = ''launch pycharm-professional "$@"'';
-    webstorm = ''launch webstorm "$@"'';
+    idea = ''idea-ultimate . > /dev/null 2>&1 &'';
+    pycharm = ''pycharm-professional . > /dev/null 2>&1 &'';
+    webstorm = ''websorm . > /dev/null 2>&1 &'';
 
     cat = "bat";
 
@@ -53,7 +53,7 @@ in {
     zsh = {
       enable = true;
       oh-my-zsh.enable = true;
-      enableAutosuggestions = true;
+      autosuggestions.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       shellAliases = myAliases;
