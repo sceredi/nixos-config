@@ -34,8 +34,7 @@ let
       swaymsg "[app_id=dropdown] scratchpad show"
     fi
   '';
-in
-{
+in {
   imports = [ ./i3status.nix ];
   config = {
     home-manager.users.simone = { pkgs, ... }: {
