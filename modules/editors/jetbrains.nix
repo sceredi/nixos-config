@@ -1,9 +1,5 @@
 {
   home-manager.users.simone = { pkgs, ... }: {
-    home.packages = with pkgs; [
-      jetbrains.idea-ultimate
-      jetbrains.webstorm
-      jetbrains.pycharm-professional
-    ];
+    home.packages = with pkgs; [ jetbrains-toolbox ];
   };
 }
