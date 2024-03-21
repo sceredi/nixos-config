@@ -19,11 +19,6 @@ let
     rm = "trash";
 
     vim = "nvim";
-    launch =
-      ''function _launch() { "$@" > /dev/null 2>&1 }; _launch'';
-    idea = ''idea-ultimate . > /dev/null 2>&1 &'';
-    pycharm = ''pycharm-professional . > /dev/null 2>&1 &'';
-    webstorm = ''websorm . > /dev/null 2>&1 &'';
 
     cat = "bat";
 
@@ -53,7 +48,7 @@ in {
     zsh = {
       enable = true;
       oh-my-zsh.enable = true;
-      autosuggestions.enable = true;
+      enableAutosuggestions = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       shellAliases = myAliases;
