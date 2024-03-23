@@ -51,7 +51,7 @@ in {
           mode "$mode_system" {
               bindsym l exec --no-startup-id $Locker, mode "default"
               bindsym e exec --no-startup-id swaymsg exit, mode "default"
-              bindsym s exec systemctl suspend, mode "default"
+              bindsym s exec --no-startup-id $Locker, exec systemctl suspend, mode "default"
               bindsym Shift+r exec --no-startup-id systemctl reboot, mode "default"
               bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
@@ -134,10 +134,10 @@ in {
               always = true;
               command = "${pkgs.mako}/bin/mako --default-timeout 3000";
             }
-            {
-              command = "exec ${idlecmd}";
-              always = true;
-            }
+            # {
+            #   command = "exec ${idlecmd}";
+            #   always = true;
+            # }
             {
               always = true;
               command =
