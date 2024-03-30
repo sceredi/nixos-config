@@ -45,9 +45,17 @@ in {
   };
 
   programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
     zsh = {
       enable = true;
-      oh-my-zsh.enable = true;
+      oh-my-zsh = {
+        enable = true;
+        plugins = [ "direnv" ];
+      };
       enableAutosuggestions = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
