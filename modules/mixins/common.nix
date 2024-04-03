@@ -36,6 +36,9 @@
       # Screenshots
       shutter
       flameshot
+
+      # Pomodoro Timer
+      porsmo
     ];
   };
 }
