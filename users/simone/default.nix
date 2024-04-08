@@ -56,7 +56,7 @@ in {
         enable = true;
         plugins = [ "direnv" ];
       };
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       shellAliases = myAliases;
