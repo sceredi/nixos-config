@@ -7,9 +7,11 @@ let
   right = "l";
   terminal = "${pkgs.wezterm}/bin/wezterm";
   light = "${pkgs.light}/bin/light";
+  fuzzel =
+    "${pkgs.fuzzel}/bin/fuzzel -D yes -w 50 -b 282a36fa -s 3d4474fa -C fffffffa";
   dmenu =
     "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
-  launcher = dmenu;
+  launcher = fuzzel;
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   swaylockcmd =
     "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
