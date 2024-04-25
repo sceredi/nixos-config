@@ -27,7 +27,9 @@
       tree
 
       # Utils
+      zip
       xfce.thunar
+      gnome.file-roller
       xfce.thunar-volman
       xfce.thunar-archive-plugin
       gnome.gnome-disk-utility
