@@ -85,6 +85,9 @@
   };
 
   services = {
+    # Some folks don't like the correct shebang
+    envfs.enable = true;
+
     thermald.enable = true;
     tlp = {
       enable = true;
