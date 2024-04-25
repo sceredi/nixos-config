@@ -16,7 +16,7 @@ end
 -- For example, changing the color scheme:
 -- config.color_scheme = "Gruvbox dark, hard (base16)"
 config.colors = {}
-config.colors.background = "#202020"
+config.colors.background = "#111111"
 
 config.font = wezterm.font({
 	family = "JetBrains Mono",
@@ -45,10 +45,10 @@ config.leader = { key = "a", mods = "CTRL", timeout_milliseconds = 1000 }
 config.keys = {
 	-- sends C-a to the terminal
 	{
-    key = 'a',
-    mods = 'LEADER|CTRL',
-    action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
-  },
+		key = "a",
+		mods = "LEADER|CTRL",
+		action = wezterm.action.SendKey({ key = "a", mods = "CTRL" }),
+	},
 	-- splitting
 	{
 		mods = "LEADER",
