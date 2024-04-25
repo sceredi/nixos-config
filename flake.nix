@@ -16,16 +16,8 @@
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
-  outputs =
-    { self
-    , nixpkgs
-    , nixos-hardware
-    , home-manager
-    , utils
-    , nix-flatpak
-    , neovim-nightly-overlay
-    , ...
-    }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, utils, nix-flatpak
+    , neovim-nightly-overlay, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
