@@ -8,7 +8,7 @@ let
   terminal = "${pkgs.wezterm}/bin/wezterm";
   light = "${pkgs.light}/bin/light";
   fuzzel =
-    "${pkgs.fuzzel}/bin/fuzzel -D yes -w 50 -b 282a36fa -s 3d4474fa -C fffffffa";
+    "${pkgs.fuzzel}/bin/fuzzel -I -w 50 -b 282a36fa -s 3d4474fa -C fffffffa";
   dmenu =
     "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
   launcher = fuzzel;
@@ -41,6 +41,7 @@ in {
   config = {
     home-manager.users.simone = { pkgs, ... }: {
       wayland.windowManager.sway = {
+        checkConfig = false;
         enable = true;
         wrapperFeatures = {
           base = true;
