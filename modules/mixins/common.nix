@@ -41,6 +41,12 @@
 
       # Pomodoro Timer
       porsmo
+
+      # Music plyaer
+      cmus
+
+      # Android tools
+      android-tools
     ];
   };
 }

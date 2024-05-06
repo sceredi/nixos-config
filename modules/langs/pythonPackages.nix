@@ -1,6 +1,7 @@
 {
-  home-manager.users.simone = { pkgs, ... }: {
-    home.packages = with pkgs;
-      [ (python310.withPackages (ps: with ps; [ pip ])) ];
-  };
+  home-manager.users.simone = { pkgs, ... }:
+    let
+      python = pkgs.python3;
+      pythonPackages = python.pkgs;
+    in { home.packages = [ python ] ++ (with pythonPackages; [ pip ]); };
 }

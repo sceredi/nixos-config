@@ -26,9 +26,7 @@
             ./hosts/pulse14/configuration.nix
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
-            nixos-hardware.nixosModules.common-cpu-amd
-            nixos-hardware.nixosModules.common-gpu-amd
-            nixos-hardware.nixosModules.common-pc-laptop-ssd
+            nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
             nix-flatpak.nixosModules.nix-flatpak
           ];
           specialArgs = { inherit inputs; };

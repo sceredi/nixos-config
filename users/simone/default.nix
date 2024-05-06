@@ -24,6 +24,8 @@ let
     shutdownsafe = "sudo shutdown now";
     rebootsafe = "sudo reboot now";
 
+    idea = "idea-ultimate . > /dev/null 2>&1 &";
+
   };
 in {
   imports = [ ./desktop.nix ];
