@@ -27,11 +27,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714957226,
-        "narHash": "sha256-OvwO5Oc4K9bHCecqzje6L+u7s3GlDD/6hEJD44LnUWo=",
+        "lastModified": 1714998392,
+        "narHash": "sha256-NJ3L36jlikzvHAF6tdfcxUpcCkwvkbIGU86X8hDPsk4=",
         "owner": "colemickens",
         "repo": "flake-firefox-nightly",
-        "rev": "df37922b2ba640958f4cd919f01e49d1bc925d27",
+        "rev": "e4fc8162a3e2517f862e98613a868b62f26f8bf4",
         "type": "github"
       },
       "original": {
@@ -316,6 +316,7 @@
       },
       "original": {
         "owner": "nixos",
+        "ref": "master",
         "repo": "nixos-hardware",
         "type": "github"
       }
