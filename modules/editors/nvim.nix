@@ -13,5 +13,6 @@
         marksman
 
       ];
+    services.emacs.enable = true;
   };
 }

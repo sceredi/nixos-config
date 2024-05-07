@@ -17,7 +17,7 @@
       signal-desktop
     ];
     sessionVariables = {
-      TERM = "wezterm";
+      TERM = "xterm-256color";
       EDITOR = "nvim";
     };
   };

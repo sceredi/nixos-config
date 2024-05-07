@@ -14,10 +14,19 @@
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nix-straight = {
+      url =
+        "github:codingkoi/nix-straight.el?ref=codingkoi/apply-librephoenixs-fix";
+      flake = false;
+    };
+    nix-doom-emacs = {
+      url = "github:nix-community/nix-doom-emacs";
+      inputs = { nix-straight.follows = "nix-straight"; };
+    };
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, utils, nix-flatpak
-    , neovim-nightly-overlay, ... }@inputs: {
+    , neovim-nightly-overlay, nix-doom-emacs, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
@@ -27,7 +36,17 @@
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
+            nixos-hardware.nixosModules.common-gpu-amd
             nix-flatpak.nixosModules.nix-flatpak
+            {
+              home-manager.users.simone = { ... }: {
+                imports = [ nix-doom-emacs.hmModule ];
+                programs.doom-emacs = {
+                  enable = true;
+                  doomPrivateDir = ./doom.d;
+                };
+              };
+            }
           ];
           specialArgs = { inherit inputs; };
         };
