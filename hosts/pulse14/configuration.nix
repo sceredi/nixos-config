@@ -19,6 +19,7 @@
     mixins-picom
     mixins-printing
     mixins-samba
+    mixins-syncthing
     mixins-tmux
     mixins-usb
     mixins-zram
