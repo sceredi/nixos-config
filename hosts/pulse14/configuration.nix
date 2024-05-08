@@ -22,6 +22,7 @@
     mixins-syncthing
     mixins-tmux
     mixins-usb
+    mixins-zerotierone
     mixins-zram
     profiles-avahi
     # profiles-awesomewm

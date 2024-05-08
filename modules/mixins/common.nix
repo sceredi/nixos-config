@@ -47,6 +47,7 @@
 
       # Android tools
       android-tools
+      scrcpy
     ];
   };
 }
