@@ -27,6 +27,7 @@
         # go
         go
         gopls
+        air
 
         # ocaml
         ocaml
