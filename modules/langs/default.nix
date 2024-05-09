@@ -39,7 +39,7 @@
         jdk
         jdt-language-server
         kotlin
-        gradle
+        (callPackage gradle-packages.gradle_8 { java = jdk; })
         scala_3
         sbt
         coursier
