@@ -1,4 +1,4 @@
-(setq doom-font (font-spec :family "JetBrains Mono" :size 20))
+(setq doom-font (font-spec :family "JetBrains Mono" :size 22))
 (setq display-line-numbers-type 'relative)
 (setq org-directory "~/notes/")
 (setq org-agenda-files '("~/notes/"))
