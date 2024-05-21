@@ -1,5 +1,5 @@
-{ config, pkgs, lib, inputs, ... }: {
-  environment.systemPackages = with pkgs; [ vim git ];
+{ pkgs, ... }: {
+  environment.systemPackages = with pkgs; [ vim git gnupg pinentry-curses ];
   nix = {
     settings = {
       trusted-users = [ "@wheel" "root" ];
@@ -48,6 +48,9 @@
       # Android tools
       android-tools
       scrcpy
+
+      # Local file sharing
+      localsend
     ];
   };
 }
