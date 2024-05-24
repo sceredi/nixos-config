@@ -1,5 +1,6 @@
 { config, lib, pkgs, inputs, ... }: {
   imports = with inputs.self.nixosModules; [
+    inputs.nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
     ./disks.nix
     ./hardware-configuration.nix
     users-simone

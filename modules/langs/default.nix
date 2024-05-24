@@ -53,6 +53,7 @@
 
         # ruby
         ruby
+        libsodium
 
         # php
         php83
