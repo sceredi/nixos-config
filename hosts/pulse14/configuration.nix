@@ -43,10 +43,6 @@
   nixpkgs = {
     # I'm sorry Stallman-taichou
     config.allowUnfree = true;
-    overlays = [
-      (final: prev: { qemu = prev.qemu.override { smbdSupport = true; }; })
-      inputs.neovim-nightly-overlay.overlay
-    ];
   };
 
   home-manager = {

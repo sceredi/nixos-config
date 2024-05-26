@@ -13,7 +13,6 @@
     };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nix-straight = {
       url =
         "github:codingkoi/nix-straight.el?ref=codingkoi/apply-librephoenixs-fix";
@@ -26,7 +25,7 @@
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, utils, nix-flatpak
-    , neovim-nightly-overlay, nix-doom-emacs, ... }@inputs: {
+    , nix-doom-emacs, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
