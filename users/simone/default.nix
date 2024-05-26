@@ -55,7 +55,7 @@ in {
       enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "direnv" ];
+        plugins = [ "direnv" "git" ];
       };
       autosuggestion.enable = true;
       enableCompletion = true;
