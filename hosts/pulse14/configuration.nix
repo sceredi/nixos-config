@@ -110,7 +110,7 @@
       };
       efi = { canTouchEfiVariables = true; };
     };
-    kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+    # kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
   };
 
   # I use zsh btw

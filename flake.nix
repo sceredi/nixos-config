@@ -35,7 +35,6 @@
             utils.nixosModules.autoGenFromInputs
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
-            nixos-hardware.nixosModules.common-gpu-amd
             nix-flatpak.nixosModules.nix-flatpak
             {
               home-manager.users.simone = { ... }: {
