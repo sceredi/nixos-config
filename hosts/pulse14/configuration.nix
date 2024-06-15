@@ -42,8 +42,14 @@
 
   nixpkgs = {
     # I'm sorry Stallman-taichou
-    config.allowUnfree = true;
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages =
+        [ "electron-27.3.11" "freeimage-unstable-2021-11-01" ];
+    };
   };
+
+  # Remove once obsidian decides update its elecron version
 
   home-manager = {
     useGlobalPkgs = true;
