@@ -36,6 +36,11 @@ xmap J :m '>+1<CR>gv=gv
 " move selected text in visual mode up
 xmap K :m '<-2<CR>gv=gv
 
+" Yank in normal mode to system clipboard
+xmap <Leader>y "+y
+" Yank in normal mode to system clipboard for entire line
+nmap <Leader>Y "+Y
+
 " location
 nmap <M-o> <Action>(Back)
 nmap <M-i> <Action>(Forward)
