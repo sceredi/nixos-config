@@ -44,6 +44,7 @@
         scala_3
         sbt
         coursier
+        scala-cli
 
         # erlang stuff
         erlang
