@@ -1,6 +1,5 @@
 { config, lib, pkgs, inputs, ... }: {
   imports = with inputs.self.nixosModules; [
-    inputs.nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
     ./disks.nix
     ./hardware-configuration.nix
     users-simone
@@ -107,7 +106,8 @@
   };
 
   boot = {
-    kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
+    kernelPackages =
+      lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
     loader = {
       systemd-boot = {
         enable = true;
@@ -115,7 +115,7 @@
       };
       efi = { canTouchEfiVariables = true; };
     };
-    # kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+    kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
   };
 
   # I use zsh btw
