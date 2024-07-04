@@ -45,7 +45,7 @@
       allowUnfree = true;
       permittedInsecurePackages =
         # Remove once obsidian decides update its elecron version
-        [ "electron-28.3.3" ];
+        [ "electron-28.3.3" "electron-27.3.11" ];
     };
   };
 
