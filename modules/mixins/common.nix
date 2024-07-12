@@ -29,11 +29,11 @@
       # Utils
       zip
       xfce.thunar
-      gnome.file-roller
+      file-roller
       xfce.thunar-volman
       xfce.thunar-archive-plugin
-      gnome.gnome-disk-utility
-      gnome.gnome-common
+      gnome-disk-utility
+      gnome-common
 
       # Screenshots
       shutter
