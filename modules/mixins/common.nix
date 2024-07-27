@@ -51,6 +51,9 @@
 
       # Local file sharing
       localsend
+
+      # Keepass
+      keepass
     ];
   };
 }
