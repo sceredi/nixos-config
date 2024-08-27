@@ -11,7 +11,6 @@
       # postman
       bruno # alternative to postman
       mongodb-compass
-      rustdesk
       # learning new languages
       exercism
     ];

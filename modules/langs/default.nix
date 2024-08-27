@@ -23,6 +23,9 @@
 
         # node
         nodejs
+        typescript
+        typescript-language-server
+        vue-language-server
 
         # go
         go
