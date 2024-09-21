@@ -1,13 +1,13 @@
 { config, lib, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    # virt-manager
-    # virtualbox
-    # distrobox
-    quickemu
-    quickgui
-  ];
+  environment.systemPackages = with pkgs;
+    [
+      # virt-manager
+      # virtualbox
+      # distrobox
+      quickemu
+    ];
   # services = { 
   #   spice-vdagentd.enable = true;
   #   spice-webdavd.enable = true;

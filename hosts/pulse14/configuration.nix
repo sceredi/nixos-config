@@ -44,7 +44,7 @@
       allowUnfree = true;
       permittedInsecurePackages =
         # Remove once obsidian decides update its elecron version
-        [ "electron-28.3.3" "electron-27.3.11" ];
+        [ "electron-27.3.11" "electron-29.4.6" ];
     };
   };
 
@@ -105,8 +105,6 @@
   };
 
   boot = {
-    kernelPackages =
-      lib.mkForce config.boot.zfs.package.latestCompatibleLinuxPackages;
     loader = {
       systemd-boot = {
         enable = true;
