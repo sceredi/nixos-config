@@ -34,7 +34,7 @@
   gtk = {
     enable = true;
     theme.package = pkgs.arc-theme;
-    theme.name = "Arc-Dark";
+    theme.name = "Arc";
     iconTheme.package = pkgs.arc-icon-theme;
     iconTheme.name = "Arc";
   };

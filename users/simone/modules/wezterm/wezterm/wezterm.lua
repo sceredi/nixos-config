@@ -2,6 +2,12 @@
 local wezterm = require("wezterm")
 local sessionizer = require("sessionizer")
 
+-- The filled in variant of the < symbol
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
+
+-- The filled in variant of the > symbol
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+
 -- This table will hold the configuration.
 local config = {}
 
@@ -16,8 +22,9 @@ config.front_end = "WebGpu"
 
 -- For example, changing the color scheme:
 -- config.color_scheme = "Gruvbox dark, hard (base16)"
-config.colors = {}
-config.colors.background = "#111111"
+local colors, _ = wezterm.color.load_scheme("/home/simone/.config/wezterm/colors.toml")
+
+config.colors = colors
 
 config.font = wezterm.font({
 	family = "JetBrains Mono",

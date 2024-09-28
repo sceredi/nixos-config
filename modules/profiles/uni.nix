@@ -13,6 +13,9 @@
       mongodb-compass
       # learning new languages
       exercism
+
+      # lcmc
+      jflap
     ];
   };
 }
