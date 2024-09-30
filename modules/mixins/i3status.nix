@@ -37,7 +37,8 @@
               theme_overrides = { idle_bg = "#00223f"; };
               click = [{
                 button = "left";
-                cmd = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
+                cmd =
+                  "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
               }];
 
             }
