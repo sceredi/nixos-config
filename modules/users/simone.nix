@@ -5,7 +5,8 @@
     simone = {
       isNormalUser = true;
       description = "SimoneCeredi";
-      extraGroups = [ "input" "lp" "wheel" "dialout" "networkmanager" ];
+      extraGroups =
+        [ "input" "lp" "wheel" "dialout" "networkmanager" "plugdev" ];
     };
   };
 }

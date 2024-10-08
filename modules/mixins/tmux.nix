@@ -9,7 +9,7 @@
     extraConfig = ''
       set -sa terminal-overrides "*:Tc"
       set -g default-terminal "screen-256color"
-      set -g status-style 'bg=#333333 fg=#5eacd3'
+      set -g status-style 'bg=#f0edec fg=#2c363c'
       unbind C-a
       bind C-a send-prefix
 

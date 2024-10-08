@@ -54,6 +54,9 @@
 
       # Keepass
       keepass
+
+      # zsa configurator
+      keymapp
     ];
   };
 }
