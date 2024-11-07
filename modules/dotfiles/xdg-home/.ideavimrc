@@ -2,6 +2,8 @@
 set scrolloff=10
 set history=1000
 
+set relativenumber
+
 " status bar
 set showmode
 
@@ -52,8 +54,8 @@ nmap <leader>xo <Action>(CloseAllEditorsButActive)
 nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
 
 " window
-nmap <C-Tab> <Action>(PreviousTab)
-nmap <Tab> <Action>(NextTab)
+nmap <C-S-Tab> <Action>(PreviousTab)
+nmap <C-Tab> <Action>(NextTab)
 nmap <leader>p <Action>(PinActiveEditorTab)
 
 nmap <leader>1 <Action>(GoToTab1)
