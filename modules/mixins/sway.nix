@@ -202,7 +202,7 @@ in {
             "${modifier}+7" = "workspace number 7";
             "${modifier}+8" = "workspace number 8";
             "${modifier}+9" = "workspace number 9";
-            # "${modifier}+0" = "workspace number 10";
+            "${modifier}+0" = "workspace number 10";
 
             "${modifier}+Shift+1" = "move container to workspace number 1";
             "${modifier}+Shift+2" = "move container to workspace number 2";
@@ -213,7 +213,7 @@ in {
             "${modifier}+Shift+7" = "move container to workspace number 7";
             "${modifier}+Shift+8" = "move container to workspace number 8";
             "${modifier}+Shift+9" = "move container to workspace number 9";
-            # "${modifier}+Shift+0" = "move container to workspace number 10";
+            "${modifier}+Shift+0" = "move container to workspace number 10";
 
             # rpq stuff
             "${modifier}+plus" = "workspace number 1";
@@ -225,7 +225,7 @@ in {
             "${modifier}+parenright" = "workspace number 7";
             "${modifier}+braceright" = "workspace number 8";
             "${modifier}+bracketright" = "workspace number 9";
-            # "${modifier}+asterisk workspace" = "number 10";
+            "${modifier}+asterisk workspace" = "number 10";
 
             "${modifier}+Shift+plus" = "move container to workspace number 1";
             "${modifier}+Shift+bracketleft" =
@@ -243,8 +243,8 @@ in {
               "move container to workspace number 8";
             "${modifier}+Shift+bracketright move container" =
               "to workspace number 9";
-            # "${modifier}+Shift+asterisk" =
-            #   "move container to workspace number 10";
+            "${modifier}+Shift+asterisk" =
+              "move container to workspace number 10";
 
             # moving workspaces between monitors
             "${modifier}+m" = "move workspace to output right";
