@@ -13,21 +13,13 @@
     };
     utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    # nix-straight = {
-    #   url =
-    #     "github:nix-community/nix-straight.el?ref=codingkoi/apply-librephoenixs-fix";
-    #   flake = false;
-    # };
-    # nix-doom-emacs = {
-    #   url = "github:nix-community/nix-doom-emacs";
-    #   inputs = { nix-straight.follows = "nix-straight"; };
-    # };
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, utils, nix-flatpak
-    , ... }@inputs: {
+    , alacritty-theme, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
@@ -38,6 +30,20 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
             nix-flatpak.nixosModules.nix-flatpak
+            ({ config, pkgs, ... }: {
+              # install the overlay
+              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+            })
+            ({ config, pkgs, ... }: {
+              home-manager.users.simone = hm: {
+                programs.alacritty = {
+                  enable = true;
+                  # use a color scheme from the overlay
+                  settings.general.import =
+                    [ pkgs.alacritty-theme.rose_pine_moon ];
+                };
+              };
+            })
           ];
           specialArgs = { inherit inputs; };
         };

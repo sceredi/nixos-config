@@ -27,8 +27,6 @@
 
       # forget the find window.  That is for chumps
       bind-key -r f run-shell "tmux neww tms"
-
-      # bind-key -r i run-shell "tmux neww tmux-cht.sh"
     '';
   };
   home-manager.users.simone = { pkgs, ... }: {

@@ -21,10 +21,7 @@ end
 config.front_end = "WebGpu"
 
 -- For example, changing the color scheme:
--- config.color_scheme = "Gruvbox dark, hard (base16)"
-local colors, _ = wezterm.color.load_scheme("/home/simone/.config/wezterm/colors.toml")
-
-config.colors = colors
+config.color_scheme = "rose-pine-moon"
 
 config.font = wezterm.font({
 	family = "JetBrains Mono",

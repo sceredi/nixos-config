@@ -274,7 +274,3 @@ set ReplaceWithRegister
 xnoremap < <gv
 xnoremap > >gv
 
-" alias
-nmap <C-a> ggVG"+y
-
-
