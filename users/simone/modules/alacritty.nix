@@ -21,42 +21,55 @@
       };
       shellIntegration.mode = "no-cursor";
       settings = {
-        foreground = "#2C363C";
-        background = "#F0EDEC";
-        selection_foreground = "#2C363C";
-        selection_background = "#CBD9E3";
-        # Cursor colors
-        cursor = "#2C363C";
-        cursor_text_color = "#F0EDEC";
-        # Tab bar colors
-        active_tab_foreground = "#2C363C";
-        active_tab_background = "#DEB9D6";
-        inactive_tab_foreground = "#2C363C";
-        inactive_tab_background = "#D6CDC9";
+        foreground = "#e0def4";
+        background = "#232136";
+        selection_foreground = "#e0def4";
+        selection_background = "#44415a";
+
+        cursor = "#56526e";
+        cursor_text_color = "#e0def4";
+
+        url_color = "#c4a7e7";
+
+        active_tab_foreground = "#e0def4";
+        active_tab_background = "#393552";
+        inactive_tab_foreground = "#6e6a86";
+        inactive_tab_background = "#232136";
+
+        active_border_color = "#3e8fb0";
+        inactive_border_color = "#44415a";
+
         # black
-        color0 = "#F0EDEC";
-        color8 = "#CFC1BA";
+        color0 = "#393552";
+        color8 = "#6e6a86";
+
         # red
-        color1 = "#A8334C";
-        color9 = "#94253E";
+        color1 = "#eb6f92";
+        color9 = "#eb6f92";
+
         # green
-        color2 = "#4F6C31";
-        color10 = "#3F5A22";
+        color2 = "#3e8fb0";
+        color10 = "#3e8fb0";
+
         # yellow
-        color3 = "#944927";
-        color11 = "#803D1C";
+        color3 = "#f6c177";
+        color11 = "#f6c177";
+
         # blue
-        color4 = "#286486";
-        color12 = "#1D5573";
+        color4 = "#9ccfd8";
+        color12 = "#9ccfd8";
+
         # magenta
-        color5 = "#88507D";
-        color13 = "#7B3B70";
+        color5 = "#c4a7e7";
+        color13 = "#c4a7e7";
+
         # cyan
-        color6 = "#3B8992";
-        color14 = "#2B747C";
+        color6 = "#ea9a97";
+        color14 = "#ea9a97";
+
         # white
-        color7 = "#2C363C";
-        color15 = "#4F5E68";
+        color7 = "#e0def4";
+        color15 = "#e0def4";
       };
     };
   };
