@@ -26,7 +26,11 @@
       bind b new-window -c "#{pane_current_path}"
 
       # forget the find window.  That is for chumps
-      bind-key -r f run-shell "tmux neww tms"
+      bind-key -r f display-popup -E "tms"
+
+      bind-key -r e display-popup -E "tms switch"
+
+      bind-key -r i display-popup -E "tms windows"
     '';
   };
   home-manager.users.simone = { pkgs, ... }: {

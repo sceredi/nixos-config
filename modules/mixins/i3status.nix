@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
   home-manager.users.simone = { pkgs, ... }: {
-    home.packages = with pkgs; [ networkmanager_dmenu ];
+    home.packages = with pkgs; [ networkmanager ];
     programs.i3status-rust = {
       enable = true;
       bars = {
@@ -37,8 +37,7 @@
               theme_overrides = { idle_bg = "#00223f"; };
               click = [{
                 button = "left";
-                cmd =
-                  "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";
+                cmd = "${pkgs.networkmanager}/bin/nmtui";
               }];
 
             }
