@@ -7,19 +7,20 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    firefox = {
-      url = "github:colemickens/flake-firefox-nightly";
+    utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
+    firefox-addons = {
+      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    utils = { url = "github:gytis-ivaskevicius/flake-utils-plus"; };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
+    nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, home-manager, utils, nix-flatpak
-    , alacritty-theme, ... }@inputs: {
+  outputs = { self, nixpkgs, nixos-hardware, home-manager, firefox-addons, utils
+    , nix-flatpak, alacritty-theme, nur, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
@@ -30,6 +31,7 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
             nix-flatpak.nixosModules.nix-flatpak
+            nur.nixosModules.nur
             ({ config, pkgs, ... }: {
               # install the overlay
               nixpkgs.overlays = [ alacritty-theme.overlays.default ];
