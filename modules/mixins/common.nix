@@ -25,6 +25,7 @@
       unzip
       fzf
       tree
+      vlc
 
       # Utils
       zip

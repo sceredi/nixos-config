@@ -7,7 +7,7 @@
     jetbrains-mono
     powerline-fonts
     gelasio
-    nerdfonts
+    nerd-fonts.jetbrains-mono
     iosevka
     noto-fonts
     noto-fonts-cjk-sans
