@@ -16,11 +16,10 @@
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
-    nur.url = "github:nix-community/NUR";
   };
 
   outputs = { self, nixpkgs, nixos-hardware, home-manager, firefox-addons, utils
-    , nix-flatpak, alacritty-theme, nur, ... }@inputs: {
+    , nix-flatpak, alacritty-theme, ... }@inputs: {
       nixosModules = import ./modules { lib = nixpkgs.lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
@@ -31,7 +30,6 @@
             home-manager.nixosModules.home-manager
             nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
             nix-flatpak.nixosModules.nix-flatpak
-            nur.nixosModules.nur
             ({ config, pkgs, ... }: {
               # install the overlay
               nixpkgs.overlays = [ alacritty-theme.overlays.default ];
