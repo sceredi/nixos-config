@@ -37,7 +37,7 @@
       gnome-common
 
       # Screenshots
-      shutter
+      # shutter
       flameshot
 
       # Pomodoro Timer
