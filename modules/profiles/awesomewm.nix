@@ -9,6 +9,10 @@
         extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
       };
     };
+    services.libinput = {
+      enable = true;
+      touchpad = { naturalScrolling = true; };
+    };
     services.xserver = {
       enable = true;
       displayManager = {
@@ -17,14 +21,7 @@
       };
       windowManager.awesome = {
         enable = true;
-        luaModules = with pkgs.luaPackages; [
-          luarocks
-          luadbi-mysql
-        ];
-      };
-      libinput = {
-        enable = true;
-        touchpad = { naturalScrolling = true; };
+        luaModules = with pkgs.luaPackages; [ luarocks luadbi-mysql ];
       };
     };
   };

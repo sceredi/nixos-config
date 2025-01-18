@@ -4,7 +4,7 @@
     ./hardware-configuration.nix
     users-simone
     dotfiles-pulse14
-    # profiles-gnome
+    profiles-gnome
     editors-default
     langs-default
     mixins-bluetooth
@@ -18,7 +18,7 @@
     mixins-openssh
     mixins-picom
     mixins-printing
-    mixins-samba
+    # mixins-samba
     mixins-syncthing
     mixins-tmux
     mixins-usb
