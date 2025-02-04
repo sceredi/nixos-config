@@ -69,6 +69,9 @@
         # latex
         texlive.combined.scheme-full
 
+        # zig
+        zig
+        zls
       ];
     };
   };

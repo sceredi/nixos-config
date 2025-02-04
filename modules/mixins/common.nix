@@ -1,5 +1,15 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [ vim git gnupg pinentry-curses ];
+  environment.systemPackages = with pkgs; [
+    vim
+    git
+    gnupg
+    pinentry-curses
+    input-remapper
+  ];
+  services.input-remapper = {
+    enable = true;
+    enableUdevRules = true;
+  };
   nix = {
     settings = {
       trusted-users = [ "@wheel" "root" ];

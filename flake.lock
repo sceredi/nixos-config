@@ -44,11 +44,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1737534026,
-        "narHash": "sha256-BUqRiE9D+7iEOFcFYF/bHRP1b/3zdk84z+yM8OEg7sY=",
+        "lastModified": 1738657214,
+        "narHash": "sha256-Gwf89BCwme5q4KzP/+mPJ199b8AYutTg6r8rri/Iu0s=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "ebd77d296e02754318aae98802440aea456bdfdc",
+        "rev": "9dcfbe779f6f6de6f31bc47d0bdc36554c5cd1d4",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1737518603,
-        "narHash": "sha256-SchRB1+PzZnmrTMg1g+5XviuixWqyRjK//o2HJThIjo=",
+        "lastModified": 1738641794,
+        "narHash": "sha256-MNnDZJuxMTXT1vGHQFSPJx9sJ56JjpjKulNsy01Cu8A=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "5d123317b5c26b6404034bcaf85ca32a058e251f",
+        "rev": "727fbb76627296cdeab0f2367930fb1f663b2113",
         "type": "gitlab"
       },
       "original": {
@@ -138,11 +138,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1737480538,
-        "narHash": "sha256-rk/cmrvq3In0TegW9qaAxw+5YpJhRWt2p74/6JStrw0=",
+        "lastModified": 1738610386,
+        "narHash": "sha256-yb6a5efA1e8xze1vcdN2HBxqYr340EsxFMrDUHL3WZM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "4481a16d1ac5bff4a77c608cefe08c9b9efe840d",
+        "rev": "066ba0c5cfddbc9e0dddaec73b1561ad38aa8abe",
         "type": "github"
       },
       "original": {
@@ -153,11 +153,11 @@
     },
     "nix-flatpak": {
       "locked": {
-        "lastModified": 1736952876,
-        "narHash": "sha256-dJXuLP2CBkIG333L+Rb3e1D0oXHYbl0MgmKPGuvFuAI=",
+        "lastModified": 1738175805,
+        "narHash": "sha256-fPjaARmK522JLJ7wxFebxG4eE/3HHSmuAA78iAZ+A7g=",
         "owner": "gmodena",
         "repo": "nix-flatpak",
-        "rev": "b6966d5fa96b0fae99a4da0b5bdfbb0a75f5c058",
+        "rev": "d4c75a33c4a7a16bf87cfd804fb5444a1ec53d49",
         "type": "github"
       },
       "original": {
@@ -168,11 +168,11 @@
     },
     "nixos-hardware": {
       "locked": {
-        "lastModified": 1737359802,
-        "narHash": "sha256-utplyRM6pqnN940gfaLFBb9oUCSzkan86IvmkhsVlN8=",
+        "lastModified": 1738638143,
+        "narHash": "sha256-ZYMe4c4OCtIUBn5hx15PEGr0+B1cNEpl2dsaLxwY2W0=",
         "owner": "nixos",
         "repo": "nixos-hardware",
-        "rev": "61c79181e77ef774ab0468b28a24bc2647d498d6",
+        "rev": "9bdd53f5908453e4d03f395eb1615c3e9a351f70",
         "type": "github"
       },
       "original": {
@@ -218,11 +218,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1737299813,
-        "narHash": "sha256-Qw2PwmkXDK8sPQ5YQ/y/icbQ+TYgbxfjhgnkNJyT1X8=",
+        "lastModified": 1738574474,
+        "narHash": "sha256-rvyfF49e/k6vkrRTV4ILrWd92W+nmBDfRYZgctOyolQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "107d5ef05c0b1119749e381451389eded30fb0d5",
+        "rev": "fecfeb86328381268e29e998ddd3ebc70bbd7f7c",
         "type": "github"
       },
       "original": {
@@ -234,11 +234,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1737469691,
-        "narHash": "sha256-nmKOgAU48S41dTPIXAq0AHZSehWUn6ZPrUKijHAMmIk=",
+        "lastModified": 1738546358,
+        "narHash": "sha256-nLivjIygCiqLp5QcL7l56Tca/elVqM9FG1hGd9ZSsrg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "9e4d5190a9482a1fb9d18adf0bdb83c6e506eaab",
+        "rev": "c6e957d81b96751a3d5967a0fd73694f303cc914",
         "type": "github"
       },
       "original": {
@@ -280,11 +280,11 @@
         "flake-utils": "flake-utils_2"
       },
       "locked": {
-        "lastModified": 1722363685,
-        "narHash": "sha256-XCf2PIAT6lH7BwytgioPmVf/wkzXjSKScC4KzcZgb64=",
+        "lastModified": 1738591040,
+        "narHash": "sha256-4WNeriUToshQ/L5J+dTSWC5OJIwT39SEP7V7oylndi8=",
         "owner": "gytis-ivaskevicius",
         "repo": "flake-utils-plus",
-        "rev": "6b10f51ff73a66bb29f3bc8151a59d217713f496",
+        "rev": "afcb15b845e74ac5e998358709b2b5fe42a948d1",
         "type": "github"
       },
       "original": {
