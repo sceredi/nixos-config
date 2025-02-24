@@ -10,6 +10,7 @@
     enable = true;
     enableUdevRules = true;
   };
+  services.teamviewer.enable = true;
   nix = {
     settings = {
       trusted-users = [ "@wheel" "root" ];
@@ -68,6 +69,9 @@
 
       # zsa configurator
       keymapp
+
+      # TeamViewer
+      teamviewer
     ];
   };
 }

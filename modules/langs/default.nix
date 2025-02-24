@@ -20,6 +20,9 @@
         autoconf
         automake
         libtool
+        stdenv.cc.cc.lib
+        glibc
+        zlib
 
         # node
         nodejs
