@@ -26,7 +26,7 @@
       bind b new-window -c "#{pane_current_path}"
 
       # forget the find window.  That is for chumps
-      bind-key -r f display-popup -E "tms"
+      bind-key -r f display-popup -E "tmux-sessionizer"
 
       bind-key -r e display-popup -E "tms switch"
 
@@ -34,6 +34,41 @@
     '';
   };
   home-manager.users.simone = { pkgs, ... }: {
-    home.packages = with pkgs; [ tmux-sessionizer ];
+    home.packages = with pkgs; [
+      tmux-sessionizer
+      (pkgs.writeShellScriptBin "tmux-sessionizer" ''
+        #!/usr/bin/env bash
+
+        if [[ $# -eq 1 ]]; then
+            selected=$1
+        else
+            list_with_git=$(fd -HI -td ^.git$ --max-depth=4 ~/projects ~/uni-lab ~/.dotfiles ~/.config ~/exercism ~/probe)
+            list_without_git=$(echo "$list_with_git" | awk -F'/.git/' '{print $1}')
+            selected=$(echo "$list_without_git" | fzf)
+        fi
+
+        if [[ -z $selected ]]; then
+            exit 0
+        fi
+
+        selected_name=$(basename "$selected" | tr . _)
+        tmux_running=$(pgrep tmux)
+
+        if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+            tmux new-session -s $selected_name -c $selected
+            exit 0
+        fi
+
+        if ! tmux has-session -t=$selected_name 2> /dev/null; then
+            tmux new-session -ds $selected_name -c $selected
+        fi
+
+        if [[ -z $TMUX ]]; then
+            tmux attach -t $selected_name
+        else
+            tmux switch-client -t $selected_name
+        fi
+      '')
+    ];
   };
 }
