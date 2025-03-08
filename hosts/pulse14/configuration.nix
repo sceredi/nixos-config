@@ -49,7 +49,7 @@
   };
 
   home-manager = {
-    backupFileExtension = "backup8";
+    backupFileExtension = "backup9";
     useGlobalPkgs = true;
     useUserPackages = true;
     users = import "${inputs.self}/users";
@@ -89,7 +89,10 @@
 
   services = {
     # Some folks don't like the correct shebang
-    envfs.enable = true;
+    envfs = {
+      enable = true;
+      extraFallbackPathCommands = "ln -s $''{pkgs.bash}/bin/bash $out/bash";
+    };
 
     thermald.enable = true;
     tlp = {
