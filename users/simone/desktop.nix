@@ -2,7 +2,6 @@
   imports = [ ./modules ];
   home = {
     packages = with pkgs; [
-      logseq
       quasselClient
       alsa-utils
       wdisplays

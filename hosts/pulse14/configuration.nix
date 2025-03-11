@@ -49,7 +49,7 @@
   };
 
   home-manager = {
-    backupFileExtension = "backup9";
+    backupFileExtension = "backup10";
     useGlobalPkgs = true;
     useUserPackages = true;
     users = import "${inputs.self}/users";
