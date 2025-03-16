@@ -37,6 +37,7 @@
       fzf
       tree
       vlc
+      magic-wormhole
 
       # Utils
       zip
