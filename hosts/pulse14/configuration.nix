@@ -50,7 +50,7 @@
   };
 
   home-manager = {
-    backupFileExtension = "backup11";
+    backupFileExtension = "backup13";
     useGlobalPkgs = true;
     useUserPackages = true;
     users = import "${inputs.self}/users";
@@ -78,7 +78,10 @@
     #   enable = true;
     #   interfaces = [ "wlp1s0" ];
     # };
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
     nat = {
       enable = true;
       internalInterfaces = [ "ve-+" ];
@@ -89,6 +92,11 @@
   };
 
   services = {
+    resolved.enable = true;
+    tailscale = {
+      enable = true;
+      useRoutingFeatures = "both";
+    };
     # Some folks don't like the correct shebang
     envfs = {
       enable = true;
