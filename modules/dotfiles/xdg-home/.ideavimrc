@@ -54,6 +54,8 @@ nmap <leader>xo <Action>(CloseAllEditorsButActive)
 nmap <leader>xp <Action>(CloseAllUnpinnedEditors)
 
 " window
+imap <C-S-Tab> <Action>(PreviousTab)
+imap <C-Tab> <Action>(NextTab)
 nmap <C-S-Tab> <Action>(PreviousTab)
 nmap <C-Tab> <Action>(NextTab)
 nmap <leader>p <Action>(PinActiveEditorTab)
