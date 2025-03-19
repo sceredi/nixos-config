@@ -98,10 +98,6 @@
       useRoutingFeatures = "both";
     };
     # Some folks don't like the correct shebang
-    envfs = {
-      enable = true;
-      extraFallbackPathCommands = "ln -s $''{pkgs.bash}/bin/bash $out/bash";
-    };
 
     thermald.enable = true;
     tlp = {
