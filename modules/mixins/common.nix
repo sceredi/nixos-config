@@ -38,6 +38,8 @@
       tree
       vlc
       magic-wormhole
+      # Allows movement inside no movement/hist cli programs
+      rlwrap
 
       # Utils
       zip
