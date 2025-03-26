@@ -5,20 +5,30 @@ let
   light = "${pkgs.light}/bin/light";
   fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
   launcher = fuzzel;
-  swaylockcmd =
-    "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
-  screenshotarea =
-    "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
-  workspaces = builtins.concatLists (builtins.genList
-    (x:
-      let ws = let c = (x + 1) / 10; in builtins.toString (x + 1 - (c * 10));
-      in [
+  swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
+  screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
+  workspaces = builtins.concatLists (
+    builtins.genList (
+      x:
+      let
+        ws =
+          let
+            c = (x + 1) / 10;
+          in
+          builtins.toString (x + 1 - (c * 10));
+      in
+      [
         "$mod, ${ws}, workspace, ${toString (x + 1)}"
         "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-      ]) 10);
+      ]
+    ) 10
+  );
 in
 {
-  home.packages = with pkgs; [ grimblast wlogout ];
+  home.packages = with pkgs; [
+    grimblast
+    wlogout
+  ];
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     # mouse movements
@@ -28,8 +38,10 @@ in
       "$mod ALT, mouse:272, resizewindow"
     ];
     bind =
-      let monocle = "dwindle:no_gaps_when_only";
-      in [
+      let
+        monocle = "dwindle:no_gaps_when_only";
+      in
+      [
         # compositor commands
         "$mod SHIFT, W, exec, killall waybar;waybar"
         "$mod SHIFT, E, exec, pkill Hyprland"
@@ -82,7 +94,8 @@ in
         # send focused workspace to left/right monitors
         "$mod SHIFT, G, movecurrentworkspacetomonitor, l"
         "$mod SHIFT, M, movecurrentworkspacetomonitor, r"
-      ] ++ workspaces;
+      ]
+      ++ workspaces;
 
     bindl = [
       # media controls

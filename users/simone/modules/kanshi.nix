@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   systemd.user.services.kanshi = {
     serviceConfig = {
       StartLimitBurst = 5;
@@ -12,13 +13,15 @@
       {
         profile = {
           name = "undocked";
-          outputs = [{
-            criteria = "eDP-1";
-            status = "enable";
-            mode = "2880x1800@60.001Hz";
-            position = "0,0";
-            scale = 1.25;
-          }];
+          outputs = [
+            {
+              criteria = "eDP-1";
+              status = "enable";
+              mode = "2880x1800@60.001Hz";
+              position = "0,0";
+              scale = 1.25;
+            }
+          ];
         };
       }
       {

@@ -1,5 +1,15 @@
-{ config, lib, pkgs, ... }: {
-  imports = [ ../mixins/mako.nix ../mixins/sway.nix ../mixins/gammastep.nix ];
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
+  imports = [
+    ../mixins/mako.nix
+    ../mixins/sway.nix
+    ../mixins/gammastep.nix
+  ];
   config = {
     services.dbus.packages = with pkgs; [ dconf ];
     programs.dconf.enable = true;
@@ -23,28 +33,40 @@
     services.xserver.displayManager.gdm = {
       enable = true;
       wayland = true;
-      settings = { greeter = { include = "simone"; }; };
+      settings = {
+        greeter = {
+          include = "simone";
+        };
+      };
     };
     programs.sway = {
       enable = true;
       wrapperFeatures.gtk = true;
     };
 
-    fonts.packages = with pkgs; [ terminus_font_ttf font-awesome ];
-    home-manager.users.simone = { pkgs, ... }: {
+    fonts.packages = with pkgs; [
+      terminus_font_ttf
+      font-awesome
+    ];
+    home-manager.users.simone =
+      { pkgs, ... }:
+      {
 
-      # Block auto-sway reload, Sway crashes if allowed to reload this way.
-      xdg.configFile."sway/config".onChange = lib.mkForce "";
+        # Block auto-sway reload, Sway crashes if allowed to reload this way.
+        xdg.configFile."sway/config".onChange = lib.mkForce "";
 
-      home.sessionVariables = {
-        "SDL_VIDEODRIVER" = "wayland";
-        "QT_QPA_PLATFORM" = "wayland";
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION" = "1";
-        "_JAVA_AWT_WM_NONREPARENTING" = "1";
-        "MOZ_ENABLE_WAYLAND" = "1";
+        home.sessionVariables = {
+          "SDL_VIDEODRIVER" = "wayland";
+          "QT_QPA_PLATFORM" = "wayland";
+          "QT_WAYLAND_DISABLE_WINDOWDECORATION" = "1";
+          "_JAVA_AWT_WM_NONREPARENTING" = "1";
+          "MOZ_ENABLE_WAYLAND" = "1";
+        };
+
+        home.packages = with pkgs; [
+          wl-clipboard
+          imv
+        ];
       };
-
-      home.packages = with pkgs; [ wl-clipboard imv ];
-    };
   };
 }

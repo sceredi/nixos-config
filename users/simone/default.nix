@@ -1,4 +1,10 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   myAliases = {
     la = "ls -Alh"; # show hidden files
@@ -16,8 +22,7 @@ let
     lf = "ls -l | egrep -v '^d'"; # files only
     ldir = "ls -l | egrep '^d'"; # directories only
 
-    launch-argos = ''
-      echo "will listen on localhost:6080" && docker run -p 6080:80 -v /home/simone/Public/IRS:/dev/simone tjferrara/argos3:latest'';
+    launch-argos = ''echo "will listen on localhost:6080" && docker run -p 6080:80 -v /home/simone/Public/IRS:/dev/simone tjferrara/argos3:latest'';
 
     vim = "nvim";
 
@@ -28,7 +33,8 @@ let
     pycharm = "pycharm-professional >/dev/null 2>&1 &";
 
   };
-in {
+in
+{
   imports = [ ./desktop.nix ];
 
   home = {
@@ -56,7 +62,10 @@ in {
       enable = true;
       oh-my-zsh = {
         enable = true;
-        plugins = [ "direnv" "git" ];
+        plugins = [
+          "direnv"
+          "git"
+        ];
       };
       autosuggestion.enable = true;
       enableCompletion = true;
@@ -85,7 +94,9 @@ in {
           format = "$shlvl ▼ ";
           threshold = 4;
         };
-        scala = { disabled = true; };
+        scala = {
+          disabled = true;
+        };
       };
     };
     bash = {

@@ -1,20 +1,27 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
 {
-  environment.systemPackages = with pkgs;
-    [
-      # virt-manager
-      # virtualbox
-      # distrobox
-      quickemu
-    ];
-  # services = { 
+  environment.systemPackages = with pkgs; [
+    # virt-manager
+    # virtualbox
+    # distrobox
+    quickemu
+  ];
+  # services = {
   #   spice-vdagentd.enable = true;
   #   spice-webdavd.enable = true;
   #   qemuGuest.enable = true;
   # };
   virtualisation.libvirtd = {
-    allowedBridges = [ "nm-bridge" "virbr0" ];
+    allowedBridges = [
+      "nm-bridge"
+      "virbr0"
+    ];
     enable = true;
     qemu.runAsRoot = false;
   };

@@ -1,4 +1,9 @@
-{ config, pkgs, input, ... }:
+{
+  config,
+  pkgs,
+  input,
+  ...
+}:
 let
   modifier = "SUPER";
   left = "h";
@@ -7,12 +12,10 @@ let
   right = "l";
   terminal = "${pkgs.wezterm}/bin/wezterm";
   light = "${pkgs.light}/bin/light";
-  rofi =
-    "${pkgs.rofi}/bin/rofi -show drun";
+  rofi = "${pkgs.rofi}/bin/rofi -show drun";
   launcher = rofi;
   pamixer = "${pkgs.pamixer}/bin/pamixer";
-  swaylockcmd =
-    "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
+  swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
   idlecmd = pkgs.writeShellScript "swayidle.sh" ''
     ${pkgs.swayidle}/bin/swayidle \
     before-sleep "${swaylockcmd}" \
@@ -22,16 +25,25 @@ let
   '';
 in
 {
-  imports = [ ../i3status.nix ../nm-applet.nix ];
+  imports = [
+    ../i3status.nix
+    ../nm-applet.nix
+  ];
   config = {
-    home-manager.users.simone = { pkgs, ... }: {
-      imports = [ ./binds.nix ./settings.nix ./rules.nix ];
-      config = {
-        wayland.windowManager.hyprland = {
-          enable = true;
-          settings = { };
+    home-manager.users.simone =
+      { pkgs, ... }:
+      {
+        imports = [
+          ./binds.nix
+          ./settings.nix
+          ./rules.nix
+        ];
+        config = {
+          wayland.windowManager.hyprland = {
+            enable = true;
+            settings = { };
+          };
         };
       };
-    };
   };
 }

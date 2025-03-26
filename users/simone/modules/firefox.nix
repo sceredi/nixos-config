@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   programs.firefox = {
     enable = true;
     profiles = {
@@ -10,34 +11,36 @@
           order = [ "Google" ];
           engines = {
             "Nix Packages" = {
-              urls = [{
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }];
-              icon =
-                "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+              urls = [
+                {
+                  template = "https://search.nixos.org/packages";
+                  params = [
+                    {
+                      name = "type";
+                      value = "packages";
+                    }
+                    {
+                      name = "query";
+                      value = "{searchTerms}";
+                    }
+                  ];
+                }
+              ];
+              icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
               definedAliases = [ "@np" ];
             };
             "NixOS Wiki" = {
-              urls = [{
-                template = "https://nixos.wiki/index.php?search={searchTerms}";
-              }];
+              urls = [
+                {
+                  template = "https://nixos.wiki/index.php?search={searchTerms}";
+                }
+              ];
               iconUpdateURL = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
               definedAliases = [ "@nw" ];
             };
             "Bing".metaData.hidden = true;
-            "Google".metaData.alias =
-              "@g"; # builtin engines only support specifying one additional alias
+            "Google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
           };
         };
         settings = {
@@ -64,8 +67,7 @@
           # Disable crappy home activity stream page
           "browser.newtabpage.activity-stream.feeds.topsites" = false;
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts" =
-            false;
+          "browser.newtabpage.activity-stream.improvesearch.topSiteSearchShortcuts" = false;
           "browser.newtabpage.blocked" = lib.genAttrs [
             # Youtube
             "26UbzFJ7qT9/4DhodHKA1Q=="
@@ -128,8 +130,11 @@
             ];
             placements = {
               PersonalToolbar = [ "personal-bookmarks" ];
-              TabsToolbar =
-                [ "tabbrowser-tabs" "new-tab-button" "alltabs-button" ];
+              TabsToolbar = [
+                "tabbrowser-tabs"
+                "new-tab-button"
+                "alltabs-button"
+              ];
               nav-bar = [
                 "back-button"
                 "forward-button"
@@ -158,4 +163,3 @@
   };
 
 }
-

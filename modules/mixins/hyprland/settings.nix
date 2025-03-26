@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
-  swaylockcmd =
-    "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
+  swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
   idlecmd = pkgs.writeShellScript "swayidle.sh" ''
     ${pkgs.swayidle}/bin/swayidle \
     before-sleep "${swaylockcmd}" \

@@ -1,4 +1,10 @@
-{ pkgs, config, lib, ... }: {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
   services.zfs.autoScrub.enable = true;
   networking.hostId = "a9c26e78";
   boot = {
@@ -9,4 +15,3 @@
     zfs.package = pkgs.zfs_unstable;
   };
 }
-

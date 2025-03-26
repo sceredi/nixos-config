@@ -1,4 +1,11 @@
-{ config, lib, pkgs, inputs, ... }: {
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
+{
   imports = with inputs.self.nixosModules; [
     ./disks.nix
     ./hardware-configuration.nix
@@ -45,12 +52,15 @@
       allowUnfree = true;
       permittedInsecurePackages =
         # Remove once obsidian decides update its elecron version
-        [ "electron-27.3.11" "electron-29.4.6" ];
+        [
+          "electron-27.3.11"
+          "electron-29.4.6"
+        ];
     };
   };
 
   home-manager = {
-    backupFileExtension = "backup15";
+    backupFileExtension = "backup16";
     useGlobalPkgs = true;
     useUserPackages = true;
     users = import "${inputs.self}/users";
@@ -70,7 +80,9 @@
   };
 
   networking = {
-    firewall = { enable = true; };
+    firewall = {
+      enable = true;
+    };
     hostName = "pulse14";
     # useNetworkd = true;
     # wireless = {
@@ -145,7 +157,9 @@
         enable = true;
         configurationLimit = 10;
       };
-      efi = { canTouchEfiVariables = true; };
+      efi = {
+        canTouchEfiVariables = true;
+      };
     };
     kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
   };
@@ -172,6 +186,7 @@
     gnumake
     htop
     git
+    inputs.nixvim.packages."x86_64-linux".default
   ];
 
   system.stateVersion = "23.11";

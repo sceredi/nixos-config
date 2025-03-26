@@ -3,7 +3,9 @@
     alacritty = {
       enable = true;
       settings = {
-        window = { opacity = 0.98; };
+        window = {
+          opacity = 0.98;
+        };
         font = {
           size = 18;
           normal = {
