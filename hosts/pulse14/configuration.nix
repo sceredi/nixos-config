@@ -41,10 +41,26 @@
     profiles-uni
     profiles-virtualization
   ];
+  nix = {
 
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-  '';
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+
+    settings.substituters = [
+      "https://nix-community.cachix.org"
+    ];
+
+    settings.trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+
+    # From flake-utils-plus
+    generateNixPathFromInputs = true;
+    generateRegistryFromInputs = true;
+    linkInputs = true;
+
+  };
 
   nixpkgs = {
     # I'm sorry Stallman-taichou
@@ -71,13 +87,6 @@
   };
 
   users.users.simone.extraGroups = [ "video" ];
-
-  nix = {
-    # From flake-utils-plus
-    generateNixPathFromInputs = true;
-    generateRegistryFromInputs = true;
-    linkInputs = true;
-  };
 
   networking = {
     firewall = {
