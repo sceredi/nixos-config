@@ -25,9 +25,7 @@ let
       findSuffix = suffix: dir: (filter (x: (hasSuffix suffix (toString x))) (listFilesRecursive dir));
       allNixFiles = findSuffix ".nix" folder;
       allModuleNames = map (removeSuffix ".nix") (map baseNameOf allNixFiles);
-      zippedList = (
-        zipListsWith (x: y: nameValuePair (prefix + "-" + x) (import y)) allModuleNames allNixFiles
-      );
+      zippedList = zipListsWith (x: y: nameValuePair (prefix + "-" + x) (import y)) allModuleNames allNixFiles;
     in
     listToAttrs zippedList;
   generateModulesAuto =

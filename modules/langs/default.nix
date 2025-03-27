@@ -11,9 +11,8 @@
 
         home.packages = with pkgs; [
           # nix
-          nixpkgs-lint
-          nixpkgs-fmt
           nixfmt-rfc-style
+          statix
 
           # c
           gcc

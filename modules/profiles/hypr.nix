@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   inputs,
   ...
@@ -13,8 +11,15 @@
   ];
   config = {
     services.dbus.packages = with pkgs; [ dconf ];
-    programs.dconf.enable = true;
-    programs.light.enable = true;
+    programs = {
+      dconf.enable = true;
+      light.enable = true;
+
+      hyprland = {
+        enable = true;
+        package = inputs.hyprland.packages."${pkgs.system}".hyprland;
+      };
+    };
 
     xdg = {
       portal = {
@@ -29,11 +34,6 @@
     services.xserver.displayManager.gdm = {
       enable = true;
       wayland = true;
-    };
-
-    programs.hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages."${pkgs.system}".hyprland;
     };
     home-manager.users.simone =
       { pkgs, ... }:

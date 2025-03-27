@@ -37,7 +37,7 @@
       ...
     }@inputs:
     {
-      nixosModules = import ./modules { lib = nixpkgs.lib; };
+      nixosModules = import ./modules { inherit (nixpkgs) lib; };
       nixosConfigurations = {
         pulse14 = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

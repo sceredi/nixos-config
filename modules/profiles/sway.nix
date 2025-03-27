@@ -1,5 +1,4 @@
 {
-  config,
   lib,
   pkgs,
   ...
@@ -11,9 +10,31 @@
     ../mixins/gammastep.nix
   ];
   config = {
-    services.dbus.packages = with pkgs; [ dconf ];
-    programs.dconf.enable = true;
-    programs.light.enable = true;
+    services = {
+      dbus.packages = with pkgs; [ dconf ];
+
+      # The NixOS option 'programs.sway.enable' is needed to make swaylock work,
+      # since home-manager can't set PAM up to allow unlocks, along with some
+      # other quirks.
+      displayManager.defaultSession = "sway";
+      xserver.displayManager.gdm = {
+        enable = true;
+        wayland = true;
+        settings = {
+          greeter = {
+            include = "simone";
+          };
+        };
+      };
+    };
+    programs = {
+      dconf.enable = true;
+      light.enable = true;
+      sway = {
+        enable = true;
+        wrapperFeatures.gtk = true;
+      };
+    };
 
     xdg = {
       portal = {
@@ -24,24 +45,6 @@
           xdg-desktop-portal-gtk
         ];
       };
-    };
-
-    # The NixOS option 'programs.sway.enable' is needed to make swaylock work,
-    # since home-manager can't set PAM up to allow unlocks, along with some
-    # other quirks.
-    services.displayManager.defaultSession = "sway";
-    services.xserver.displayManager.gdm = {
-      enable = true;
-      wayland = true;
-      settings = {
-        greeter = {
-          include = "simone";
-        };
-      };
-    };
-    programs.sway = {
-      enable = true;
-      wrapperFeatures.gtk = true;
     };
 
     fonts.packages = with pkgs; [

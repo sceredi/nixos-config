@@ -1,6 +1,6 @@
 {
   home-manager.users.simone =
-    { ... }:
+    _:
     {
       services.gammastep = {
         enable = true;

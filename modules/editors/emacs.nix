@@ -14,6 +14,6 @@
       };
     environment.variables.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
 
-    fonts.packages = [ (pkgs.nerd-fonts.symbols-only) ];
+    fonts.packages = [ pkgs.nerd-fonts.symbols-only ];
   };
 }
