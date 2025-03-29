@@ -22,5 +22,5 @@ upgrade:
 	make update && make switch
 
 neovim:
-	nix flake lock --update-info nixvim && make switch
+	nix flake update nixvim && make switch
 

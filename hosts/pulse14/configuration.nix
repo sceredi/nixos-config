@@ -76,7 +76,7 @@
   };
 
   home-manager = {
-    backupFileExtension = "backup16";
+    backupFileExtension = "backup17";
     useGlobalPkgs = true;
     useUserPackages = true;
     users = import "${inputs.self}/users";
@@ -103,23 +103,16 @@
       enable = true;
       wifi.powersave = false;
     };
-    nat = {
-      enable = true;
-      internalInterfaces = [ "ve-+" ];
-      externalInterface = "ens3";
-      # Lazy IPv6 connectivity for the container
-      enableIPv6 = true;
-    };
+    # nat = {
+    #   enable = true;
+    #   internalInterfaces = [ "ve-+" ];
+    #   externalInterface = "ens3";
+    #   # Lazy IPv6 connectivity for the container
+    #   enableIPv6 = true;
+    # };
   };
 
   services = {
-    resolved.enable = true;
-    tailscale = {
-      enable = true;
-      useRoutingFeatures = "both";
-    };
-    # Some folks don't like the correct shebang
-
     thermald.enable = true;
     tlp = {
       enable = true;
