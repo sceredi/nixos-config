@@ -16,7 +16,6 @@ set notimeout
 let mapleader=" "
 
 " find and replace
-set hlsearch
 set incsearch
 set ignorecase
 set smartcase
