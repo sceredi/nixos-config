@@ -22,5 +22,5 @@ upgrade:
 	make update && make switch
 
 neovim:
-	nix flake update nixvim && make switch
+	nix flake update sceredi-nix-cats && make switch
 
