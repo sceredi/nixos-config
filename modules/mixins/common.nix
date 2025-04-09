@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     vim
@@ -55,6 +55,11 @@
         xfce.thunar-archive-plugin
         gnome-disk-utility
         gnome-common
+
+        # Browsers
+        chromium
+        brave
+        inputs.zen-browser.packages."${system}".default
 
         # Screenshots
         # shutter
