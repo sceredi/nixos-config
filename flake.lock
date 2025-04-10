@@ -173,11 +173,11 @@
     },
     "nixCats": {
       "locked": {
-        "lastModified": 1744009035,
-        "narHash": "sha256-zwGfDrhycyTl1CASAntRHsvC0jzGQaOx357v6sdo4M4=",
+        "lastModified": 1744136093,
+        "narHash": "sha256-mdI4Y6j9ZZm1cLkvhAgUISaZK/WT9Xh0LemOUfOsBic=",
         "owner": "BirdeeHub",
         "repo": "nixCats-nvim",
-        "rev": "1901a45f8cdc0976f58c41b66092a145036fc22d",
+        "rev": "9ea41c71e8ea5aa81d6a677bbe1c10315f90a610",
         "type": "github"
       },
       "original": {
@@ -270,11 +270,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1743938762,
-        "narHash": "sha256-UgFYn8sGv9B8PoFpUfCa43CjMZBl1x/ShQhRDHBFQdI=",
+        "lastModified": 1744157173,
+        "narHash": "sha256-bWSjxDwq7iVePrhmA7tY2dyMWHuNJo8knkO4y+q4ZkY=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "74a40410369a1c35ee09b8a1abee6f4acbedc059",
+        "rev": "6a39c6e495eefabc935d8ddf66aa45d85b85fa3f",
         "type": "github"
       },
       "original": {
@@ -304,11 +304,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1744043931,
-        "narHash": "sha256-kqMIfOOLkiYngboRFPgwukK8lvh7Th4OuF5V2v5l3zg=",
+        "lastModified": 1744282743,
+        "narHash": "sha256-+wg2sE+p6WRL27saSyS0Gh+kdfeuptKFTMM80v0h8Uw=",
         "owner": "sceredi",
         "repo": "init.lua",
-        "rev": "474f97c1aedcb8eb6d50b7831f31889fc470f104",
+        "rev": "a1423a4bf1f83665b073e4ff1450004599072c90",
         "type": "github"
       },
       "original": {
