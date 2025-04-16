@@ -20,7 +20,6 @@
       qbittorrent
       thunderbird
       wl-mirror
-      signal-desktop
     ];
     sessionVariables = {
       TERM = "xterm-256color";
