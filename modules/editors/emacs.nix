@@ -5,7 +5,6 @@
 {
   inputs,
   lib,
-  config,
   pkgs,
   ...
 }:
@@ -53,7 +52,7 @@ in
           ## Optional dependencies
           fd # faster projectile indexing
           imagemagick # for image-dired
-          (mkIf (config.programs.gnupg.agent.enable) pinentry-emacs) # in-emacs gnupg prompts
+          pinentry-emacs # in-emacs gnupg prompts
           zstd # for undo-fu-session/undo-tree compression
 
           ## Module dependencies
@@ -66,6 +65,7 @@ in
               en
               en-computers
               en-science
+              it
             ]
           ))
           # :tools editorconfig
@@ -84,7 +84,10 @@ in
         ];
       };
 
-    environment.variables.PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
+    environment.variables = {
+      PATH = [ "$XDG_CONFIG_HOME/emacs/bin" ];
+      DOOMDIR = [ "$XDG_CONFIG_HOME/doom" ];
+    };
     fonts.packages = [ pkgs.nerd-fonts.symbols-only ];
   };
 }
