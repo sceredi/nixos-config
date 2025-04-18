@@ -10,7 +10,7 @@ let
   down = "j";
   up = "k";
   right = "l";
-  terminal = "${pkgs.alacritty}/bin/alacritty";
+  terminal = "${pkgs.kitty}/bin/kitty";
   light = "${pkgs.light}/bin/light";
   fuzzel = "${pkgs.fuzzel}/bin/fuzzel -I -w 50 -b 282a36fa -s 3d4474fa -C fffffffa";
   dmenu = "${pkgs.dmenu-rs}/bin/dmenu_run -p execute: -b -fn 'Terminus 9' -sf '#FFFFFF' -nf '#FFFFFF' -nb '#000000'";

@@ -9,7 +9,7 @@
         font = {
           size = 18;
           normal = {
-            family = "JetBrains Mono";
+            family = "Jetbrains Mono";
             style = "Regular";
           };
         };
@@ -18,8 +18,8 @@
     kitty = {
       enable = true;
       font = {
-        size = 18;
-        name = "JetBrains Mono";
+        size = 20;
+        name = "Iosevka Term";
       };
       shellIntegration.mode = "no-cursor";
       settings = {
