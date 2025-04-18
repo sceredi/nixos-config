@@ -4,6 +4,8 @@ set history=1000
 
 set relativenumber
 
+set nohlsearch
+
 " status bar
 set showmode
 
@@ -42,6 +44,8 @@ xmap <Leader>y "+y
 " Yank in normal mode to system clipboard for entire line
 nmap <Leader>Y "+Y
 
+map gc <Action>(CommentByLineComment)
+map gb <Action>(CommentByBlockComment)
 " location
 nmap <M-o> <Action>(Back)
 nmap <M-i> <Action>(Forward)
@@ -124,13 +128,11 @@ nmap <leader>rp <Action>(ManageRecentProjects)
 nmap <leader>sh <Action>(LocalHistory.ShowHistory)
 nmap <leader>sf <Action>(ShowFilePath)
 nmap <leader>si <Action>(SelectIn)
-nmap <leader>fp <Action>(FindInPath)
 nmap <leader>rp <Action>(ReplaceInPath)
 nmap <leader>sw <Action>($SearchWeb)
 
 " tag
 nmap <leader>gu <Action>(FindUsages)
-nmap <leader>fs <Action>(FileStructurePopup)
 nmap <leader>su <Action>(ShowUsages)
 nmap <leader>hl <Action>(HighlightUsagesInFile)
 nmap <leader>qp <Action>(QuickPreview)
@@ -138,8 +140,6 @@ nmap <leader>qd <Action>(QuickDefinition)
 nmap <leader>qD <Action>(QuickTypeDefinition)
 
 " code
-map <leader>gc <Action>(CommentByLineComment)
-map <leader>gC <Action>(CommentByBlockComment)
 nmap <leader>qf <Action>(ShowIntentionActions)
 nmap <leader>se <Action>(ShowErrorDescription)
 nmap <leader>om <Action>(OverrideMethods)
@@ -204,7 +204,7 @@ nmap ]c <Action>(JumpToNextChange)
 " goto
 nmap <leader>a <Action>(GotoAction)
 nmap ga <Action>(GotoAction)
-nmap gc <Action>(GotoClass)
+nmap gC <Action>(GotoClass)
 nmap <C-p> <Action>(GotoFile)
 nmap gs <Action>(GotoSymbol)
 nmap gt <Action>(GoToTest)
@@ -212,8 +212,7 @@ nmap gT <Action>(TextSearchAction)
 nmap go <Action>(GotoSuperMethod)
 nmap gd <Action>(GotoDeclaration)
 nmap gD <Action>(GotoTypeDeclaration)
-nmap gi <Action>(GotoImplementation)
-nmap gI <Action>(QuickImplementations)
+nmap gI <Action>(GotoImplementation)
 nmap gn <Action>(ShowNavBar)
 
 " terminal
