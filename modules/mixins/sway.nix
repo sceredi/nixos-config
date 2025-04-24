@@ -24,6 +24,7 @@ let
     timeout 300 "${swaylockcmd}" \
     timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
   '';
+  screenshotcmd = ''${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp -d)"'';
   dropdownTerminalCmd = pkgs.writeShellScript "launchkitty.sh" ''
     open=$(ps aux | grep -i "kitty --class=dropdown" | grep -v grep)
     if [[ $open -eq 0 ]]
@@ -274,7 +275,12 @@ in
 
               "${modifier}+space" = "focus mode_toggle";
 
-              "${modifier}+p" = "focus parent";
+              # "${modifier}+p" = "focus parent";
+
+              "${modifier}+p" =
+                "exec ${screenshotcmd} ~/notes/RoamNotes/Screenshots/$(date +%Y-%m-%d-%H%M%S).png";
+
+              "${modifier}+Shift+p" = "exec ${screenshotcmd} - | wl-copy";
 
               "${modifier}+r" = ''mode "resize"'';
 
