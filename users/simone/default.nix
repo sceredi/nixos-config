@@ -75,7 +75,7 @@ in
       enableCompletion = true;
       syntaxHighlighting.enable = true;
       shellAliases = myAliases;
-      initExtra = ''
+      initContent = ''
         bindkey '^y' autosuggest-accept
         bindkey '^r' history-incremental-search-backward
         bindkey -s ^f "tmux-sessionizer\n"
