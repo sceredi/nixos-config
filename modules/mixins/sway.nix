@@ -112,7 +112,7 @@ in
                   criteria = {
                     app_id = "dropdown";
                   };
-                  command = "resize set 1920 1440";
+                  command = "resize set 800 600";
                 }
                 {
                   criteria = {

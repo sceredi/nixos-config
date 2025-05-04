@@ -2,6 +2,6 @@
   home-manager.users.simone =
     { pkgs, ... }:
     {
-      home.packages = with pkgs; [ discord-screenaudio ];
+      home.packages = with pkgs; [ discord ];
     };
 }
