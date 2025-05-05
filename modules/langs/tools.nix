@@ -1,12 +1,10 @@
 {
   config = {
-    home-manager.users.simone =
-      { pkgs, ... }:
-      {
-        home.packages = with pkgs; [
-          jq
-          yq
-        ];
-      };
+    home-manager.users.simone = {pkgs, ...}: {
+      home.packages = with pkgs; [
+        jq
+        yq
+      ];
+    };
   };
 }

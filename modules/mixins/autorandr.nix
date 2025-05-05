@@ -18,10 +18,8 @@
             #   y = 0.75;
             # };
             # dpi = 160;
-
           };
         };
-
       };
       docked = {
         fingerprint = {

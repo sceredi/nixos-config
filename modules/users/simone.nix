@@ -1,6 +1,9 @@
-{ config, inputs, ... }:
 {
-  nix.settings.trusted-users = [ "simone" ];
+  config,
+  inputs,
+  ...
+}: {
+  nix.settings.trusted-users = ["simone"];
   users.users = {
     root.isNormalUser = false;
     simone = {

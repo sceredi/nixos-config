@@ -1,10 +1,9 @@
 {
-  home-manager.users.simone =
-    { pkgs, ... }:
-    {
-      home.packages = with pkgs; [
-        (python3.withPackages (
-          ps: with ps; [
+  home-manager.users.simone = {pkgs, ...}: {
+    home.packages = with pkgs; [
+      (python3.withPackages (
+        ps:
+          with ps; [
             black
             pyflakes
             isort
@@ -12,7 +11,7 @@
             setuptools
             pytest
           ]
-        ))
-      ];
-    };
+      ))
+    ];
+  };
 }

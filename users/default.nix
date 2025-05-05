@@ -1,1 +1,1 @@
-{ simone = import ./simone; }
+{simone = import ./simone;}

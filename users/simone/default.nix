@@ -4,8 +4,7 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   myAliases = {
     la = "ls -Alh"; # show hidden files
     ls = "ls -aFh --color=always"; # add colors and file type extensions
@@ -37,9 +36,8 @@ let
     eman = ''emacs -nw --eval "(switch-to-buffer (man \"$1\"))";'';
     ekill = ''emacsclient --eval '(kill-emacs)';'';
   };
-in
-{
-  imports = [ ./desktop.nix ];
+in {
+  imports = [./desktop.nix];
 
   home = {
     username = "simone";

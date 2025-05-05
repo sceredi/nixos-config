@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
   idlecmd = pkgs.writeShellScript "swayidle.sh" ''
     ${pkgs.swayidle}/bin/swayidle \
@@ -9,11 +8,10 @@ let
     timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
   '';
   waybar = "${pkgs.waybar}/bin/waybar";
-in
-{
+in {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
-    env = [ "QT_WAYLAND_DISABLE_WINDOWDECORATION,1" ];
+    env = ["QT_WAYLAND_DISABLE_WINDOWDECORATION,1"];
 
     exec-once = [
       "${pkgs.systemd}/bin/systemd-notify --ready || true"

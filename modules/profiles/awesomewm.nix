@@ -1,9 +1,12 @@
-{ lib, pkgs, ... }:
 {
-  imports = [ ../mixins/awesomewm.nix ];
+  lib,
+  pkgs,
+  ...
+}: {
+  imports = [../mixins/awesomewm.nix];
   config = {
     services = {
-      dbus.packages = with pkgs; [ dconf ];
+      dbus.packages = with pkgs; [dconf];
       libinput = {
         enable = true;
         touchpad = {
@@ -31,7 +34,7 @@
     xdg = {
       portal = {
         enable = true;
-        extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+        extraPortals = with pkgs; [xdg-desktop-portal-gtk];
       };
     };
   };

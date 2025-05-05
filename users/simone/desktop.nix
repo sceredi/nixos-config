@@ -4,9 +4,8 @@
   pkgs,
   inputs,
   ...
-}:
-{
-  imports = [ ./modules ];
+}: {
+  imports = [./modules];
   home = {
     packages = with pkgs; [
       quasselClient

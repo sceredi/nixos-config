@@ -1,12 +1,15 @@
-{ config, pkgs, ... }:
 {
+  config,
+  pkgs,
+  ...
+}: {
   systemd.user.services.kanshi = {
     serviceConfig = {
       StartLimitBurst = 5;
       StartLimitIntervalSec = 30;
     };
   };
-  home.packages = [ pkgs.kanshi ];
+  home.packages = [pkgs.kanshi];
   services.kanshi = {
     enable = true;
     settings = [

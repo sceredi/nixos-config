@@ -1,6 +1,6 @@
-{ lib }:
-let
-  inherit (builtins)
+{lib}: let
+  inherit
+    (builtins)
     filter
     map
     readDir
@@ -9,7 +9,8 @@ let
     attrNames
     listToAttrs
     ;
-  inherit (lib)
+  inherit
+    (lib)
     removeSuffix
     nameValuePair
     zipListsWith
@@ -19,30 +20,28 @@ let
     foldAttrs
     ;
   inherit (lib.filesystem) listFilesRecursive;
-  generateModules =
-    folder: prefix:
-    let
-      findSuffix = suffix: dir: (filter (x: (hasSuffix suffix (toString x))) (listFilesRecursive dir));
-      allNixFiles = findSuffix ".nix" folder;
-      allModuleNames = map (removeSuffix ".nix") (map baseNameOf allNixFiles);
-      zippedList = zipListsWith (
+  generateModules = folder: prefix: let
+    findSuffix = suffix: dir: (filter (x: (hasSuffix suffix (toString x))) (listFilesRecursive dir));
+    allNixFiles = findSuffix ".nix" folder;
+    allModuleNames = map (removeSuffix ".nix") (map baseNameOf allNixFiles);
+    zippedList =
+      zipListsWith (
         x: y: nameValuePair (prefix + "-" + x) (import y)
-      ) allModuleNames allNixFiles;
-    in
+      )
+      allModuleNames
+      allNixFiles;
+  in
     listToAttrs zippedList;
-  generateModulesAuto =
-    root:
-    let
-      moduleFolderNames = attrNames (filterAttrs (n: v: v == "directory") (readDir (toString root)));
-      moduleFolderPaths = map (x: (toString root) + "/" + x) moduleFolderNames;
-      zippedList = listToAttrs (
-        zipListsWith (x: y: nameValuePair x y) moduleFolderNames moduleFolderPaths
-      );
-    in
-    foldAttrs (item: acc: item) { } (mapAttrsToList (n: v: generateModules v n) zippedList);
+  generateModulesAuto = root: let
+    moduleFolderNames = attrNames (filterAttrs (n: v: v == "directory") (readDir (toString root)));
+    moduleFolderPaths = map (x: (toString root) + "/" + x) moduleFolderNames;
+    zippedList = listToAttrs (
+      zipListsWith (x: y: nameValuePair x y) moduleFolderNames moduleFolderPaths
+    );
+  in
+    foldAttrs (item: acc: item) {} (mapAttrsToList (n: v: generateModules v n) zippedList);
 in
-generateModulesAuto ./.
-
+  generateModulesAuto ./.
 # The code below will put everything into attribute sets, instead of just
 # prefixing the name of the folder like the above code will
 #
@@ -67,3 +66,4 @@ generateModulesAuto ./.
 #     zippedList = listToAttrs (zipListsWith (x: y: nameValuePair x y) moduleFolderNames moduleFolderPaths);
 #   in mapAttrs (n: v: generateModules v) zippedList;
 # in generateModulesAuto ./.
+

@@ -1,5 +1,8 @@
-{ inputs, pkgs, ... }:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   environment.systemPackages = with pkgs; [
     vim
     git
@@ -21,71 +24,69 @@
       auto-optimise-store = true;
     };
   };
-  home-manager.users.simone =
-    { pkgs, ... }:
-    {
-      home.packages = with pkgs; [
-        # Command Line
-        tldr
-        neofetch
-        gnugrep
-        gnused
-        killall
-        libnotify
-        bat
-        eza
-        fd
-        bottom
-        ripgrep
-        htop
-        hwinfo
-        unzip
-        fzf
-        tree
-        vlc
-        magic-wormhole
-        # Allows movement inside no movement/hist cli programs
-        rlwrap
+  home-manager.users.simone = {pkgs, ...}: {
+    home.packages = with pkgs; [
+      # Command Line
+      tldr
+      neofetch
+      gnugrep
+      gnused
+      killall
+      libnotify
+      bat
+      eza
+      fd
+      bottom
+      ripgrep
+      htop
+      hwinfo
+      unzip
+      fzf
+      tree
+      vlc
+      magic-wormhole
+      # Allows movement inside no movement/hist cli programs
+      rlwrap
 
-        # Utils
-        zip
-        xfce.thunar
-        file-roller
-        xfce.thunar-volman
-        xfce.thunar-archive-plugin
-        gnome-disk-utility
-        gnome-common
+      # Utils
+      zip
+      xfce.thunar
+      file-roller
+      xfce.thunar-volman
+      xfce.thunar-archive-plugin
+      gnome-disk-utility
+      gnome-common
 
-        # Browsers
-        chromium
-        brave
-        inputs.zen-browser.packages."${system}".default
+      # Browsers
+      chromium
+      brave
+      inputs.zen-browser.packages."${system}".default
 
-        # Screenshots
-        # shutter
-        flameshot
+      # Screenshots
+      # shutter
+      flameshot
 
-        # Pomodoro Timer
-        porsmo
+      # Pomodoro Timer
+      porsmo
 
-        # Music plyaer
-        cmus
+      # Music plyaer
+      cmus
 
-        # Android tools
-        android-tools
-        scrcpy
+      # Android tools
+      android-tools
+      scrcpy
 
-        # Local file sharing
-        localsend
+      # Local file sharing
+      localsend
 
-        # Keepass
-        keepass
+      # Keepass
+      keepass
 
-        # zsa configurator
-        keymapp
+      # zsa configurator
+      keymapp
 
-        # TeamViewer
-        teamviewer
-      ];
-    };
+      # TeamViewer
+      teamviewer
+    ];
+  };
 }

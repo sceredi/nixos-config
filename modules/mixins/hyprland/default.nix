@@ -3,8 +3,7 @@
   pkgs,
   input,
   ...
-}:
-let
+}: let
   modifier = "SUPER";
   left = "h";
   down = "j";
@@ -23,27 +22,24 @@ let
     timeout 300 "${swaylockcmd}" \
     timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
   '';
-in
-{
+in {
   imports = [
     ../i3status.nix
     ../nm-applet.nix
   ];
   config = {
-    home-manager.users.simone =
-      { pkgs, ... }:
-      {
-        imports = [
-          ./binds.nix
-          ./settings.nix
-          ./rules.nix
-        ];
-        config = {
-          wayland.windowManager.hyprland = {
-            enable = true;
-            settings = { };
-          };
+    home-manager.users.simone = {pkgs, ...}: {
+      imports = [
+        ./binds.nix
+        ./settings.nix
+        ./rules.nix
+      ];
+      config = {
+        wayland.windowManager.hyprland = {
+          enable = true;
+          settings = {};
         };
       };
+    };
   };
 }

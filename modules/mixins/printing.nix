@@ -1,5 +1,5 @@
 {
-  imports = [ ../profiles/avahi.nix ];
+  imports = [../profiles/avahi.nix];
   services.printing = {
     enable = true;
     browsing = true;

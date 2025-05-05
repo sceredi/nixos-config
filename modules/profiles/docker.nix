@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   environment.systemPackages = with pkgs; [
     docker
     docker-compose
@@ -10,5 +9,5 @@
     autoPrune.enable = true;
     liveRestore = false;
   };
-  users.users.simone.extraGroups = [ "docker" ];
+  users.users.simone.extraGroups = ["docker"];
 }

@@ -29,53 +29,57 @@
     };
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      nixos-hardware,
-      home-manager,
-      firefox-addons,
-      utils,
-      nix-flatpak,
-      alacritty-theme,
-      sceredi-nix-cats,
-      zen-browser,
-      ...
-    }@inputs:
-    {
-      nixosModules = import ./modules { inherit (nixpkgs) lib; };
-      nixosConfigurations = {
-        pulse14 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [
-            ./hosts/pulse14/configuration.nix
-            utils.nixosModules.autoGenFromInputs
-            home-manager.nixosModules.home-manager
-            nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
-            nix-flatpak.nixosModules.nix-flatpak
-            (
-              { config, pkgs, ... }:
-              {
-                # install the overlay
-                nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-              }
-            )
-            (
-              { config, pkgs, ... }:
-              {
-                home-manager.users.simone = hm: {
-                  programs.alacritty = {
-                    enable = true;
-                    # use a color scheme from the overlay
-                    settings.general.import = [ pkgs.alacritty-theme.rose_pine_moon ];
-                  };
+  outputs = {
+    self,
+    nixpkgs,
+    nixos-hardware,
+    home-manager,
+    firefox-addons,
+    utils,
+    nix-flatpak,
+    alacritty-theme,
+    sceredi-nix-cats,
+    zen-browser,
+    ...
+  } @ inputs: {
+    nixosModules = import ./modules {inherit (nixpkgs) lib;};
+    nixosConfigurations = {
+      pulse14 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/pulse14/configuration.nix
+          utils.nixosModules.autoGenFromInputs
+          home-manager.nixosModules.home-manager
+          nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
+          nix-flatpak.nixosModules.nix-flatpak
+          (
+            {
+              config,
+              pkgs,
+              ...
+            }: {
+              # install the overlay
+              nixpkgs.overlays = [alacritty-theme.overlays.default];
+            }
+          )
+          (
+            {
+              config,
+              pkgs,
+              ...
+            }: {
+              home-manager.users.simone = hm: {
+                programs.alacritty = {
+                  enable = true;
+                  # use a color scheme from the overlay
+                  settings.general.import = [pkgs.alacritty-theme.rose_pine_moon];
                 };
-              }
-            )
-          ];
-          specialArgs = { inherit inputs; };
-        };
+              };
+            }
+          )
+        ];
+        specialArgs = {inherit inputs;};
       };
     };
+  };
 }

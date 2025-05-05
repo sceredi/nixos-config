@@ -5,78 +5,75 @@
     ./tools.nix
   ];
   config = {
-    home-manager.users.simone =
-      { pkgs, ... }:
-      {
+    home-manager.users.simone = {pkgs, ...}: {
+      home.packages = with pkgs; [
+        # nix
+        nixfmt-rfc-style
+        statix
 
-        home.packages = with pkgs; [
-          # nix
-          nixfmt-rfc-style
-          statix
+        # c
+        gcc
+        gnumake
+        cmake
+        autoconf
+        automake
+        libtool
+        stdenv.cc.cc.lib
+        glibc
+        zlib
 
-          # c
-          gcc
-          gnumake
-          cmake
-          autoconf
-          automake
-          libtool
-          stdenv.cc.cc.lib
-          glibc
-          zlib
+        # node
+        nodejs
+        typescript
+        typescript-language-server
+        vue-language-server
 
-          # node
-          nodejs
-          typescript
-          typescript-language-server
-          vue-language-server
+        # go
+        go
+        gopls
+        air
 
-          # go
-          go
-          gopls
-          air
+        # ocaml
+        ocaml
+        opam
 
-          # ocaml
-          ocaml
-          opam
+        # rust
+        rustup
 
-          # rust
-          rustup
+        # jvm stuff
+        jdk
+        jdt-language-server
+        kotlin
+        (callPackage gradle-packages.gradle_8 {java = jdk;})
+        scala_3
+        sbt
+        coursier
+        scala-cli
 
-          # jvm stuff
-          jdk
-          jdt-language-server
-          kotlin
-          (callPackage gradle-packages.gradle_8 { java = jdk; })
-          scala_3
-          sbt
-          coursier
-          scala-cli
+        # erlang stuff
+        erlang
+        elixir
+        gleam
+        rebar3
 
-          # erlang stuff
-          erlang
-          elixir
-          gleam
-          rebar3
+        # ruby
+        ruby
+        libsodium
 
-          # ruby
-          ruby
-          libsodium
+        # php
+        php83
+        php83Packages.composer
 
-          # php
-          php83
-          php83Packages.composer
+        # lua
+        luajitPackages.luarocks
 
-          # lua
-          luajitPackages.luarocks
+        # latex
+        texlive.combined.scheme-full
 
-          # latex
-          texlive.combined.scheme-full
-
-          # zig
-          zig
-          zls
-        ];
-      };
+        # zig
+        zig
+        zls
+      ];
+    };
   };
 }

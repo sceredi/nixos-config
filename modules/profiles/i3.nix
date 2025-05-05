@@ -1,9 +1,8 @@
-{ pkgs, ... }:
-{
-  imports = [ ../mixins/i3.nix ];
+{pkgs, ...}: {
+  imports = [../mixins/i3.nix];
   config = {
     services = {
-      dbus.packages = with pkgs; [ dconf ];
+      dbus.packages = with pkgs; [dconf];
       libinput = {
         enable = true;
         touchpad = {
@@ -28,18 +27,16 @@
     xdg = {
       portal = {
         enable = true;
-        extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+        extraPortals = with pkgs; [xdg-desktop-portal-gtk];
       };
     };
-    home-manager.users.simone =
-      { pkgs, ... }:
-      {
-        home.packages = with pkgs; [
-          i3status-rust
-          imv
-          alacritty
-          xclip
-        ];
-      };
+    home-manager.users.simone = {pkgs, ...}: {
+      home.packages = with pkgs; [
+        i3status-rust
+        imv
+        alacritty
+        xclip
+      ];
+    };
   };
 }

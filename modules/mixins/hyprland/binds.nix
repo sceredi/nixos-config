@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-let
+{pkgs, ...}: let
   terminal = "${pkgs.alacritty}/bin/alacritty";
   pamixer = "${pkgs.pamixer}/bin/pamixer";
   light = "${pkgs.light}/bin/light";
@@ -9,22 +8,19 @@ let
   screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
   workspaces = builtins.concatLists (
     builtins.genList (
-      x:
-      let
-        ws =
-          let
-            c = (x + 1) / 10;
-          in
+      x: let
+        ws = let
+          c = (x + 1) / 10;
+        in
           builtins.toString (x + 1 - (c * 10));
-      in
-      [
+      in [
         "$mod, ${ws}, workspace, ${toString (x + 1)}"
         "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
       ]
-    ) 10
+    )
+    10
   );
-in
-{
+in {
   home.packages = with pkgs; [
     grimblast
     wlogout
@@ -37,10 +33,9 @@ in
       "$mod, mouse:273, resizewindow"
       "$mod ALT, mouse:272, resizewindow"
     ];
-    bind =
-      let
-        monocle = "dwindle:no_gaps_when_only";
-      in
+    bind = let
+      monocle = "dwindle:no_gaps_when_only";
+    in
       [
         # compositor commands
         "$mod SHIFT, W, exec, killall waybar;waybar"

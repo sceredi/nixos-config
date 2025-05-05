@@ -3,15 +3,14 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   home.sessionVariables = {
     NNN_FIFO = "$XDG_RUNTIME_DIR/nnn.fifo";
   };
   programs = {
     nnn = {
       enable = true;
-      package = pkgs.nnn.override { withNerdIcons = true; };
+      package = pkgs.nnn.override {withNerdIcons = true;};
       extraPackages = with pkgs; [
         bat
         eza

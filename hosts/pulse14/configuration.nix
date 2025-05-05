@@ -4,8 +4,7 @@
   pkgs,
   inputs,
   ...
-}:
-{
+}: {
   imports = with inputs.self.nixosModules; [
     ./disks.nix
     ./hardware-configuration.nix
@@ -42,7 +41,6 @@
     profiles-virtualization
   ];
   nix = {
-
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -59,7 +57,6 @@
     generateNixPathFromInputs = true;
     generateRegistryFromInputs = true;
     linkInputs = true;
-
   };
 
   nixpkgs = {
@@ -86,7 +83,7 @@
     };
   };
 
-  users.users.simone.extraGroups = [ "video" ];
+  users.users.simone.extraGroups = ["video"];
 
   networking = {
     firewall = {
@@ -163,11 +160,11 @@
         canTouchEfiVariables = true;
       };
     };
-    kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+    kernelParams = ["amdgpu.dcdebugmask=0x10"];
   };
 
   # I use zsh btw
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
