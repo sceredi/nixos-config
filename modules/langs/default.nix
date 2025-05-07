@@ -70,6 +70,10 @@
         # latex
         texlive.combined.scheme-full
 
+        # typst
+        typst
+        tinymist
+
         # zig
         zig
         zls

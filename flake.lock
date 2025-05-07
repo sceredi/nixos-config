@@ -301,11 +301,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1746464776,
-        "narHash": "sha256-rceMwOE1ZFAMv4WluuRIsIAceGWit4+NoEtUIm5KM2k=",
+        "lastModified": 1746648727,
+        "narHash": "sha256-VEAsvivhllILqtwXs1iRsJAj1rAykLUWlRI/WOgT6nQ=",
         "owner": "sceredi",
         "repo": "init.lua",
-        "rev": "dac6ca8f91932fdecfcce71f5711498308559f9b",
+        "rev": "cb3e497fabec45d0d0cd88fd517f4a6faa1a9a06",
         "type": "github"
       },
       "original": {
