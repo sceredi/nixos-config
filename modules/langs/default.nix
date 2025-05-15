@@ -12,7 +12,9 @@
         statix
 
         # c
-        gcc
+        clang
+        clang-tools
+        # gcc
         gnumake
         cmake
         autoconf
