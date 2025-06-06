@@ -42,7 +42,7 @@
         if [[ $# -eq 1 ]]; then
             selected=$1
         else
-            list_with_git=$(fd -HI -td ^.git$ --max-depth=7 ~/projects ~/notes ~/uni-lab ~/.dotfiles ~/.config ~/exercism ~/probe)
+            list_with_git=$(fd -HI -td ^.git$ --max-depth=7 ~/projects ~/notes ~/uni-lab ~/.dotfiles ~/.config/nvim ~/exercism ~/probe)
             list_without_git=$(echo "$list_with_git" | awk -F'/.git/' '{print $1}')
             selected=$(echo "$list_without_git" | fzf)
         fi

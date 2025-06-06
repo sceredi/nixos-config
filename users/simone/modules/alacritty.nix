@@ -7,7 +7,7 @@
           opacity = 1;
         };
         font = {
-          size = 18;
+          size = 20;
           normal = {
             family = "Jetbrains Mono";
             style = "Regular";
@@ -19,7 +19,7 @@
       enable = true;
       font = {
         size = 20;
-        name = "Iosevka Term";
+        name = "Jetbrains Mono";
       };
       shellIntegration.mode = "no-cursor";
       settings = {

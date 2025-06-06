@@ -20,6 +20,7 @@
     labc = "ls -lap"; # alphabetical sort
     lf = "ls -l | egrep -v '^d'"; # files only
     ldir = "ls -l | egrep '^d'"; # directories only
+    ta = "tmux a";
 
     launch-argos = ''echo "will listen on localhost:6080" && docker run -p 6080:80 -v /home/simone/Public/IRS:/dev/simone tjferrara/argos3:latest'';
 
