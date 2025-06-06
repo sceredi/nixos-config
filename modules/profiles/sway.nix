@@ -16,7 +16,7 @@
       # since home-manager can't set PAM up to allow unlocks, along with some
       # other quirks.
       displayManager.defaultSession = "sway";
-      xserver.displayManager.gdm = {
+      displayManager.gdm = {
         enable = true;
         wayland = true;
         settings = {

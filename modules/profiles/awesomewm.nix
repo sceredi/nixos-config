@@ -13,21 +13,21 @@
           naturalScrolling = true;
         };
       };
+      displayManager = {
+        gdm = {
+          enable = true;
+        };
+        defaultSession = lib.mkForce "none+awesome";
+      };
+      windowManager.awesome = {
+        enable = true;
+        luaModules = with pkgs.luaPackages; [
+          luarocks
+          luadbi-mysql
+        ];
+      };
       xserver = {
         enable = true;
-        displayManager = {
-          gdm = {
-            enable = true;
-          };
-          defaultSession = lib.mkForce "none+awesome";
-        };
-        windowManager.awesome = {
-          enable = true;
-          luaModules = with pkgs.luaPackages; [
-            luarocks
-            luadbi-mysql
-          ];
-        };
       };
     };
     programs.dconf.enable = true;

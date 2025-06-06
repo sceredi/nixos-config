@@ -9,14 +9,14 @@
           naturalScrolling = true;
         };
       };
+      displayManager = {
+        gdm = {
+          enable = true;
+        };
+        defaultSession = "none+i3";
+      };
       xserver = {
         enable = true;
-        displayManager = {
-          gdm = {
-            enable = true;
-          };
-          defaultSession = "none+i3";
-        };
         windowManager.i3 = {
           enable = true;
         };

@@ -28,7 +28,8 @@
     home.packages = with pkgs; [
       # Command Line
       tldr
-      neofetch
+      fastfetch
+      tokei
       gnugrep
       gnused
       killall
