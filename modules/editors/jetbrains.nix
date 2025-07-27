@@ -10,6 +10,8 @@
   in {
     home.packages = with pkgs; [
       jetbrains-toolbox
+      jetbrains.idea-ultimate
+      jetbrains.pycharm-professional
     ];
     # ++ [
     #   idea-overriden
