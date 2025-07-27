@@ -12,7 +12,7 @@
       alsa-utils
       wdisplays
       inkscape
-      gimp
+      gimp3
       mumble
       zathura
       pavucontrol

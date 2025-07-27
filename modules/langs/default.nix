@@ -43,7 +43,7 @@
         rustup
 
         # jvm stuff
-        jdk
+        (jdk.override {enableJavaFX = true;})
         jdt-language-server
         kotlin
         (callPackage gradle-packages.gradle_8 {java = jdk;})
