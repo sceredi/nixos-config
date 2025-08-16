@@ -20,14 +20,12 @@
       set -g pane-active-border-style fg=magenta
 
       # Theme: status
-      set -g status-style bg=default,fg=white,bright
+      set -g status-style bg=default,fg=magenta,bright,nobold
       set -g status-left ""
       set -g status-right "#[fg=white,bright]#S"
 
       # Theme: status (windows)
-      # set -g window-status-format "●"
-      # set -g window-status-current-format "●"
-      set -g window-status-current-style "#{?window_zoomed_flag,fg=yellow,fg=magenta,nobold}"
+      set -g window-status-current-style "#{?window_zoomed_flag,fg=yellow,fg=white,bright}"
       set -g window-status-bell-style "fg=red,nobold"
 
       unbind C-a
