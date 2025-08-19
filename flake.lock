@@ -44,11 +44,11 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
-        "lastModified": 1755534441,
-        "narHash": "sha256-wA4cHIaHCkHLERl2W5h/78gDsO4L+e/yowBynMd2Nyo=",
+        "lastModified": 1755623837,
+        "narHash": "sha256-AfoT3hg31jFThBInuymwAffgOOe78zLC7CL8zmcCSfk=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "382428e9af7df6b10ad9caefcad0ca8322d5e352",
+        "rev": "df1e0259cd03c65ba9f08a8173106c49cc7b98fe",
         "type": "github"
       },
       "original": {
@@ -122,11 +122,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755538029,
-        "narHash": "sha256-XVsragfuN8A/tMiPToejH7RofH15toeIGhlXraX+yBo=",
+        "lastModified": 1755625756,
+        "narHash": "sha256-t57ayMEdV9g1aCfHzoQjHj1Fh3LDeyblceADm2hsLHM=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "bf450a0844e80e6aa22652d3f3728f20cd974527",
+        "rev": "dd026d86420781e84d0732f2fa28e1c051117b59",
         "type": "github"
       },
       "original": {
@@ -301,11 +301,11 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
-        "lastModified": 1755530052,
-        "narHash": "sha256-IMcCtuXCai2fBPtgX4vH0lRSdTW7zeqUjrroUAWn9OU=",
+        "lastModified": 1755633803,
+        "narHash": "sha256-oVWpFvKyI2IdEOjMN9VePLAj9EW3kFLEkyph8zTBB6E=",
         "owner": "sceredi",
         "repo": "init.lua",
-        "rev": "fd2f0e15b6d43b089a352c4a6b730ba5364f6ef1",
+        "rev": "77d24dca45183fa3f86befc87ad21103daaf5aa1",
         "type": "github"
       },
       "original": {
@@ -355,11 +355,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755484558,
-        "narHash": "sha256-1dlhluaqrePy1L8ShBCkiF/KF9ci5tSZzdUI60NjzOI=",
+        "lastModified": 1755577394,
+        "narHash": "sha256-DsU5qMTdQvlq85cmPd08M57y3JgJRmgKoOEcvBc6Ikk=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "d169f16140842d7ba3183c0321f984368bdd2ee3",
+        "rev": "fed34c3fe29a694f62b23bcc63dd5ad284ab19fb",
         "type": "github"
       },
       "original": {

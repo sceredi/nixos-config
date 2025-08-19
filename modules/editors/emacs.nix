@@ -34,7 +34,7 @@ in {
         # })
 
         ## Emacs itself
-        clang
+        gcc
         # binutils # native-comp needs 'as', provided by this
         emacs # HEAD + native-comp
 
