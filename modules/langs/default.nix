@@ -38,7 +38,9 @@
         opam
 
         # rust
-        rustup
+        cargo
+        rustc
+        rust-analyzer
 
         # jvm stuff
         (jdk.override {enableJavaFX = true;})
