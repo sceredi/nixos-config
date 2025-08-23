@@ -38,7 +38,11 @@
         opam
 
         # rust
-        rustup
+        cargo
+        rustc
+        rust-analyzer
+        rustfmt
+        clippy
 
         # jvm stuff
         (jdk.override {enableJavaFX = true;})
@@ -80,7 +84,7 @@
       ];
     };
     environment.variables = {
-      PATH = ["~/.cargo/bin"];
+      PATH = ["/home/simone/.cargo/bin"];
     };
   };
 }
