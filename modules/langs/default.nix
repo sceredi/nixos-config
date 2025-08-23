@@ -38,9 +38,7 @@
         opam
 
         # rust
-        cargo
-        rustc
-        rust-analyzer
+        rustup
 
         # jvm stuff
         (jdk.override {enableJavaFX = true;})
@@ -80,6 +78,9 @@
         zig
         zls
       ];
+    };
+    environment.variables = {
+      PATH = ["~/.cargo/bin"];
     };
   };
 }
