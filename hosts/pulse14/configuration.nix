@@ -120,7 +120,7 @@
         CPU_MAX_PERF_ON_BAT = "30";
       };
     };
-    logind.killUserProcesses = true;
+    logind.settings.Login.KillUserProcesses = true;
     power-profiles-daemon.enable = false;
     udev.extraRules = ''
             # Rules for Oryx web flashing and live training

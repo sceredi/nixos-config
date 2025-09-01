@@ -5,7 +5,7 @@
     home.packages = with pkgs; [
       teams-for-linux
       # obsidian
-      libsForQt5.okular
+      kdePackages.okular
       # postman
       bruno # alternative to postman
       mongodb-compass
