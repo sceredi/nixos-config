@@ -8,7 +8,6 @@
       networkmanager
       networkmanagerapplet
       networkmanager_dmenu
-      dmenu-rs
     ];
     programs.i3status-rust = {
       enable = true;

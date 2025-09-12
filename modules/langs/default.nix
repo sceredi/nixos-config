@@ -48,7 +48,7 @@
         (jdk.override {enableJavaFX = true;})
         jdt-language-server
         kotlin
-        (callPackage gradle-packages.gradle_8 {java = jdk;})
+        # (callPackage gradle-packages.gradle_8 {java = jdk;})
         scala_3
         sbt
         coursier
