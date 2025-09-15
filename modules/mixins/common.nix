@@ -46,6 +46,7 @@
       tree
       vlc
       magic-wormhole
+      lazygit
       # Allows movement inside no movement/hist cli programs
       rlwrap
 
