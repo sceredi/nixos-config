@@ -28,6 +28,7 @@
     home.packages = with pkgs; [
       # Command Line
       tldr
+      lsof
       fastfetch
       tokei
       gnugrep
