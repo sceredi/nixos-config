@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: let
+{pkgs, ...}: let
   myAliases = {
     la = "ls -Alh"; # show hidden files
     ls = "ls -aFh --color=always"; # add colors and file type extensions

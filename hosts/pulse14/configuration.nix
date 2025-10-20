@@ -29,6 +29,7 @@
     mixins-tmux
     mixins-usb
     # mixins-zerotierone
+    mixins-zoxide
     mixins-zram
     profiles-avahi
     # profiles-awesomewm
