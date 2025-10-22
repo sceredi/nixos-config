@@ -52,22 +52,37 @@
           home-manager.nixosModules.home-manager
           nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
           nix-flatpak.nixosModules.nix-flatpak
+          {
+            # install the overlay
+            nixpkgs.overlays = [alacritty-theme.overlays.default];
+          }
           (
-            {
-              config,
-              pkgs,
-              ...
-            }: {
-              # install the overlay
-              nixpkgs.overlays = [alacritty-theme.overlays.default];
+            {pkgs, ...}: {
+              home-manager.users.simone = hm: {
+                programs.alacritty = {
+                  enable = true;
+                  # use a color scheme from the overlay
+                  settings.general.import = [pkgs.alacritty-theme.rose_pine_moon];
+                };
+              };
             }
           )
+        ];
+        specialArgs = {inherit inputs;};
+      };
+      pavilion15 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./hosts/pavilion15/configuration.nix
+          utils.nixosModules.autoGenFromInputs
+          home-manager.nixosModules.home-manager
+          nix-flatpak.nixosModules.nix-flatpak
+          {
+            # install the overlay
+            nixpkgs.overlays = [alacritty-theme.overlays.default];
+          }
           (
-            {
-              config,
-              pkgs,
-              ...
-            }: {
+            {pkgs, ...}: {
               home-manager.users.simone = hm: {
                 programs.alacritty = {
                   enable = true;
