@@ -11,6 +11,7 @@
             pipenv
             setuptools
             pytest
+            sdl3
           ]
       ))
     ];

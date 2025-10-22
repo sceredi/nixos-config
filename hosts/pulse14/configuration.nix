@@ -26,6 +26,7 @@
     mixins-printing
     # mixins-samba
     mixins-syncthing
+    mixins-tailscale
     mixins-tmux
     mixins-usb
     # mixins-zerotierone
