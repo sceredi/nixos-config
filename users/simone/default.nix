@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   myAliases = {
+    cd = "z"; # enhanced cd with zoxide
     la = "ls -Alh"; # show hidden files
     ls = "ls -aFh --color=always"; # add colors and file type extensions
     lx = "ls -lXBh"; # sort by extension
