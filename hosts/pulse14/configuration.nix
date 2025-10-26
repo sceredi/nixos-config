@@ -10,7 +10,8 @@
     ./hardware-configuration.nix
     users-simone
     dotfiles-pulse14
-    profiles-gnome
+    # profiles-gnome
+    profiles-i3
     editors-default
     langs-default
     mixins-bluetooth

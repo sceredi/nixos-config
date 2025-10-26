@@ -13,7 +13,7 @@
         gdm = {
           enable = true;
         };
-        defaultSession = "none+i3";
+        # defaultSession = "none+i3";
       };
       xserver = {
         enable = true;

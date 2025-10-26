@@ -2,6 +2,7 @@
   services = {
     xserver = {
       # Enable the X11 windowing system.
+      videoDrivers = ["modesetting"];
       enable = true;
     };
     # Enable the GNOME Desktop Environment.
