@@ -58,10 +58,6 @@
       "workspace special silent, title:^(Zen — Sharing Indicator)$"
       "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
 
-      # start browser and terminal
-      "workspace 2 silent, title:^(zen-beta)$"
-      "workspace 3 silent, title:^(alacritty)$"
-
       # idle inhibit while watching videos
       "idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
       "idleinhibit focus, class:^(zen)$, title:^(.*YouTube.*)$"
