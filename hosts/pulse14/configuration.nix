@@ -90,6 +90,7 @@
   };
 
   users.users.simone.extraGroups = ["video"];
+  powerManagement.enable = true;
 
   networking = {
     firewall = {
@@ -102,10 +103,10 @@
     #   enable = true;
     #   interfaces = [ "wlp1s0" ];
     # };
-    networkmanager = {
-      enable = true;
-      wifi.powersave = false;
-    };
+    # networkmanager = {
+    #   enable = true;
+    #   wifi.powersave = false;
+    # };
     # nat = {
     #   enable = true;
     #   internalInterfaces = [ "ve-+" ];
@@ -113,6 +114,7 @@
     #   # Lazy IPv6 connectivity for the container
     #   enableIPv6 = true;
     # };
+    wireless.iwd.enable = true;
   };
 
   services = {

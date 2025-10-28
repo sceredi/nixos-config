@@ -32,6 +32,7 @@ in {
   home.packages = with pkgs; [
     grimblast
     wlogout
+    gnome-control-center
   ];
   home.sessionVariables = {
     TERMINAL = "alacritty";
@@ -67,7 +68,7 @@ in {
 
         # utility
         # terminal
-        "$mod, Return, exec, ${terminal}"
+        "$mod, Return, exec, uwsm app -- ${terminal}"
         # logout menu
         "$mod, Escape, exec, ${toggle "wlogout"} -p layer-shell"
         # lock screen
@@ -76,7 +77,7 @@ in {
         "$mod, D, exec, ${toggle launcher}"
 
         # open settings
-        "$mod, U, exec, XDG_CURRENT_DESKTOP=gnome ${runOnce "${pkgs.gnome-control-center}/bin/gnome-control-center"}"
+        "$mod, U, exec, XDG_CURRENT_DESKTOP=gnome ${runOnce "gnome-control-center"}"
 
         # move focus
         "$mod, left, movefocus, l"

@@ -48,6 +48,7 @@
       vlc
       magic-wormhole
       lazygit
+      impala
       # Allows movement inside no movement/hist cli programs
       rlwrap
 
