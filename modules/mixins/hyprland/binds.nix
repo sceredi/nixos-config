@@ -50,7 +50,7 @@ in {
         "$mod SHIFT, E, exec, pkill Hyprland"
         "$mod, Q, killactive,"
         "$mod, F, fullscreen,"
-        "$mod, G, togglegroup,"
+        "$mod, W, togglegroup,"
         "$mod SHIFT, N, changegroupactive, f"
         "$mod SHIFT, P, changegroupactive, b"
         "$mod, R, togglesplit,"
@@ -98,10 +98,6 @@ in {
         # special workspace
         "$mod SHIFT, grave, movetoworkspace, special"
         "$mod, grave, togglespecialworkspace, eDP-1"
-
-        # cycle monitors
-        # "$mod, G, focusmonitor, l"
-        # "$mod, M, focusmonitor, r"
 
         # send focused workspace to left/right monitors
         "$mod SHIFT, G, movecurrentworkspacetomonitor, l"

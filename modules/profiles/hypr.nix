@@ -1,6 +1,7 @@
 {
   lib,
   pkgs,
+  inputs,
   ...
 }: {
   imports = [
@@ -29,19 +30,18 @@
       hyprland = {
         enable = true;
         withUWSM = true;
-        # package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-        # portalPackage = null;
+        package = inputs.hyprland.packages.${pkgs.system}.hyprland;
       };
     };
 
-    xdg = {
-      portal = {
-        enable = true;
-        extraPortals = with pkgs; [
-          xdg-desktop-portal-hyprland
-        ];
-      };
-    };
+    # xdg = {
+    #   portal = {
+    #     enable = true;
+    #     extraPortals = with pkgs; [
+    #       xdg-desktop-portal-hyprland
+    #     ];
+    #   };
+    # };
 
     home-manager.users.simone = {pkgs, ...}: {
       home.sessionVariables = {
