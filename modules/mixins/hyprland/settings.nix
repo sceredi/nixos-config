@@ -1,64 +1,77 @@
-{pkgs, ...}: let
-  swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
-  idlecmd = pkgs.writeShellScript "swayidle.sh" ''
-    ${pkgs.swayidle}/bin/swayidle \
-    before-sleep "${swaylockcmd}" \
-    lock "${swaylockcmd}" \
-    timeout 300 "${swaylockcmd}" \
-    timeout 600 "${pkgs.systemd}/bin/systemctl suspend"
-  '';
-  waybar = "${pkgs.waybar}/bin/waybar";
-in {
+{pkgs, ...}: {
   wayland.windowManager.hyprland.settings = {
     "$mod" = "SUPER";
     env = ["QT_WAYLAND_DISABLE_WINDOWDECORATION,1"];
 
     exec-once = [
+      # finalize startup
+      "uwsm finalize"
       "${pkgs.systemd}/bin/systemd-notify --ready || true"
       "${pkgs.mako}/bin/mako --default-timeout 3000"
-      "exec ${idlecmd}"
       "exec i3status-rs $HOME/.config/i3status-rust/config-top.toml"
+      "waybar"
     ];
 
     general = {
-      gaps_in = 0;
-      gaps_out = 0;
+      gaps_in = 5;
+      gaps_out = 5;
       border_size = 1;
       "col.active_border" = "rgba(88888888)";
       "col.inactive_border" = "rgba(00000088)";
 
-      allow_tearing = false;
+      allow_tearing = true;
       resize_on_border = true;
     };
 
     decoration = {
-      rounding = 0;
+      rounding = 10;
+      rounding_power = 3;
       blur = {
-        enabled = false;
+        enabled = true;
         brightness = 1.0;
         contrast = 1.0;
-        noise = 2.0e-2;
+        noise = 0.01;
 
-        passes = 3;
-        size = 10;
+        vibrancy = 0.2;
+        vibrancy_darkness = 0.5;
+
+        passes = 4;
+        size = 7;
+
+        popups = true;
+        popups_ignorealpha = 0.2;
       };
 
-      drop_shadow = true;
-      shadow_ignore_window = true;
-      shadow_offset = "0 2";
-      shadow_range = 20;
-      shadow_render_power = 3;
-      "col.shadow" = "rgba(00000055)";
+      shadow = {
+        enabled = true;
+        color = "rgba(00000055)";
+        ignore_window = true;
+        offset = "0 15";
+        range = 100;
+        render_power = 2;
+        scale = 0.97;
+      };
     };
 
     animations = {
-      enabled = false;
+      enabled = true;
       animation = [
         "border, 1, 2, default"
         "fade, 1, 4, default"
         "windows, 1, 3, default, popin 80%"
         "workspaces, 1, 2, default, slide"
       ];
+    };
+
+    group = {
+      groupbar = {
+        font_size = 10;
+        gradients = false;
+        text_color = "rgb(b6c4ff)";
+      };
+
+      "col.border_active" = "rgba(35447988)";
+      "col.border_inactive" = "rgba(dce1ff88)";
     };
 
     input = {
@@ -70,11 +83,22 @@ in {
       touchpad.scroll_factor = 0.1;
       touchpad.natural_scroll = true;
     };
+    device = [
+      {
+        name = "at-translated-set-2-keyboard";
+        kb_layout = "bus";
+        kb_options = "caps:escape";
+      }
+      {
+        name = "glove80-keyboard";
+        kb_layout = "rpq";
+      }
+    ];
 
-    "device:glove80-keyboard" = {
-      # set keyboard layout
-      kb_layout = "rpq";
-    };
+    # "device:glove80-keyboard" = {
+    #   # set keyboard layout
+    #   kb_layout = "rpq";
+    # };
 
     dwindle = {
       # keep floating dimentions while tiling
@@ -93,19 +117,42 @@ in {
 
       # enable variable refresh rate (effective depending on hardware)
       vrr = 1;
-
-      # we do, in fact, want direct scanout
-      no_direct_scanout = false;
     };
 
-    # touchpad gestures
-    # gestures = {
-    #   workspace_swipe = true;
-    #   workspace_swipe_forever = true;
-    # };
+    render = {
+      direct_scanout = true;
+      # Fixes some apps stuttering (xournalpp, hyprlock). Possibly an amdgpu bug
+      # explicit_sync = 0;
+      # explicit_sync_kms = 0;
+    };
 
-    # xwayland.force_zero_scaling = true;
+    xwayland.force_zero_scaling = true;
 
     debug.disable_logs = false;
+
+    plugin = {
+      hyprbars = {
+        bar_height = 24;
+        bar_precedence_over_border = true;
+
+        # order is right-to-left
+        hyprbars-button = [
+          # close
+          "rgb(ffb4ab), 15, , hyprctl dispatch killactive"
+          # maximize
+          "rgb(b6c4ff), 15, , hyprctl dispatch fullscreen 1"
+        ];
+      };
+
+      hyprexpo = {
+        columns = 3;
+        gap_size = 4;
+        bg_col = "rgb(000000)";
+
+        enable_gesture = true;
+        gesture_distance = 300;
+        gesture_positive = false;
+      };
+    };
   };
 }

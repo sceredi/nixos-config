@@ -238,7 +238,7 @@ in {
             "${modifier}+parenright" = "workspace number 7";
             "${modifier}+braceright" = "workspace number 8";
             "${modifier}+bracketright" = "workspace number 9";
-            "${modifier}+asterisk workspace" = "number 10";
+            "${modifier}+asterisk" = "workspace number 10";
 
             "${modifier}+Shift+plus" = "move container to workspace number 1";
             "${modifier}+Shift+bracketleft" = "move container to workspace number 2";
@@ -248,7 +248,7 @@ in {
             "${modifier}+Shift+equal" = "move container to workspace number 6";
             "${modifier}+Shift+parenright" = "move container to workspace number 7";
             "${modifier}+Shift+braceright" = "move container to workspace number 8";
-            "${modifier}+Shift+bracketright move container" = "to workspace number 9";
+            "${modifier}+Shift+bracketright" = "move container to workspace number 9";
             "${modifier}+Shift+asterisk" = "move container to workspace number 10";
 
             # moving workspaces between monitors

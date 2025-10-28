@@ -11,7 +11,6 @@
     users-simone
     dotfiles-pulse14
     # profiles-gnome
-    profiles-i3
     editors-default
     langs-default
     mixins-bluetooth
@@ -36,8 +35,8 @@
     profiles-avahi
     # profiles-awesomewm
     profiles-docker
-    # profiles-hypr
-    # profiles-i3
+    profiles-hypr
+    profiles-i3
     profiles-pipewire
     profiles-sway
     profiles-uni
@@ -48,13 +47,17 @@
       experimental-features = nix-command flakes
     '';
 
-    settings.substituters = [
-      "https://nix-community.cachix.org"
-    ];
-
-    settings.trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
+    settings = {
+      substituters = [
+        "https://nix-community.cachix.org"
+        "https://hyprland.cachix.org"
+      ];
+      trusted-substituters = ["https://hyprland.cachix.org"];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      ];
+    };
 
     # From flake-utils-plus
     generateNixPathFromInputs = true;
