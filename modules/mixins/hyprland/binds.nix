@@ -6,6 +6,9 @@
   launcher = fuzzel;
   # swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
   screenshotarea = "hyprctl keyword animation 'fadeOut,0,0,default'; grimblast --notify copysave area; hyprctl keyword animation 'fadeOut,1,4,default'";
+  dropdownTerminalCmd = pkgs.writeShellScript "launchwezterm.sh" ''
+    hyprctl dispatch togglespecialworkspace dropdown
+  '';
   workspaces = builtins.concatLists (
     builtins.genList (
       x: let
@@ -57,6 +60,7 @@ in {
         "$mod, T, togglefloating,"
         "$mod, P, pseudo,"
         "$mod ALT, ,resizeactive,"
+        "$mod, C, exec, ${dropdownTerminalCmd}"
 
         # toggle "monocle" (no_gaps_when_only)
         "$mod, M, exec, hyprctl keyword ${monocle} $(($(hyprctl getoption ${monocle} -j | jaq -r '.int') ^ 1))"

@@ -32,6 +32,13 @@
 
     # window rules
     windowrulev2 = [
+      # floating kitty window
+      "workspace special:dropdown silent, class:(dropdown)"
+      "size 50% 50%, class:(dropdown)"
+      "center, class:(dropdown)"
+      "float, class:(dropdown)"
+      "stayfocused, class:(dropdown)"
+
       # telegram media viewer
       "float, title:^(Media viewer)$"
 

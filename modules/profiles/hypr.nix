@@ -34,15 +34,6 @@
       };
     };
 
-    # xdg = {
-    #   portal = {
-    #     enable = true;
-    #     extraPortals = with pkgs; [
-    #       xdg-desktop-portal-hyprland
-    #     ];
-    #   };
-    # };
-
     home-manager.users.simone = {pkgs, ...}: {
       home.sessionVariables = {
         XDG_CURRENT_DESKTOP = "hyprland";

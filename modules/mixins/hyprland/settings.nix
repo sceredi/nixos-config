@@ -8,8 +8,8 @@
       "uwsm finalize"
       "${pkgs.systemd}/bin/systemd-notify --ready || true"
       "${pkgs.mako}/bin/mako --default-timeout 3000"
-      "exec i3status-rs $HOME/.config/i3status-rust/config-top.toml"
       "waybar"
+      "${pkgs.wezterm}/bin/wezterm start --class dropdown"
     ];
 
     general = {
