@@ -1,6 +1,6 @@
 {
+  lib,
   pkgs,
-  inputs,
   ...
 }: {
   imports = [
@@ -9,7 +9,19 @@
     ../mixins/gammastep.nix
   ];
   config = {
-    services.dbus.packages = with pkgs; [dconf];
+    services = {
+      dbus.packages = with pkgs; [dconf];
+      displayManager.defaultSession = lib.mkForce "hyprland-uwsm";
+      displayManager.gdm = {
+        enable = true;
+        wayland = true;
+        settings = {
+          greeter = {
+            include = "simone";
+          };
+        };
+      };
+    };
     programs = {
       dconf.enable = true;
       light.enable = true;
@@ -31,10 +43,6 @@
       };
     };
 
-    services.displayManager.gdm = {
-      enable = true;
-      wayland = true;
-    };
     home-manager.users.simone = {pkgs, ...}: {
       home.sessionVariables = {
         XDG_CURRENT_DESKTOP = "hyprland";
@@ -43,6 +51,10 @@
         QT_QPA_PLATFORM = "wayland";
         SDL_VIDEODRIVER = "wayland";
       };
+      home.packages = with pkgs; [
+        wl-clipboard
+        imv
+      ];
     };
   };
 }

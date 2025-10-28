@@ -12,6 +12,7 @@
         ./gtk.nix
         ./hyprlock.nix
         ./wlogout.nix
+        ./hyprpaper.nix
       ];
       config = {
         home.packages = with pkgs; [
