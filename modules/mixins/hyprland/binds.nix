@@ -80,14 +80,14 @@ in {
         "$mod, U, exec, XDG_CURRENT_DESKTOP=gnome ${runOnce "gnome-control-center"}"
 
         # move focus
-        "$mod, left, movefocus, l"
-        "$mod, right, movefocus, r"
-        "$mod, up, movefocus, u"
-        "$mod, down, movefocus, d"
         "$mod, H, movefocus, l"
         "$mod, L, movefocus, r"
         "$mod, K, movefocus, u"
         "$mod, J, movefocus, d"
+        "$mod SHIFT, H, movewindow, l"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, K, movewindow, u"
+        "$mod SHIFT, J, movewindow, d"
 
         # screenshot
         # stop animations while screenshotting; makes black border go away
@@ -151,6 +151,11 @@ in {
       ", XF86AudioMute, exec, ${pamixer} -t"
       ", XF86MonBrightnessUp, exec, ${light} -A 5"
       ", XF86MonBrightnessDown, exec, ${light} -U 5"
+
+      "$mod, right, resizeactive, 20 0"
+      "$mod, left, resizeactive, -20 0"
+      "$mod, up, resizeactive, 0 -20"
+      "$mod, down, resizeactive, 0 20"
     ];
   };
 }
