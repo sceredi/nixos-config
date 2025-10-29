@@ -97,23 +97,6 @@
       enable = true;
     };
     hostName = "pulse14";
-    # useNetworkd = true;
-    # wireless = {
-    #   userControlled.enable = true;
-    #   enable = true;
-    #   interfaces = [ "wlp1s0" ];
-    # };
-    # networkmanager = {
-    #   enable = true;
-    #   wifi.powersave = false;
-    # };
-    # nat = {
-    #   enable = true;
-    #   internalInterfaces = [ "ve-+" ];
-    #   externalInterface = "ens3";
-    #   # Lazy IPv6 connectivity for the container
-    #   enableIPv6 = true;
-    # };
     wireless.iwd.enable = true;
   };
 
