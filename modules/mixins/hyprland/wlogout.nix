@@ -27,13 +27,13 @@ in {
       }
       {
         label = "suspend";
-        action = "systemctl suspend";
+        action = "hyprlock & systemctl suspend";
         text = "Suspend";
         keybind = "u";
       }
       {
         label = "hibernate";
-        action = "systemctl hibernate";
+        action = "hyprlock & systemctl hibernate";
         text = "Hibernate";
         keybind = "h";
       }
