@@ -32,7 +32,6 @@ in {
   home.packages = with pkgs; [
     grimblast
     wlogout
-    gnome-control-center
   ];
   home.sessionVariables = {
     TERMINAL = "alacritty";
@@ -75,9 +74,6 @@ in {
         # "$mod, L, exec, ${runOnce "hyprlock"}"
 
         "$mod, D, exec, ${toggle launcher}"
-
-        # open settings
-        "$mod, U, exec, XDG_CURRENT_DESKTOP=gnome ${runOnce "gnome-control-center"}"
 
         # move focus
         "$mod, H, movefocus, l"
