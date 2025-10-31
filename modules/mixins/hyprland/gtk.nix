@@ -1,7 +1,6 @@
 {
   lib,
   pkgs,
-  config,
   ...
 }: {
   home.pointerCursor = {
@@ -24,6 +23,17 @@
       name = lib.mkForce "adw-gtk3-dark";
       package = lib.mkForce pkgs.adw-gtk3;
     };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = lib.mkForce "gtk3";
+    style.name = lib.mkForce "adwaita-dark";
+  };
+
+  home.sessionVariables = {
+    XCURSOR_THEME = lib.mkForce "Bibata-Modern-Classic";
+    XCURSOR_SIZE = lib.mkForce "16";
   };
 
   xdg.configFile."gtk-4.0/gtk.css".enable = lib.mkForce false;
