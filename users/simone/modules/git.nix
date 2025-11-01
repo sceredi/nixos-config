@@ -2,17 +2,12 @@
   home.packages = [pkgs.git pkgs.diff-so-fancy];
   programs.git = {
     enable = true;
-    signing = {
-      key = "3F2E5DD6B8564CAAEFB75B214F363989CBECC6BC";
-      signByDefault = true;
-    };
     settings = {
       user = {
         name = "sceredi";
         email = "ceredi.simone.iti@gmail.com";
       };
       init.defaultBranch = "main";
-      commit.gpgsign = true;
       pull = {
         default = "current";
         rebase = true;

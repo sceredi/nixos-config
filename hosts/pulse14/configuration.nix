@@ -1,6 +1,4 @@
 {
-  config,
-  lib,
   pkgs,
   inputs,
   ...
@@ -8,6 +6,7 @@
   imports = with inputs.self.nixosModules; [
     ./disks.nix
     ./hardware-configuration.nix
+    ./home.nix
     users-simone
     dotfiles-pulse14
     # profiles-gnome
