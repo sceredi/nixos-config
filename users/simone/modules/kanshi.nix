@@ -47,6 +47,19 @@
           ];
         };
       }
+      {
+        profile = {
+          name = "single";
+          outputs = [
+            {
+              criteria = "LG Electronics LG HDR 4K 0x00007E97";
+              mode = "3840x2160";
+              position = "0,0";
+              scale = 1.0;
+            }
+          ];
+        };
+      }
     ];
   };
 }

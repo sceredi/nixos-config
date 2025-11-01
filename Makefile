@@ -7,13 +7,13 @@ ifndef HOSTNAME
 endif
 
 switch:
-	nixos-rebuild switch --sudo --flake .#${HOSTNAME} -L
+	nixos-rebuild switch --flake .#${HOSTNAME} -L
 
 boot:
-	nixos-rebuild boot --sudo --flake .#${HOSTNAME} -L
+	nixos-rebuild boot --flake .#${HOSTNAME} -L
 
 test:
-	nixos-rebuild test --sudo --flake .#${HOSTNAME} -L --show-trace
+	nixos-rebuild test --flake .#${HOSTNAME} -L --show-trace
 
 update:
 	nix flake update

@@ -6,7 +6,7 @@
   ...
 }: {
   imports = with inputs.self.nixosModules; [
-    # ./hardware-configuration.nix
+    ./hardware-configuration.nix
     users-simone
     dotfiles-pulse14
     editors-default
@@ -29,7 +29,9 @@
     mixins-zram
     profiles-avahi
     profiles-docker
+    # profiles-i3
     profiles-hypr
+    profiles-gnome
     profiles-pipewire
     profiles-uni
     profiles-virtualization
@@ -70,13 +72,15 @@
     };
   };
 
+  hardware.graphics.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.opengl.enable = true;
-  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   # For CUDA support
-  hardware.opengl.driSupport = true;
-  hardware.opengl.driSupport32Bit = true;
+  # hardware.opengl.driSupport = true;
+  hardware.graphics.enable32Bit = true;
+  hardware.nvidia.open = false;
+  # hardware.nvidia.enabled = true;
 
   home-manager = {
     backupFileExtension = "backup1";
@@ -165,6 +169,7 @@
     htop
     git
     inputs.sceredi-nix-cats.packages."x86_64-linux".default
+    gh
   ];
 
   system.stateVersion = "25.05";
