@@ -94,6 +94,10 @@
         name = "glove80-keyboard";
         kb_layout = "rpq";
       }
+      {
+        name = "moergo-glove80-left-keyboard";
+        kb_layout = "rpq";
+      }
     ];
 
     dwindle = {
