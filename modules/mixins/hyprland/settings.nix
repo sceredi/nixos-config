@@ -76,6 +76,7 @@
 
     input = {
       kb_layout = "bus,rpq";
+      kb_options = "caps:escape";
 
       # focus change on cursor move
       follow_mouse = 1;
@@ -94,11 +95,6 @@
         kb_layout = "rpq";
       }
     ];
-
-    # "device:glove80-keyboard" = {
-    #   # set keyboard layout
-    #   kb_layout = "rpq";
-    # };
 
     dwindle = {
       # keep floating dimentions while tiling
