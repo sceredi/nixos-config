@@ -49,6 +49,8 @@
       bind-key -r e display-popup -E "tms switch"
 
       bind-key -r i display-popup -E "tms windows"
+
+      bind-key -r o attach-session -c "#{pane_current_path}"
     '';
   };
   home-manager.users.simone = {pkgs, ...}: {
