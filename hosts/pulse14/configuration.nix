@@ -64,6 +64,8 @@
     linkInputs = true;
   };
 
+  hardware.graphics.enable = true;
+
   nixpkgs = {
     # I'm sorry Stallman-taichou
     config = {

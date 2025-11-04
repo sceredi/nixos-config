@@ -18,7 +18,7 @@ if wezterm.config_builder then
 end
 
 -- This is where you actually apply your config choices
-config.front_end = "WebGpu"
+config.front_end = "OpenGL"
 
 -- For example, changing the color scheme:
 config.color_scheme = "rose-pine-moon"
