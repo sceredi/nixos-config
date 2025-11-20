@@ -5,6 +5,11 @@
     ./tools.nix
   ];
   config = {
+    documentation = {
+      enable = true;
+      man.enable = true;
+      dev.enable = true;
+    };
     home-manager.users.simone = {pkgs, ...}: {
       home.packages = with pkgs; [
         # nix

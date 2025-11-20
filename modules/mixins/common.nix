@@ -9,6 +9,8 @@
     gnupg
     pinentry-curses
     input-remapper
+    man-pages
+    man-pages-posix
   ];
   services.input-remapper = {
     enable = true;
@@ -35,6 +37,7 @@
       gnused
       killall
       libnotify
+      bc
       bat
       eza
       fd
