@@ -9,6 +9,9 @@ endif
 switch:
 	nixos-rebuild switch --flake .#${HOSTNAME} -L
 
+rollback:
+	nixos-rebuild switch --flake .#${HOSTNAME} -L --rollback
+
 boot:
 	nixos-rebuild boot --flake .#${HOSTNAME} -L
 

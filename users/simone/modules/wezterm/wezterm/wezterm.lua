@@ -21,7 +21,7 @@ end
 config.front_end = "OpenGL"
 
 -- For example, changing the color scheme:
-config.color_scheme = "rose-pine-moon"
+config.color_scheme = "GruvboxDark"
 
 config.font = wezterm.font({
 	family = "JetBrains Mono",

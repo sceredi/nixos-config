@@ -92,7 +92,7 @@
                 programs.alacritty = {
                   enable = true;
                   # use a color scheme from the overlay
-                  settings.general.import = [pkgs.alacritty-theme.rose_pine_moon];
+                  settings.general.import = [pkgs.alacritty-theme.gruvbox_dark];
                 };
               };
             }
@@ -117,7 +117,7 @@
                 programs.alacritty = {
                   enable = true;
                   # use a color scheme from the overlay
-                  settings.general.import = [pkgs.alacritty-theme.rose_pine_moon];
+                  settings.general.import = [pkgs.alacritty-theme.gruvbox_dark];
                 };
               };
             }
@@ -146,7 +146,7 @@
                 programs.alacritty = {
                   enable = true;
                   # use a color scheme from the overlay
-                  settings.general.import = [pkgs.alacritty-theme.rose_pine_moon];
+                  settings.general.import = [pkgs.alacritty-theme.gruvbox_dark];
                 };
               };
             }
