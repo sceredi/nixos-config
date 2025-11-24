@@ -31,7 +31,7 @@
     ];
 
     # window rules
-    windowrulev2 = [
+    windowrule = [
       # floating kitty window
       "workspace special:dropdown silent, class:(dropdown)"
       "size 50% 50%, class:(dropdown)"
