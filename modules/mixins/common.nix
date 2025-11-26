@@ -56,6 +56,7 @@
       caligula
       # Allows movement inside no movement/hist cli programs
       rlwrap
+      obs-studio
 
       # Utils
       zip
