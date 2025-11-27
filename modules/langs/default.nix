@@ -20,6 +20,7 @@
         gcc
         gnumake
         cmake
+        gdb
         autoconf
         automake
         libtool
