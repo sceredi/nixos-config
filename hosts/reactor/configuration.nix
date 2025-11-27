@@ -31,7 +31,7 @@
     profiles-docker
     # profiles-i3
     profiles-hypr
-    profiles-gnome
+    # profiles-gnome
     profiles-pipewire
     profiles-uni
     profiles-virtualization
@@ -45,11 +45,13 @@
       substituters = [
         "https://nix-community.cachix.org"
         "https://hyprland.cachix.org"
+        "https://chaotic-nyx.cachix.org/"
       ];
       trusted-substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        "chaotic-nyx.cachix.org-1:HfnXSw4pj95iI/n17rIDy40agHj12WfF+Gqk6SonIT8="
       ];
     };
 
@@ -78,13 +80,22 @@
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = ["nvidia"];
-  # hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+  hardware.nvidia.package = pkgs.linuxPackages_cachyos-lto.nvidiaPackages.beta;
+  boot.kernelPackages = pkgs.linuxPackages_cachyos-lto;
 
   # For CUDA support
   # hardware.opengl.driSupport = true;
   hardware.graphics.enable32Bit = true;
   hardware.nvidia.open = false;
   # hardware.nvidia.enabled = true;
+
+  programs = {
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
+  };
 
   home-manager = {
     backupFileExtension = "backup1";
@@ -174,6 +185,14 @@
     git
     inputs.sceredi-nix-cats.packages."x86_64-linux".default
     gh
+
+    # Games stuff
+    mangohud
+    protonup-qt
+    protontricks
+    lutris
+    bottles
+    heroic
   ];
 
   system.stateVersion = "25.05";

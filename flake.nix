@@ -57,19 +57,17 @@
         systems.follows = "hyprland/systems";
       };
     };
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
-    self,
     nixpkgs,
     nixos-hardware,
     home-manager,
-    firefox-addons,
     utils,
     nix-flatpak,
     alacritty-theme,
-    sceredi-nix-cats,
-    zen-browser,
+    chaotic,
     ...
   } @ inputs: {
     nixosModules = import ./modules {inherit (nixpkgs) lib;};
@@ -136,6 +134,7 @@
           nixos-hardware.nixosModules.common-cpu-amd
           nixos-hardware.nixosModules.common-pc
           nixos-hardware.nixosModules.common-pc-ssd
+          chaotic.nixosModules.default
           {
             # install the overlay
             nixpkgs.overlays = [alacritty-theme.overlays.default];

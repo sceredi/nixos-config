@@ -53,7 +53,7 @@
           outputs = [
             {
               criteria = "LG Electronics LG HDR 4K 0x00007E97";
-              mode = "3840x2160";
+              mode = "1920x1080@60.00Hz";
               position = "0,0";
               scale = 1.0;
             }
