@@ -5,10 +5,10 @@
   config = {
     home-manager.users.simone = {pkgs, ...}: {
       imports = [
-        ./binds.nix
-        ./settings.nix
-        ./rules.nix
-        ./smartgaps.nix
+        # ./binds.nix
+        # ./settings.nix
+        # ./rules.nix
+        # ./smartgaps.nix
         ./gtk.nix
         ./hyprlock.nix
         ./wlogout.nix
@@ -25,10 +25,10 @@
           # wl-screenrec
           wlr-randr
         ];
-        wayland.windowManager.hyprland = {
-          enable = true;
-          settings = {};
-        };
+        # wayland.windowManager.hyprland = {
+        #   enable = true;
+        #   settings = {};
+        # };
       };
     };
   };

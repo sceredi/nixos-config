@@ -29,13 +29,10 @@
 
   runOnce = program: "pgrep ${program} || uwsm app -- ${program}";
 in {
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     grimblast
   ];
-  home.sessionVariables = {
-    TERMINAL = "alacritty";
-  };
-  wayland.windowManager.hyprland.settings = {
+  programs.hyprland.settings = {
     "$mod" = "SUPER";
     # mouse movements
     bindm = [
@@ -43,9 +40,9 @@ in {
       "$mod, mouse:273, resizewindow"
       "$mod ALT, mouse:272, resizewindow"
     ];
-    bind = let
-      monocle = "dwindle:no_gaps_when_only";
-    in
+
+    # binds
+    bind =
       [
         # compositor commands
         "$mod SHIFT, W, exec, killall waybar;waybar"
@@ -60,9 +57,6 @@ in {
         "$mod, P, pseudo,"
         "$mod ALT, ,resizeactive,"
         "$mod, C, exec, ${dropdownTerminalCmd}"
-
-        # toggle "monocle" (no_gaps_when_only)
-        "$mod, M, exec, hyprctl keyword ${monocle} $(($(hyprctl getoption ${monocle} -j | jaq -r '.int') ^ 1))"
 
         # utility
         # terminal
@@ -128,6 +122,11 @@ in {
         "$mod SHIFT, bracketright, movetoworkspace, 9"
         "$mod SHIFT, asterisk, movetoworkspace, 10"
       ];
+
+    bindr = [
+      # launcher
+      "$mod, SUPER_L, exec, ${toggle "anyrun"}"
+    ];
 
     bindl = [
       # media controls
