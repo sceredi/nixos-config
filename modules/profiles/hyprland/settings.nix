@@ -5,13 +5,12 @@
       env = ["QT_WAYLAND_DISABLE_WINDOWDECORATION,1"];
 
       exec-once = [
-        # finalize startup
-        "uwsm finalize"
         "uwsm app -- ${pkgs.systemd}/bin/systemd-notify --ready || true"
         "uwsm app -- ${pkgs.mako}/bin/mako --default-timeout 3000"
         "uwsm app -- waybar"
-        "$uwsm app -- ${pkgs.wezterm}/bin/wezterm start --class dropdown"
-        "uwsm app -- kitty"
+        "[workspace special] uwsm app -- ${pkgs.wezterm}/bin/wezterm start --class dropdown"
+        # finalize startup
+        "uwsm finalize"
       ];
 
       general = {

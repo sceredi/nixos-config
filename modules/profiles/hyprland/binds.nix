@@ -56,7 +56,7 @@ in {
         "$mod, T, togglefloating,"
         "$mod, P, pseudo,"
         "$mod ALT, ,resizeactive,"
-        "$mod, C, exec, ${dropdownTerminalCmd}"
+        # "$mod, C, exec, ${dropdownTerminalCmd}"
 
         # utility
         # terminal
@@ -90,8 +90,8 @@ in {
         "$mod SHIFT ALT, R, exec, grimblast --notify --cursor copysave screen"
 
         # special workspace
-        "$mod SHIFT, grave, movetoworkspace, special"
-        "$mod, grave, togglespecialworkspace, eDP-1"
+        # "$mod SHIFT, C, movetoworkspace, special"
+        "$mod, C, togglespecialworkspace"
 
         # send focused workspace to left/right monitors
         "$mod SHIFT, G, movecurrentworkspacetomonitor, l"
@@ -122,11 +122,6 @@ in {
         "$mod SHIFT, bracketright, movetoworkspace, 9"
         "$mod SHIFT, asterisk, movetoworkspace, 10"
       ];
-
-    bindr = [
-      # launcher
-      "$mod, SUPER_L, exec, ${toggle "anyrun"}"
-    ];
 
     bindl = [
       # media controls

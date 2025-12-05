@@ -1,60 +1,60 @@
 {lib, ...}: {
   programs.hyprland.settings = {
-    # layer rules
-    layerrule = let
-      toRegex = list: let
-        elements = lib.concatStringsSep "|" list;
-      in "^(${elements})$";
-
-      lowopacity = [
-        "bar"
-        "calendar"
-        "notifications"
-        "system-menu"
-        "quickshell:bar"
-        "quickshell:notifications:overlay"
-        "quickshell:osd"
-      ];
-
-      highopacity = [
-        "anyrun"
-        "osd"
-        "logout_dialog"
-        "quickshell:sidebar"
-      ];
-
-      blurred = lib.concatLists [
-        lowopacity
-        highopacity
-      ];
-    in [
-      "blur, ${toRegex blurred}"
-      "blurpopups, ^quickshell.*$"
-      "xray 1, ${
-        toRegex [
-          "bar"
-          "quickshell:bar"
-        ]
-      }"
-      "ignorealpha 0.5, ${toRegex (highopacity ++ ["music"])}"
-      "ignorealpha 0.2, ${toRegex lowopacity}"
-      "noanim, ${
-        toRegex [
-          "notifications"
-          "quickshell:notifications:overlay"
-          "quickshell:notifictaions:panel"
-        ]
-      }"
-    ];
-
+    # # layer rules
+    # layerrule = let
+    #   toRegex = list: let
+    #     elements = lib.concatStringsSep "|" list;
+    #   in "^(${elements})$";
+    #
+    #   lowopacity = [
+    #     "bar"
+    #     "calendar"
+    #     "notifications"
+    #     "system-menu"
+    #     "quickshell:bar"
+    #     "quickshell:notifications:overlay"
+    #     "quickshell:osd"
+    #   ];
+    #
+    #   highopacity = [
+    #     "anyrun"
+    #     "osd"
+    #     "logout_dialog"
+    #     "quickshell:sidebar"
+    #   ];
+    #
+    #   blurred = lib.concatLists [
+    #     lowopacity
+    #     highopacity
+    #   ];
+    # in [
+    #   "blur, ${toRegex blurred}"
+    #   "blurpopups, ^quickshell.*$"
+    #   "xray 1, ${
+    #     toRegex [
+    #       "bar"
+    #       "quickshell:bar"
+    #     ]
+    #   }"
+    #   "ignorealpha 0.5, ${toRegex (highopacity ++ ["music"])}"
+    #   "ignorealpha 0.2, ${toRegex lowopacity}"
+    #   "noanim, ${
+    #     toRegex [
+    #       "notifications"
+    #       "quickshell:notifications:overlay"
+    #       "quickshell:notifictaions:panel"
+    #     ]
+    #   }"
+    # ];
+    #
     # window rules
     windowrulev2 = [
       # floating terminal window
-      "workspace special:dropdown silent, class:(dropdown)"
-      "size 50% 50%, class:(dropdown)"
-      "center, class:(dropdown)"
-      "float, class:(dropdown)"
-      "stayfocused, class:(dropdown)"
+      # "workspace special:dropdown silent, class:(dropdown)"
+      # "size 50% 50%, class:(dropdown)"
+      # "center, class:(dropdown)"
+      # "float, class:(dropdown)"
+      # "stayfocused, class:(dropdown)"
 
       # telegram media viewer
       "float, title:^(Media viewer)$"
