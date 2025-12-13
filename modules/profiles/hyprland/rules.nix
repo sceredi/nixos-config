@@ -99,20 +99,20 @@
 
       # less sensitive scroll for some windows
       # browser(-based)
-      "match:class ^(zen|firefox|chromium-browser|chrome-.*)$, scroll_touchpad 0.1"
-      "match:class ^(obsidian)$, scroll_touchpad 0.1"
-      "match:class ^(steam)$, scroll_touchpad 0.1"
-      "match:class ^(Zotero)$, scroll_touchpad 0.1"
+      "match:class ^(zen|firefox|chromium-browser|chrome-.*)$, scroll_touchpad 0.25"
+      "match:class ^(obsidian)$, scroll_touchpad 0.25"
+      "match:class ^(steam)$, scroll_touchpad 0.25"
+      "match:class ^(Zotero)$, scroll_touchpad 0.25"
       # GTK3
-      "match:class ^(com.github.xournalpp.xournalpp)$, scroll_touchpad 0.1"
-      "match:class ^(libreoffice.*)$, scroll_touchpad 0.1"
-      "match:class ^(.virt-manager-wrapped)$, scroll_touchpad 0.1"
-      "match:class ^(xdg-desktop-portal-gtk)$, scroll_touchpad 0.1"
+      "match:class ^(com.github.xournalpp.xournalpp)$, scroll_touchpad 0.25"
+      "match:class ^(libreoffice.*)$, scroll_touchpad 0.25"
+      "match:class ^(.virt-manager-wrapped)$, scroll_touchpad 0.25"
+      "match:class ^(xdg-desktop-portal-gtk)$, scroll_touchpad 0.25"
       # Qt5
-      "match:class ^(org.prismlauncher.PrismLauncher)$, scroll_touchpad 0.1"
-      "match:class ^(org.kde.kdeconnect.app)$, scroll_touchpad 0.1"
+      "match:class ^(org.prismlauncher.PrismLauncher)$, scroll_touchpad 0.25"
+      "match:class ^(org.kde.kdeconnect.app)$, scroll_touchpad 0.25"
       # Others
-      "match:class ^(org.pwmt.zathura)$, scroll_touchpad 0.1"
+      "match:class ^(org.pwmt.zathura)$, scroll_touchpad 0.25"
     ];
   };
 }

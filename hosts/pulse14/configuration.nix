@@ -90,7 +90,7 @@
     };
   };
 
-  users.users.simone.extraGroups = ["video"];
+  users.users.simone.extraGroups = ["video" "networkmanager"];
   powerManagement.enable = true;
 
   networking = {
@@ -98,7 +98,8 @@
       enable = true;
     };
     hostName = "pulse14";
-    wireless.iwd.enable = true;
+    # wireless.iwd.enable = true;
+    networkmanager.enable = true;
   };
 
   services = {

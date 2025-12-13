@@ -81,8 +81,9 @@
         # focus change on cursor move
         follow_mouse = 1;
         accel_profile = "flat";
-        touchpad.scroll_factor = 0.1;
+        touchpad.scroll_factor = 0.25;
         touchpad.natural_scroll = true;
+        touchpad.middle_button_emulation = true;
       };
 
       dwindle = {
