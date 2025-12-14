@@ -24,7 +24,7 @@
       background = [
         {
           monitor = "";
-          path = "$HOME/.wallpapers/wallpaper.png";
+          path = "$HOME/.wallpapers/lockscreen.png";
         }
       ];
 
