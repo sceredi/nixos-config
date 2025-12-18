@@ -98,9 +98,16 @@
       enable = true;
     };
     hostName = "pulse14";
-    # wireless.iwd.enable = true;
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi = {
+        backend = "wpa_supplicant";
+        powersave = false;
+      };
+    };
+    wireless.iwd.enable = false;
   };
+  services.gnome.gnome-keyring.enable = true;
 
   services = {
     thermald.enable = true;
@@ -111,24 +118,33 @@
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
         CPU_MAX_PERF_ON_AC = "100";
         CPU_MAX_PERF_ON_BAT = "30";
+
+        WIFI_PWR_ON_AC = "off";
+        WIFI_PWR_ON_BAT = "off";
+
+        RUNTIME_PM_ON_AC = "on";
+        RUNTIME_PM_ON_BAT = "off";
+
+        PCIE_ASPM_ON_AC = "default";
+        PCIE_ASPM_ON_BAT = "default";
       };
     };
     logind.settings.Login.KillUserProcesses = true;
     power-profiles-daemon.enable = false;
     udev.extraRules = ''
-            # Rules for Oryx web flashing and live training
+      # Rules for Oryx web flashing and live training
       KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", MODE="0664", GROUP="plugdev"
       KERNEL=="hidraw*", ATTRS{idVendor}=="3297", MODE="0664", GROUP="plugdev"
 
       # Legacy rules for live training over webusb (Not needed for firmware v21+)
-        # Rule for all ZSA keyboards
-        SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
-        # Rule for the Moonlander
-        SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
-        # Rule for the Ergodox EZ
-        SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
-        # Rule for the Planck EZ
-        SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
+      # Rule for all ZSA keyboards
+      SUBSYSTEM=="usb", ATTR{idVendor}=="3297", GROUP="plugdev"
+      # Rule for the Moonlander
+      SUBSYSTEM=="usb", ATTR{idVendor}=="3297", ATTR{idProduct}=="1969", GROUP="plugdev"
+      # Rule for the Ergodox EZ
+      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
+      # Rule for the Planck EZ
+      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
 
       # Wally Flashing rules for the Ergodox EZ
       ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
