@@ -6,7 +6,7 @@
   services.redshift = {
     enable = true;
     temperature = {
-      day = 4000;
+      day = 6500;
       night = 4000;
     };
   };

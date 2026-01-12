@@ -47,6 +47,8 @@ in {
       htop
       pciutils
       trash-cli
+      timer
+      lolcat
     ];
   };
 
@@ -76,6 +78,28 @@ in {
         export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD')
         eval $(opam env)
         export GPG_TTY=$(tty)
+
+        # pomodoro
+        typeset -A pomo_options
+        pomo_options[study]=25
+        pomo_options[work]=45
+        pomo_options[short-break]=5
+        pomo_options[long-break]=10
+
+        pomodoro () {
+          if [[ -n "$1" && -n "''${pomo_options[$1]}" ]]; then
+            val=$1
+            echo "$val" | lolcat
+            timer ''${pomo_options[$val]}m
+            notify-send Pomodoro "$val session done"
+            spd-say "$val session done"
+          fi
+        }
+
+        alias wo="pomodoro work"
+        alias st="pomodoro study"
+        alias lbr="pomodoro long-break"
+        alias sbr="pomodoro short-break"
       '';
     };
     starship = {
