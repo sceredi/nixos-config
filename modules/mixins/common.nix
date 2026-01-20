@@ -60,10 +60,10 @@
 
       # Utils
       zip
-      xfce.thunar
+      thunar
       file-roller
-      xfce.thunar-volman
-      xfce.thunar-archive-plugin
+      thunar-volman
+      thunar-archive-plugin
       gnome-disk-utility
       gnome-common
 

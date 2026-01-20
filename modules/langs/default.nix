@@ -13,7 +13,7 @@
     home-manager.users.simone = {pkgs, ...}: {
       home.packages = with pkgs; [
         # nix
-        nixfmt-rfc-style
+        nixfmt
         statix
 
         # c

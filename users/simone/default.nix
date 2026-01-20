@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   myAliases = {
     cd = "z"; # enhanced cd with zoxide
     la = "ls -Alh"; # show hidden files
@@ -60,6 +64,7 @@ in {
     };
     zsh = {
       enable = true;
+      dotDir = "${config.xdg.configHome}/zsh";
       oh-my-zsh = {
         enable = true;
         plugins = [
