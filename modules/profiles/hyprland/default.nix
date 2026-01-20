@@ -17,7 +17,7 @@
   config = {
     services = {
       dbus.packages = with pkgs; [dconf];
-      displayManager.defaultSession = lib.mkForce "hyprland-uwsm";
+      # displayManager.defaultSession = lib.mkForce "hyprland-uwsm";
       displayManager.gdm = {
         enable = true;
         wayland = true;
