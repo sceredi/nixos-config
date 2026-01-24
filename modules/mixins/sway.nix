@@ -107,7 +107,7 @@ in {
                 criteria = {
                   app_id = "dropdown";
                 };
-                command = "resize set 50 ppt 35 ppt";
+                command = "resize set 40 ppt 30 ppt";
               }
               {
                 criteria = {
