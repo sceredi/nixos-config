@@ -95,6 +95,7 @@
 
   networking = {
     firewall = {
+      checkReversePath = false;
       enable = true;
     };
     hostName = "pulse14";
@@ -195,6 +196,8 @@
     htop
     git
     inputs.sceredi-nix-cats.packages."x86_64-linux".default
+    wireguard-tools
+    protonvpn-gui
   ];
 
   system.stateVersion = "23.11";
