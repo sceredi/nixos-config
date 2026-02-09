@@ -86,7 +86,7 @@
 
         # zig
         zig
-        zls
+        # zls
       ];
     };
     environment.variables = {
