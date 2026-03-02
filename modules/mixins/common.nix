@@ -51,7 +51,6 @@
       vlc
       magic-wormhole
       lazygit
-      impala
       # wrapper around dd for better UX
       caligula
       # Allows movement inside no movement/hist cli programs
