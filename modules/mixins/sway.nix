@@ -10,7 +10,7 @@
   up = "k";
   right = "l";
   terminal = "${pkgs.alacritty}/bin/alacritty";
-  light = "${pkgs.light}/bin/light";
+  brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   fuzzel = "${pkgs.fuzzel}/bin/fuzzel -I -w 50 -b 282a36fa -s 3d4474fa -C fffffffa";
   launcher = fuzzel;
   pamixer = "${pkgs.pamixer}/bin/pamixer";
@@ -107,7 +107,7 @@ in {
                 criteria = {
                   app_id = "dropdown";
                 };
-                command = "resize set 40 ppt 30 ppt";
+                command = "resize set 80 ppt 60 ppt";
               }
               {
                 criteria = {
@@ -172,8 +172,8 @@ in {
             }
           ];
           keybindings = {
-            "XF86MonBrightnessUp" = "exec ${light} -A 5 && ${light} -G | cut -d'.' -f1 > $SWAYSOCK.wob";
-            "XF86MonBrightnessDown" = "exec ${light} -U 5 && ${light} -G | cut -d'.' -f1 > $SWAYSOCK.wob";
+            "XF86MonBrightnessUp" = "exec ${brightnessctl} set 5%+ && ${brightnessctl} | awk -F'[(:%)]+' '/Current brightness/{print $3}' > $SWAYSOCK.wob";
+            "XF86MonBrightnessDown" = "exec ${brightnessctl} set 5%- && ${brightnessctl} | awk -F'[(:%)]+' '/Current brightness/{print $3}' > $SWAYSOCK.wob";
             "XF86AudioRaiseVolume" = "exec ${pamixer} -ui 2 && ${pamixer} --get-volume > $SWAYSOCK.wob";
             "XF86AudioLowerVolume" = "exec ${pamixer} -ud 2 && ${pamixer} --get-volume > $SWAYSOCK.wob";
             "XF86AudioMute" = "exec ${pamixer} --toggle-mute && ( ${pamixer} --get-mute && echo 0 > $SWAYSOCK.wob ) || ${pamixer} --get-volume > $SWAYSOCK.wob";
@@ -270,9 +270,8 @@ in {
 
             # "${modifier}+p" = "focus parent";
 
-            "${modifier}+p" = "exec ${screenshotcmd} ~/notes/RoamNotes/Screenshots/$(date +%Y-%m-%d-%H%M%S).png";
-
-            "${modifier}+Shift+p" = "exec ${screenshotcmd} - | wl-copy";
+            "${modifier}+p" = "exec ${screenshotcmd} ~/Pictures/screenshots/$(date +%Y-%m-%d-%H%M%S).png";
+            "${modifier}+Shift+p" = "exec ${screenshotcmd} ~/notes/RoamNotes/Screenshots/$(date +%Y-%m-%d-%H%M%S).png";
 
             "${modifier}+r" = ''mode "resize"'';
 

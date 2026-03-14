@@ -23,7 +23,7 @@
       };
     };
     programs.dconf.enable = true;
-    programs.light.enable = true;
+    # programs.light.enable = true;
     xdg = {
       portal = {
         enable = true;

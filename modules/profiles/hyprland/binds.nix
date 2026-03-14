@@ -1,7 +1,7 @@
 {pkgs, ...}: let
   terminal = "${pkgs.kitty}/bin/kitty";
   pamixer = "${pkgs.pamixer}/bin/pamixer";
-  light = "${pkgs.light}/bin/light";
+  brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
   fuzzel = "${pkgs.fuzzel}/bin/fuzzel -I -w 50 -b 282a36fa -s 3d4474fa -C fffffffa";
   launcher = fuzzel;
   # swaylockcmd = "${pkgs.swaylock}/bin/swaylock -i $HOME/.wallpapers/wallpaper.png";
@@ -138,8 +138,8 @@ in {
       ", XF86AudioRaiseVolume, exec, ${pamixer} -i 5"
       ", XF86AudioLowerVolume, exec, ${pamixer} -d 5"
       ", XF86AudioMute, exec, ${pamixer} -t"
-      ", XF86MonBrightnessUp, exec, ${light} -A 5"
-      ", XF86MonBrightnessDown, exec, ${light} -U 5"
+      ", XF86MonBrightnessUp, exec, ${brightnessctl} set 5%+"
+      ", XF86MonBrightnessDown, exec, ${brightnessctl} set 5%-"
 
       "$mod, right, resizeactive, 20 0"
       "$mod, left, resizeactive, -20 0"
