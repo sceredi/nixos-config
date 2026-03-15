@@ -38,6 +38,7 @@
         go
         gopls
         air
+        golangci-lint
 
         # ocaml
         ocaml
