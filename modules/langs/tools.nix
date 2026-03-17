@@ -6,6 +6,8 @@
         yq
 
         pre-commit
+        # Run ci locally
+        act
       ];
     };
   };
