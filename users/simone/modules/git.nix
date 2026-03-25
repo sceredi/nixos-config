@@ -2,6 +2,7 @@
   home.packages = [pkgs.git pkgs.diff-so-fancy];
   programs.git = {
     enable = true;
+    signing.format = null;
     settings = {
       user = {
         name = "sceredi";

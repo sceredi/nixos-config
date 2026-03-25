@@ -41,6 +41,7 @@
     theme.name = "Arc";
     iconTheme.package = pkgs.arc-icon-theme;
     iconTheme.name = "Arc";
+    gtk4.theme = null;
   };
 
   xdg.enable = true;
