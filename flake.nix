@@ -14,9 +14,6 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    sceredi-nix-cats = {
-      url = "github:sceredi/init.lua";
-    };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";

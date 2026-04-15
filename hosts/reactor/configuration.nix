@@ -183,7 +183,6 @@
     gnumake
     htop
     git
-    inputs.sceredi-nix-cats.packages."x86_64-linux".default
     gh
 
     # Games stuff

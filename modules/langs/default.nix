@@ -38,6 +38,7 @@
         go
         gopls
         air
+        delve
         golangci-lint
 
         # ocaml

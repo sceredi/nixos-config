@@ -24,6 +24,3 @@ update:
 upgrade:
 	make update && make switch
 
-neovim:
-	nix flake update sceredi-nix-cats && make switch
-

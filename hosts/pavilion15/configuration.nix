@@ -184,7 +184,6 @@
     gnumake
     htop
     git
-    inputs.sceredi-nix-cats.packages."x86_64-linux".default
   ];
 
   system.stateVersion = "25.05";
