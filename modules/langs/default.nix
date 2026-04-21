@@ -10,89 +10,95 @@
       man.enable = true;
       dev.enable = true;
     };
-    home-manager.users.simone = {pkgs, ...}: {
-      home.packages = with pkgs; [
-        # nix
-        nixfmt
-        statix
+    home-manager.users.simone =
+      { pkgs, ... }:
+      {
+        home.packages = with pkgs; [
+          # nix
+          nixd
+          nixfmt
+          statix
 
-        # c
-        gcc
-        gnumake
-        cmake
-        gdb
-        autoconf
-        automake
-        libtool
-        stdenv.cc.cc.lib
-        glibc
-        zlib
+          # c
+          gcc
+          gnumake
+          cmake
+          gdb
+          autoconf
+          automake
+          libtool
+          stdenv.cc.cc.lib
+          glibc
+          zlib
 
-        # node
-        nodejs
-        typescript
-        typescript-language-server
-        vue-language-server
+          # node
+          nodejs
+          typescript
+          typescript-language-server
+          vue-language-server
 
-        # go
-        go
-        gopls
-        air
-        delve
-        golangci-lint
+          # go
+          go
+          gopls
+          air
+          delve
+          golangci-lint
 
-        # ocaml
-        ocaml
-        opam
+          # ocaml
+          ocaml
+          opam
 
-        # rust
-        cargo
-        rustc
-        rust-analyzer
-        rustfmt
-        clippy
+          # rust
+          cargo
+          rustc
+          rust-analyzer
+          rustfmt
+          clippy
 
-        # jvm stuff
-        (jdk.override {enableJavaFX = true;})
-        jdt-language-server
-        kotlin
-        # (callPackage gradle-packages.gradle_8 {java = jdk;})
-        scala_3
-        sbt
-        coursier
-        scala-cli
+          # jvm stuff
+          (jdk.override { enableJavaFX = true; })
+          jdt-language-server
+          kotlin
+          # (callPackage gradle-packages.gradle_8 {java = jdk;})
+          scala_3
+          sbt
+          coursier
+          scala-cli
 
-        # erlang stuff
-        erlang
-        elixir
-        gleam
-        rebar3
+          # erlang stuff
+          erlang
+          elixir
+          gleam
+          rebar3
 
-        # ruby
-        ruby
-        libsodium
+          # ruby
+          ruby
+          libsodium
 
-        # php
-        php83
-        php83Packages.composer
+          # php
+          php83
+          php83Packages.composer
 
-        # lua
-        luajitPackages.luarocks
+          # lua
+          luajitPackages.luarocks
 
-        # latex
-        texlive.combined.scheme-full
+          # latex
+          texlive.combined.scheme-full
 
-        # typst
-        typst
-        tinymist
+          # typst
+          typst
+          tinymist
 
-        # zig
-        zig
-        # zls
-      ];
-    };
+          # yaml
+          yaml-language-server
+
+          # zig
+          zig
+          # zls
+        ];
+      };
     environment.variables = {
-      PATH = ["/home/simone/.cargo/bin"];
+      PATH = [ "/home/simone/.cargo/bin" ];
     };
   };
 }
