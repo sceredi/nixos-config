@@ -44,6 +44,9 @@
           delve
           golangci-lint
 
+          # protobuf
+          protobuf
+
           # ocaml
           ocaml
           opam
@@ -98,7 +101,10 @@
         ];
       };
     environment.variables = {
-      PATH = [ "/home/simone/.cargo/bin" ];
+      PATH = [
+        "/home/simone/.cargo/bin"
+        "/home/simone/go/bin/"
+      ];
     };
   };
 }

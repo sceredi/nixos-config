@@ -2,7 +2,8 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = with inputs.self.nixosModules; [
     ./disks.nix
     ./hardware-configuration.nix
@@ -51,7 +52,7 @@
         "https://nix-community.cachix.org"
         "https://hyprland.cachix.org"
       ];
-      trusted-substituters = ["https://hyprland.cachix.org"];
+      trusted-substituters = [ "https://hyprland.cachix.org" ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
@@ -90,7 +91,10 @@
     };
   };
 
-  users.users.simone.extraGroups = ["video" "networkmanager"];
+  users.users.simone.extraGroups = [
+    "video"
+    "networkmanager"
+  ];
   powerManagement.enable = true;
 
   networking = {
@@ -170,11 +174,11 @@
         canTouchEfiVariables = true;
       };
     };
-    kernelParams = ["amdgpu.dcdebugmask=0x10"];
+    kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
   };
 
   # I use zsh btw
-  environment.shells = with pkgs; [zsh];
+  environment.shells = with pkgs; [ zsh ];
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
@@ -196,7 +200,7 @@
     htop
     git
     wireguard-tools
-    protonvpn-gui
+    proton-vpn
   ];
 
   system.stateVersion = "23.11";
