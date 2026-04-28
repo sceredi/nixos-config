@@ -1,20 +1,28 @@
 {
-  config,
-  lib,
   pkgs,
   ...
-}: {
-  environment.systemPackages = with pkgs; [
-    # virt-manager
-    # virtualbox
-    # distrobox
-    quickemu
-  ];
-  # services = {
-  #   spice-vdagentd.enable = true;
-  #   spice-webdavd.enable = true;
-  #   qemuGuest.enable = true;
-  # };
+}:
+{
+
+  # packages for administration tasks
+  environment = {
+    systemPackages = with pkgs; [
+      quickemu
+      kompose
+      kubectl
+      kubernetes
+      minikube
+    ];
+    variables = {
+      KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
+    };
+  };
+
+  services.k3s = {
+    enable = true;
+    role = "server";
+    extraFlags = "--write-kubeconfig-mode 644"; # So you can run kubectl without sudo
+  };
   virtualisation.libvirtd = {
     allowedBridges = [
       "nm-bridge"
@@ -23,5 +31,4 @@
     enable = true;
     qemu.runAsRoot = false;
   };
-  # boot.extraModulePackages = with config.boot.kernelPackages; [ virtualbox ];
 }

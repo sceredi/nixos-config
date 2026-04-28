@@ -1,9 +1,5 @@
 {
-  config,
-  inputs,
-  ...
-}: {
-  nix.settings.trusted-users = ["simone"];
+  nix.settings.trusted-users = [ "simone" ];
   users.users = {
     root.isNormalUser = false;
     simone = {
@@ -16,6 +12,7 @@
         "dialout"
         "networkmanager"
         "plugdev"
+        "kubernetes"
       ];
     };
   };

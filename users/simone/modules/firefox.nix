@@ -1,17 +1,20 @@
 {
+  config,
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   programs.firefox = {
     enable = true;
+    configPath = "${config.xdg.configHome}/mozilla/firefox";
     profiles = {
       default = {
         id = 0;
         name = "default";
         isDefault = true;
         search = {
-          order = ["google"];
+          order = [ "google" ];
           engines = {
             "Nix Packages" = {
               urls = [
@@ -30,7 +33,7 @@
                 }
               ];
               icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-              definedAliases = ["@np"];
+              definedAliases = [ "@np" ];
             };
             "NixOS Wiki" = {
               urls = [
@@ -40,7 +43,7 @@
               ];
               icon = "https://nixos.wiki/favicon.png";
               updateInterval = 24 * 60 * 60 * 1000; # every day
-              definedAliases = ["@nw"];
+              definedAliases = [ "@nw" ];
             };
             "bing".metaData.hidden = true;
             "google".metaData.alias = "@g"; # builtin engines only support specifying one additional alias
@@ -132,7 +135,7 @@
               "widget-overflow-fixed-list"
             ];
             placements = {
-              PersonalToolbar = ["personal-bookmarks"];
+              PersonalToolbar = [ "personal-bookmarks" ];
               TabsToolbar = [
                 "tabbrowser-tabs"
                 "new-tab-button"
@@ -149,9 +152,9 @@
                 "reset-pbm-toolbar-button"
                 "unified-extensions-button"
               ];
-              toolbar-menubar = ["menubar-items"];
-              unified-extensions-area = [];
-              widget-overflow-fixed-list = [];
+              toolbar-menubar = [ "menubar-items" ];
+              unified-extensions-area = [ ];
+              widget-overflow-fixed-list = [ ];
             };
             seen = [
               "save-to-pocket-button"
