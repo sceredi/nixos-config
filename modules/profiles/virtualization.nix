@@ -12,10 +12,8 @@
       kubectl
       kubernetes
       minikube
+      kubernetes-helm
     ];
-    variables = {
-      KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
-    };
   };
 
   services.k3s = {
