@@ -136,7 +136,7 @@ in {
               natural_scroll = "enabled";
             };
             "5824:10203:Glove80_Keyboard" = {
-              xkb_layout = "rpq";
+              xkb_layout = "bus";
             };
             "1:1:AT_Translated_Set_2_keyboard" = {
               xkb_layout = "bus";
@@ -145,7 +145,7 @@ in {
           };
           output = {
             "*" = {
-              bg = "$HOME/.wallpapers/wallpaper.png fill";
+              bg = "$HOME/.wallpapers/wallpaper.jpg fit";
             };
           };
           startup = [

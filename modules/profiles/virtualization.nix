@@ -10,8 +10,6 @@
       quickemu
       kompose
       kubectl
-      kubernetes
-      minikube
       kubernetes-helm
     ];
   };
@@ -21,6 +19,7 @@
     role = "server";
     extraFlags = "--write-kubeconfig-mode 644"; # So you can run kubectl without sudo
   };
+  environment.variables.KUBECONFIG = "/etc/rancher/k3s/k3s.yaml";
   virtualisation.libvirtd = {
     allowedBridges = [
       "nm-bridge"
