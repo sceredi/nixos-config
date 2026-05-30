@@ -175,6 +175,7 @@
       };
     };
     kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
+    zfs.forceImportRoot = false;
   };
 
   # I use zsh btw

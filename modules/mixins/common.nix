@@ -93,6 +93,8 @@
 
       # zsa configurator
       keymapp
+      qmk
+      dos2unix
 
       # TeamViewer
       teamviewer
