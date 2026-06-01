@@ -19,7 +19,6 @@
       displayManager.defaultSession = "sway";
       displayManager.gdm = {
         enable = true;
-        wayland = true;
         settings = {
           greeter = {
             include = "simone";

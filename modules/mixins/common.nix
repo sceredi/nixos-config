@@ -56,6 +56,8 @@
       # Allows movement inside no movement/hist cli programs
       rlwrap
       obs-studio
+      # Spotify player
+      ncspot
 
       # Utils
       zip
