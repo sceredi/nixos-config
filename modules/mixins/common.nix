@@ -57,7 +57,7 @@
       rlwrap
       obs-studio
       # Spotify player
-      ncspot
+      spotify-player
 
       # Utils
       zip

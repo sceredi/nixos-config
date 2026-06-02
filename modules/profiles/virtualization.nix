@@ -8,18 +8,9 @@
   environment = {
     systemPackages = with pkgs; [
       quickemu
-      kompose
-      kubectl
-      kubernetes-helm
     ];
   };
 
-  services.k3s = {
-    enable = true;
-    role = "server";
-    extraFlags = "--write-kubeconfig-mode 644"; # So you can run kubectl without sudo
-  };
-  environment.variables.KUBECONFIG = "/home/simone/.config/kube/k3s.yaml";
   virtualisation.libvirtd = {
     allowedBridges = [
       "nm-bridge"

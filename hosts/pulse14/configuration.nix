@@ -35,6 +35,7 @@
     profiles-avahi
     # profiles-awesomewm
     profiles-docker
+    profiles-kubernetes
     profiles-i3
     profiles-pipewire
     profiles-sway
