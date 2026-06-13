@@ -36,6 +36,7 @@
           typescript
           typescript-language-server
           vue-language-server
+          copilot-language-server
 
           # go
           go
