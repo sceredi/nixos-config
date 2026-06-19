@@ -58,6 +58,7 @@
       obs-studio
       # Spotify player
       spotify-player
+      gh
 
       # Utils
       zip
