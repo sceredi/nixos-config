@@ -70,8 +70,8 @@
           scala-cli
 
           # erlang stuff
-          erlang
-          elixir
+          beamPackages.erlang
+          beamPackages.elixir
           gleam
           rebar3
 
