@@ -75,6 +75,10 @@
           gleam
           rebar3
 
+          # kubernetes
+          k9s
+          kubectx
+
           # ruby
           ruby
           libsodium
