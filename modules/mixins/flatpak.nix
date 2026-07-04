@@ -8,7 +8,7 @@
       }
     ];
     packages = [
-      "md.obsidian.Obsidian"
+      # "md.obsidian.Obsidian"
       "org.kde.okular"
       "org.mobsya.ThymioSuite"
       "org.telegram.desktop"

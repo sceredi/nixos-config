@@ -51,6 +51,9 @@
       substituters = [
         "https://nix-community.cachix.org"
       ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      ];
     };
 
     # From flake-utils-plus
@@ -68,8 +71,7 @@
       permittedInsecurePackages =
         # Remove once obsidian decides update its elecron version
         [
-          "electron-27.3.11"
-          "electron-29.4.6"
+          "pnpm-10.34.0"
         ];
     };
   };

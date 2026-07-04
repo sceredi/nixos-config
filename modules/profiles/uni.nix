@@ -4,7 +4,7 @@
   home-manager.users.simone = {pkgs, ...}: {
     home.packages = with pkgs; [
       teams-for-linux
-      # obsidian
+      obsidian
       kdePackages.okular
       # postman
       bruno # alternative to postman
