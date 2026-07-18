@@ -92,6 +92,7 @@
 
           # latex
           texlive.combined.scheme-full
+          texlivePackages.latexmk
 
           # typst
           typst
