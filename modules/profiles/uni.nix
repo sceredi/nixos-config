@@ -8,7 +8,6 @@
       kdePackages.okular
       # postman
       bruno # alternative to postman
-      mongodb-compass
       # learning new languages
       exercism
 
