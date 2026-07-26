@@ -91,7 +91,7 @@
           luajitPackages.luarocks
 
           # latex
-          texlive.combined.scheme-full
+          texliveFull
           texlivePackages.latexmk
 
           # typst
