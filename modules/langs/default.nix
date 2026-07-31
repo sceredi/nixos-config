@@ -31,6 +31,9 @@
           glibc
           zlib
 
+          # d2
+          d2
+
           # node
           nodejs
           typescript
