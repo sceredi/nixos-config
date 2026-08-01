@@ -8,5 +8,4 @@
     };
     pulse.enable = true;
   };
-  services.spotifyd.enable = true;
 }

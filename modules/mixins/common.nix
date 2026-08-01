@@ -56,8 +56,7 @@
       # Allows movement inside no movement/hist cli programs
       rlwrap
       obs-studio
-      # Spotify player
-      spotify-player
+      spotify
       gh
 
       # Utils
