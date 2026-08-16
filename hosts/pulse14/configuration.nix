@@ -109,6 +109,7 @@
     wireless.iwd.enable = false;
   };
   services.gnome.gnome-keyring.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
 
   services = {
     thermald.enable = true;
@@ -172,6 +173,10 @@
     };
     kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
     zfs.forceImportRoot = false;
+    kernel.sysctl = {
+      "fs.inotify.max_user_watches" = 524288;
+      "fs.inotify.max_user_instances" = 8192;
+    };
   };
 
   # I use zsh btw

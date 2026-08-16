@@ -15,8 +15,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
-    emacs-overlay.inputs.nixpkgs.follows = "nixpkgs";
     alacritty-theme.url = "github:alexghr/alacritty-theme.nix";
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
@@ -24,99 +22,104 @@
       # to have it up to date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  };
-
-  outputs = {
-    nixpkgs,
-    nixos-hardware,
-    home-manager,
-    utils,
-    nix-flatpak,
-    alacritty-theme,
-    ...
-  } @ inputs: {
-    nixosModules = import ./modules {inherit (nixpkgs) lib;};
-    nixosConfigurations = {
-      pulse14 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/pulse14/configuration.nix
-          utils.nixosModules.autoGenFromInputs
-          home-manager.nixosModules.home-manager
-          nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
-          nix-flatpak.nixosModules.nix-flatpak
-          {
-            # install the overlay
-            nixpkgs.overlays = [alacritty-theme.overlays.default];
-          }
-          (
-            {pkgs, ...}: {
-              home-manager.users.simone = hm: {
-                programs.alacritty = {
-                  enable = true;
-                  # use a color scheme from the overlay
-                  settings.general.import = [pkgs.alacritty-theme.gruvbox_dark];
-                };
-              };
-            }
-          )
-        ];
-        specialArgs = {inherit inputs;};
-      };
-      pavilion15 = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/pavilion15/configuration.nix
-          utils.nixosModules.autoGenFromInputs
-          home-manager.nixosModules.home-manager
-          nix-flatpak.nixosModules.nix-flatpak
-          {
-            # install the overlay
-            nixpkgs.overlays = [alacritty-theme.overlays.default];
-          }
-          (
-            {pkgs, ...}: {
-              home-manager.users.simone = hm: {
-                programs.alacritty = {
-                  enable = true;
-                  # use a color scheme from the overlay
-                  settings.general.import = [pkgs.alacritty-theme.gruvbox_dark];
-                };
-              };
-            }
-          )
-        ];
-        specialArgs = {inherit inputs;};
-      };
-      reactor = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./hosts/reactor/configuration.nix
-          utils.nixosModules.autoGenFromInputs
-          home-manager.nixosModules.home-manager
-          nix-flatpak.nixosModules.nix-flatpak
-          nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
-          nixos-hardware.nixosModules.common-cpu-amd
-          nixos-hardware.nixosModules.common-pc
-          nixos-hardware.nixosModules.common-pc-ssd
-          {
-            # install the overlay
-            nixpkgs.overlays = [alacritty-theme.overlays.default];
-          }
-          (
-            {pkgs, ...}: {
-              home-manager.users.simone = hm: {
-                programs.alacritty = {
-                  enable = true;
-                  # use a color scheme from the overlay
-                  settings.general.import = [pkgs.alacritty-theme.gruvbox_dark];
-                };
-              };
-            }
-          )
-        ];
-        specialArgs = {inherit inputs;};
+    nix-doom-emacs-unstraightened = {
+      url = "github:marienz/nix-doom-emacs-unstraightened";
+      inputs = {
+        doomdir.url = "git+https://github.com/sceredi/doom.d";
+        nixpkgs.follows = "";
       };
     };
   };
+
+  outputs =
+    {
+      nixpkgs,
+      nixos-hardware,
+      home-manager,
+      utils,
+      nix-flatpak,
+      nix-doom-emacs-unstraightened,
+      alacritty-theme,
+      ...
+    }@inputs:
+    {
+      nixosModules = import ./modules { inherit (nixpkgs) lib; };
+      nixosConfigurations = {
+        pulse14 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/pulse14/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+            home-manager.nixosModules.home-manager
+            nixos-hardware.nixosModules.tuxedo-pulse-14-gen3
+            nix-flatpak.nixosModules.nix-flatpak
+            {
+              # install the overlay
+              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+            }
+            ({ pkgs, ... }: {
+              home-manager.sharedModules = [ nix-doom-emacs-unstraightened.homeModule ];
+              home-manager.users.simone = {
+                programs.alacritty = {
+                  enable = true;
+                  # use a color scheme from the overlay
+                  settings.general.import = [ pkgs.alacritty-theme.gruvbox_dark ];
+                };
+              };
+            })
+          ];
+          specialArgs = { inherit inputs; };
+        };
+        pavilion15 = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/pavilion15/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+            home-manager.nixosModules.home-manager
+            nix-flatpak.nixosModules.nix-flatpak
+            {
+              # install the overlay
+              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+            }
+            ({ pkgs, ... }: {
+              home-manager.users.simone = {
+                programs.alacritty = {
+                  enable = true;
+                  # use a color scheme from the overlay
+                  settings.general.import = [ pkgs.alacritty-theme.gruvbox_dark ];
+                };
+              };
+            })
+          ];
+          specialArgs = { inherit inputs; };
+        };
+        reactor = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [
+            ./hosts/reactor/configuration.nix
+            utils.nixosModules.autoGenFromInputs
+            home-manager.nixosModules.home-manager
+            nix-flatpak.nixosModules.nix-flatpak
+            nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
+            nixos-hardware.nixosModules.common-cpu-amd
+            nixos-hardware.nixosModules.common-pc
+            nixos-hardware.nixosModules.common-pc-ssd
+            {
+              # install the overlay
+              nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+            }
+            ({ pkgs, ... }: {
+              home-manager.users.simone = {
+                programs.alacritty = {
+                  enable = true;
+                  # use a color scheme from the overlay
+                  settings.general.import = [ pkgs.alacritty-theme.gruvbox_dark ];
+                };
+              };
+            })
+          ];
+          specialArgs = { inherit inputs; };
+        };
+      };
+    };
 }

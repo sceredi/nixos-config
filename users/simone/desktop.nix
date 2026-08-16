@@ -37,10 +37,6 @@
 
   gtk = {
     enable = true;
-    theme.package = pkgs.arc-theme;
-    theme.name = "Arc";
-    iconTheme.package = pkgs.arc-icon-theme;
-    iconTheme.name = "Arc";
     gtk4.theme = null;
   };
 
