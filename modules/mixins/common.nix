@@ -29,6 +29,7 @@
   home-manager.users.simone = {pkgs, ...}: {
     home.packages = with pkgs; [
       # Command Line
+      google-chrome
       tldr
       lsof
       fastfetch
@@ -58,6 +59,7 @@
       obs-studio
       spotify
       gh
+      qpdf
 
       # Utils
       zip
