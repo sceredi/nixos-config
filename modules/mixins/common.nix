@@ -16,7 +16,7 @@
     enable = true;
     enableUdevRules = true;
   };
-  services.teamviewer.enable = true;
+  # services.teamviewer.enable = true;
   nix = {
     settings = {
       trusted-users = [
@@ -101,7 +101,7 @@
       dos2unix
 
       # TeamViewer
-      teamviewer
+      # teamviewer
     ];
   };
 }

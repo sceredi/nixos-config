@@ -18,7 +18,7 @@
     noto-fonts-cjk-sans
     noto-fonts-color-emoji
     source-code-pro
-    ttf_bitstream_vera
+    ttf-bitstream-vera
     terminus_font_ttf
     iosevka
   ];
