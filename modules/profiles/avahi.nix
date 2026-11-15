@@ -4,10 +4,9 @@
     nssmdns4 = true; # Allows software to use Avahi to resolve.
     enable = true;
     settings.publish = {
-      enable = true;
-      addresses = true;
-      workstation = true;
-      userServices = true;
+      publish-addresses = true;
+      publish-workstation = true;
+      disable-user-service-publishing = false;
     };
   };
 }
