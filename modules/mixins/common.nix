@@ -7,7 +7,7 @@
     vim
     git
     gnupg
-    pinentry-curses
+    pinentry-gnome3
     input-remapper
     man-pages
     man-pages-posix
