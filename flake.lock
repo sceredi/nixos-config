@@ -39,11 +39,11 @@
     "doomdir": {
       "flake": false,
       "locked": {
-        "lastModified": 1786203454,
-        "narHash": "sha256-JSGuW3FB+q9UZSSeyrO+iwmsd0QGxaiOGZ7fJRfGGcA=",
+        "lastModified": 1794770652,
+        "narHash": "sha256-hi9ytOHZzIlvXIYG0qDV4CrcaJx59aK/D0VIRRYxRGc=",
         "ref": "refs/heads/main",
-        "rev": "05295a5b98eb10cccc2805522286a88a47e76c24",
-        "revCount": 5,
+        "rev": "ba6260896c0e17dc9ca8be3597efa5686f8700ad",
+        "revCount": 12,
         "type": "git",
         "url": "https://github.com/sceredi/doom.d"
       },
@@ -94,11 +94,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1794412481,
-        "narHash": "sha256-Pv/EOm33j0bgqpJGgrbRM91YanRk1aC23qNXrThEydA=",
+        "lastModified": 1794756259,
+        "narHash": "sha256-PVITowIBwWBCqlpYDt1/CvFEi3IpGxtS4FmrQu7v8GE=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "d6b7a178036a028d08062c15f27fcec0094d1f5e",
+        "rev": "a7df736215569220c5e6bb4b0e90b73f9638c810",
         "type": "github"
       },
       "original": {
@@ -215,11 +215,11 @@
         "nixpkgs": []
       },
       "locked": {
-        "lastModified": 1794569982,
-        "narHash": "sha256-EfNipnzGEEPS3QebLbLngI1zfS7ZKfYOPZWSJn+USys=",
+        "lastModified": 1794757367,
+        "narHash": "sha256-YJ+ds3q1k4V7pjc0R5YzNYl8WMyqtOUDr1/3Kvh9j3g=",
         "owner": "marienz",
         "repo": "nix-doom-emacs-unstraightened",
-        "rev": "433519e634c5cf9c68e5fdb04ff9e7cb8cfe83d5",
+        "rev": "fb84e6005a83be2dbc7deb95ee57a0fe1b2fa797",
         "type": "github"
       },
       "original": {

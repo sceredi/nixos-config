@@ -2,6 +2,8 @@
   home-manager.users.simone = {pkgs, ...}: {
     home.packages = with pkgs; [
       uv
+      pipenv
+      poetry
       (python3.withPackages (
         ps:
           with ps; [

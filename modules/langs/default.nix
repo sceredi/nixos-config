@@ -20,19 +20,27 @@
           statix
 
           # c
+          clang-tools
           gcc
           gnumake
           cmake
           gdb
           autoconf
           automake
+          glslang
           libtool
           stdenv.cc.cc.lib
           glibc
           zlib
 
+          # c#
+          csharpier
+
           # d2
           d2
+
+          #docker
+          dockfmt
 
           # node
           nodejs
@@ -40,6 +48,7 @@
           typescript-language-server
           vue-language-server
           copilot-language-server
+          js-beautify
 
           # go
           go
@@ -47,6 +56,9 @@
           air
           delve
           golangci-lint
+          gomodifytags
+          gotests
+          gore
 
           # protobuf
           protobuf
@@ -54,6 +66,7 @@
           # ocaml
           ocaml
           opam
+          ocamlPackages.merlin
 
           # rust
           cargo
@@ -66,17 +79,24 @@
           (jdk.override { enableJavaFX = true; })
           jdt-language-server
           kotlin
+          ktlint
           # (callPackage gradle-packages.gradle_8 {java = jdk;})
           scala_3
           sbt
           coursier
           scala-cli
+          scalafmt
+          metals
 
           # erlang stuff
           beamPackages.erlang
           beamPackages.elixir
           gleam
           rebar3
+
+          # html
+          html-tidy
+          stylelint
 
           # kubernetes
           k9s
@@ -93,9 +113,19 @@
           # lua
           luajitPackages.luarocks
 
+          # md
+          pandoc
+
           # latex
           texliveFull
           texlivePackages.latexmk
+
+          # sh
+          shfmt
+          shellcheck
+
+          # terraform
+          terraform
 
           # typst
           typst
@@ -103,6 +133,9 @@
 
           # yaml
           yaml-language-server
+
+          # xml
+          libxml2
 
           # zig
           zig
