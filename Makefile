@@ -18,6 +18,9 @@ boot:
 test:
 	nixos-rebuild test --flake .#${HOSTNAME} -L --show-trace
 
+emacs:
+	nix flake update nix-doom-emacs-unstraightened && make switch
+
 update:
 	nix flake update
 
