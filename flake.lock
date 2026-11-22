@@ -39,10 +39,10 @@
     "doomdir": {
       "flake": false,
       "locked": {
-        "lastModified": 1795209408,
-        "narHash": "sha256-Js0Ojp6I20cYr5DUHkAcEXTVkMWzgJ3PfR1bGxbr2gE=",
+        "lastModified": 1795345110,
+        "narHash": "sha256-9o8iq3xuTKv/0jufeL9X80pABMr9pCLF2ix8N9bG1ek=",
         "ref": "refs/heads/main",
-        "rev": "2c3793f2cd7a28212d363d582077b7ec6d75c7ca",
+        "rev": "9cad1893525435cc10e43993e00aeedaaf4f0a33",
         "revCount": 14,
         "type": "git",
         "url": "https://github.com/sceredi/doom.d"
