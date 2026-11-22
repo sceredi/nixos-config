@@ -131,7 +131,8 @@
           typst
           tinymist
 
-          # yaml
+          # json-yaml
+          vscode-json-languageserver
           yaml-language-server
 
           # xml
